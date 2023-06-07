@@ -6,9 +6,9 @@ import { useRouter } from 'next/router'
 export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
     const router = useRouter()
 
-    const { data: user, error, mutate } = useSWR('/api/user', () =>
+    const { data: user, error, mutate } = useSWR('/api/userr', () =>
         axios
-            .get('/api/user')
+            .get('/api/userr')
             .then(res => res.data)
             .catch(error => {
                 if (error.response.status !== 409) throw error
