@@ -1,5 +1,9 @@
 import 'tailwindcss/tailwind.css'
-
-const App = ({ Component, pageProps }) => <Component {...pageProps} />
+import Contextpaginaifno from '@/context/contextpaginaifno'
+const App = ({ Component, pageProps }) => (
+    <Contextpaginaifno>
+        <Component {...pageProps} />
+    </Contextpaginaifno>
+)
 
 export default App

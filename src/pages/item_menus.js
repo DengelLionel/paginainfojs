@@ -1,6 +1,7 @@
 import AppLayout from '@/components/Layouts/AppLayout'
 import Head from 'next/head'
-
+import CreacionItem from '@/components/menuitems/CreacionItem'
+import ListaItem from '@/components/menuitems/ListaItem'
 const Dashboard = () => {
     return (
         <AppLayout
@@ -10,11 +11,14 @@ const Dashboard = () => {
                 </div>
             }>
             <Head>
-                <title>Laravel - Dashboard</title>
+                <title>Item Menú</title>
             </Head>
 
             <div className="py-12">
-                <div className="max-w-7xl mx-auto sm:px-6 lg:px-8" />
+                <div className="flex justify-center items-center flex-col sm:px-6 lg:flex-row lg:justify-start lg:px-8">
+                    <CreacionItem />
+                    <ListaItem />
+                </div>
             </div>
         </AppLayout>
     )
