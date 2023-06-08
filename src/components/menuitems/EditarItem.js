@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from '@/lib/axios'
-import { useContext, useState, useRef } from 'react'
+import { useContext, useState, useRef, useEffect } from 'react'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
 
 const EditarItem = () => {
@@ -10,7 +10,7 @@ const EditarItem = () => {
     const [visible, setVisible] = useState('true')
     const csrf = () => axios.get('/sanctum/csrf-cookie')
     const { isOpen, setIsOpen, idMenuItem } = useContext(PaginaContextValue)
-
+    const [errorserv, setErrorserv] = useState(null)
     const togglePopup = event => {
         if (modalRef.current === event.target) {
             setIsOpen(!isOpen)
@@ -24,14 +24,14 @@ const EditarItem = () => {
                 visible: visible === 'true' ? true : false,
             }
             await csrf()
-            const response = await axios.put(`/api/menu/${idMenuItem}`, menu)
+            await axios.put(`/api/menu/${idMenuItem}`, menu)
             window.location.reload()
             setIsOpen(false)
-            console.log(response.data)
         } catch (error) {
-            console.error('There was an error updating the item!', error)
+            setErrorserv(error)
         }
     }
+    useEffect(() => {}, [errorserv])
     return (
         isOpen && (
             <div

@@ -5,6 +5,7 @@ const CreacionItem = () => {
     const [nombre, setNombre] = useState('')
     const [link, setLink] = useState('')
     const [visible, setVisible] = useState('true')
+    const [errorserv, setErrorserv] = useState(null)
     const csrf = () => axios.get('/sanctum/csrf-cookie')
     const handleCrearMenu = async () => {
         try {
@@ -14,14 +15,13 @@ const CreacionItem = () => {
                 link: link,
                 visible: visible === 'true' ? true : false,
             }
-            const response = await axios.post('/api/menu', menu)
-            return response
+            await axios.post('/api/menu', menu)
             window.location.reload()
         } catch (error) {
-            console.error(error)
+            setErrorserv(error)
         }
     }
-    useEffect(() => {}, [])
+    useEffect(() => {}, [errorserv])
 
     return (
         <div>

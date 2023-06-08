@@ -2,7 +2,7 @@ import React from 'react'
 import useSWR from 'swr'
 import axios from '@/lib/axios'
 
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
 import EditarItem from './EditarItem'
 const ListaItem = () => {
@@ -11,6 +11,7 @@ const ListaItem = () => {
         axios.get('/api/menu').then(res => res.data),
     )
     const dato = data.data
+    const [errorserv, setErrorserv] = useState(null)
     const IdTem = item => {
         setIdMenuItem(item)
     }
@@ -19,9 +20,10 @@ const ListaItem = () => {
             await axios.delete(`/api/menu/${item_eliminado}`)
             window.location.reload()
         } catch (error) {
-            console.error(error)
+            setErrorserv(error)
         }
     }
+    useEffect(() => {}, [errorserv])
     return (
         <div className="overflow-x-auto w-[360px] p-[16px] lg:w-full sm:mx-0.5 lg:mx-0.5">
             <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
