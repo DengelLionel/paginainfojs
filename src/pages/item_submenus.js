@@ -1,8 +1,8 @@
 import AppLayout from '@/components/Layouts/AppLayout'
 import Head from 'next/head'
-import CreacionItem from '@/components/menuitems/CreacionItem'
-import ListaItem from '@/components/menuitems/ListaItem'
-const ItemMenu = () => {
+import CreacionItem from '@/components/submenus/CreacionItem'
+import ListaItem from '@/components/submenus/ListaItem'
+const ItemSubMenu = () => {
     return (
         <AppLayout
             header={
@@ -24,4 +24,4 @@ const ItemMenu = () => {
     )
 }
 
-export default ItemMenu
+export default ItemSubMenu

@@ -1,8 +1,8 @@
 import AppLayout from '@/components/Layouts/AppLayout'
 import Head from 'next/head'
-import CreacionItem from '@/components/menuitems/CreacionItem'
-import ListaItem from '@/components/menuitems/ListaItem'
-const ItemMenu = () => {
+import CreacionItem from '@/components/subsubmenu/CreacionItem'
+import ListaItem from '@/components/subsubmenu/ListaItem'
+const ItemSubsubMenu = () => {
     return (
         <AppLayout
             header={
@@ -11,11 +11,11 @@ const ItemMenu = () => {
                 </div>
             }>
             <Head>
-                <title>Item Menú</title>
+                <title>Item Sub-subMenú</title>
             </Head>
 
             <div className="py-12">
-                <div className="flex justify-center items-center flex-col sm:px-6 lg:flex-row lg:justify-start lg:px-8">
+                <div className="flex justify-center items-center flex-col sm:px-6  lg:justify-start lg:px-8">
                     <CreacionItem />
                     <ListaItem />
                 </div>
@@ -24,4 +24,4 @@ const ItemMenu = () => {
     )
 }
 
-export default ItemMenu
+export default ItemSubsubMenu

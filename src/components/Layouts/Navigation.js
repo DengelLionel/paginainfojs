@@ -42,6 +42,26 @@ const Navigation = ({ user }) => {
                                 active={router.pathname === '/item_menus'}>
                                 Items de menú
                             </NavLink>
+                            <NavLink
+                                href="/item_submenus"
+                                active={router.pathname === '/item_submenus'}>
+                                Items de submenu
+                            </NavLink>
+                            <NavLink
+                                href="/subsubmenu"
+                                active={router.pathname === '/subsubmenu'}>
+                                Items de sub-submenu
+                            </NavLink>
+                            <NavLink
+                                href="/item_products"
+                                active={router.pathname === '/item_products'}>
+                                Items de productos
+                            </NavLink>
+                            <NavLink
+                                href="/colecciones"
+                                active={router.pathname === '/colecciones'}>
+                                Items de colecciones
+                            </NavLink>
                         </div>
                     </div>
 

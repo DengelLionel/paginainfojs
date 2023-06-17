@@ -8,6 +8,9 @@ module.exports = {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
+            colors:{
+                "blackTransparente":"rgba(0,0,0,.5)"
+            }
         },
     },
     variants: {
