@@ -24,19 +24,11 @@ const Navigation = ({ user }) => {
                 <div className="flex justify-between h-16">
                     <div className="flex">
                         {/* Logo */}
-                        <div className="flex-shrink-0 flex items-center">
-                            <Link href="/dashboard">
-                                <ApplicationLogo className="block h-10 w-auto fill-current text-gray-600" />
-                            </Link>
-                        </div>
+                    
 
                         {/* Navigation Links */}
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                            <NavLink
-                                href="/dashboard"
-                                active={router.pathname === '/dashboard'}>
-                                Dashboard
-                            </NavLink>
+                          
                             <NavLink
                                 href="/item_menus"
                                 active={router.pathname === '/item_menus'}>
@@ -58,9 +50,24 @@ const Navigation = ({ user }) => {
                                 Items de productos
                             </NavLink>
                             <NavLink
+                                href="/producto_imagen"
+                                active={router.pathname === '/producto_imagen'}>
+                                Imagenes de Producto
+                            </NavLink>
+                            <NavLink
                                 href="/colecciones"
                                 active={router.pathname === '/colecciones'}>
                                 Items de colecciones
+                            </NavLink>
+                            <NavLink
+                                href="/sliders"
+                                active={router.pathname === '/sliders'}>
+                                Sliders
+                            </NavLink>
+                            <NavLink
+                                href="/clientes"
+                                active={router.pathname === '/clientes'}>
+                               Clientes
                             </NavLink>
                         </div>
                     </div>

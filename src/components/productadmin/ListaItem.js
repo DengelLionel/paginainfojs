@@ -111,10 +111,7 @@ const ListaItem = () => {
                                         {item.nombre}
                                     </td>
                                     <td className="text-sm text-gray-900 font-light  px-6 py-4 ">
-                                        <p className="w-[150px] lg:w-[500px] h-auto ">
-                                            {' '}
-                                            {item.descripcion}
-                                        </p>
+                                            {item.descripcion!==null&&"Si existe descripción"}
                                     </td>
                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                         {item.marca}
