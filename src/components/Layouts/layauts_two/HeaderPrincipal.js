@@ -10,7 +10,7 @@ const HeaderPrincipal = ({logo}) => {
   return (
     <div >
     {/* movile and tablet */}
-      <div className='md:hidden'>
+      <div className='lg:hidden'>
       <NavBarMobil logo={logo} />
        
       

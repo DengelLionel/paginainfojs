@@ -9,8 +9,14 @@ module.exports = {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
             },
             colors:{
-                "blackTransparente":"rgba(0,0,0,.5)"
-            }
+                "blackTransparente":"rgba(0,0,0,.5)",
+                "blancoTransparente":"rgba(255.255.255)",
+                "plomo":"#595858",
+                "blueOne":"#2F6AAD",
+                "blancoOne":"#EEEFF3",
+                "blancoTwo":"#F7F8F7",
+                "negro":"#020507",
+                     }
         },
     },
     variants: {

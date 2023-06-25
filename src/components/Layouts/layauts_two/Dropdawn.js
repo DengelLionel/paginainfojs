@@ -1,17 +1,22 @@
 import React from 'react'
 import MenuItems from './MenuItems'
 const Dropdawn = ({submenus,dropdawn,depthLevel}) => {
-    depthLevel=depthLevel+1
-  console.log("sub",submenus)
+  depthLevel=depthLevel+1
+
   return (
-    <ul className={`absolute right-0 list-none bg-white shadow-md rounded-md p-2 ${
-        depthLevel > 1 ? 'absolute left-full -mt-[50px] w-full' : ''
-      } ${dropdawn ? 'block' : 'hidden'
-    }`}>
-  {submenus?.map((submenu, index) => (
-    <MenuItems items={submenu} key={index} depthLevel={depthLevel} />
-  ))}
-</ul>
+      <div className={`${dropdawn ? 'block' : 'hidden'
+      } absolute right-0 list-none shadow-md rounded-md p-2 ${
+          depthLevel > 1 ? 'absolute left-full -mt-[50px] w-[150px]' : '' 
+      }`}>
+          {submenus?.map((submenu, index) => {
+              const hasSubmenus = submenu.submenu && submenu.submenu.length > 0;
+              return (
+                  <ul className={"bg-blue-800" } key={index}>
+                      <MenuItems items={submenu} depthLevel={depthLevel} />
+                  </ul>
+              )
+          })}
+      </div>
   )
 }
 

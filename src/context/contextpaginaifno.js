@@ -16,6 +16,7 @@ const Contextpaginaifno = ({ children }) => {
     const [openSubsubNav, setOpenSubsubNav]=useState(false)
     const [capturarMenu,setCapturarMenu]=useState(0)
     const [capturarSubMenu,setCapturarSubMenu]=useState(0)
+    const [dropdawn,setDropdawn]=useState(false)
     const data = {
         isOpen,
         setIsOpen,
@@ -42,7 +43,9 @@ const Contextpaginaifno = ({ children }) => {
         capturarSubMenu,
         setCapturarSubMenu,
         isOopen,
-        setIsOopen
+        setIsOopen,
+        dropdawn,
+        setDropdawn
     }
     return (
         <PaginaContextValue.Provider value={data}>
