@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import Dropdawn from './Dropdawn'
 import Link from 'next/link'
-
+import IconSub from '@/components/icons/IconSub'
 const MenuItems = ({ items, depthLevel, isHovered }) => {
   const [dropdawn, setDropdawn] = useState(false)
   let ref = useRef()
@@ -27,10 +27,10 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
   const onMouseLeave = () => {
     window.innerWidth > 960 && setDropdawn(false);
   };
-
+console.log("depth",depthLevel)
   return (
     <li
-      className="relative font-normal text-base text-white"
+      className="relative font-normal text-base text-white "
       ref={ref}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
@@ -38,7 +38,7 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
       {items.submenu ? (
         <>
           <Link
-            className={`${isHovered ? 'text-black' : 'text-white'} transition-all duration-[800ms] block text-left px-2 py-1 w-full`}
+            className={`${isHovered ? 'text-black hover:text-blueOne' : 'text-white '} ${depthLevel >0&&' hover:text-blancoOne text-blueOne hover:bg-blueOne'}  transition-all duration-[800ms] font-notosans font-medium flex flex-row items-center justify-between text-left px-[10px] py-[15px] w-full `}
             type="button"
             href={items.enlace}
             aria-haspopup="menu"
@@ -46,7 +46,8 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
             onClick={() => setDropdawn((prev) => !prev)}
           >
             {items.nombre}{" "}
-            {depthLevel > 0 ? <span>&raquo;</span> : <span className="" />}
+
+            {items.submenu && items.submenu.length > 0 &&depthLevel >0&&   <IconSub status={dropdawn} clase={`rotate-360   transition-all duration-[500ms]`}/> }
           </Link>
           <Dropdawn
             depthLevel={depthLevel}
@@ -56,7 +57,7 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
         </>
       ) : (
         <Link 
-          className={`${isHovered ? 'text-black' : 'text-white'} block text-left px-2 py-1 w-full`} 
+          className={`${isHovered ? 'text-black' : 'text-blueOne font-notosans font-medium hover:bg-blueOne hover:text-blancoOne'}   block text-left px-2 py-1 w-full`} 
           href={items.enlace}>
           {items.nombre}
         </Link>

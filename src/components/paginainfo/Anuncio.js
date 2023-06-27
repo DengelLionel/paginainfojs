@@ -12,7 +12,7 @@ const Anuncio = () => {
         <span className='hidden lg:block'>/ ventas@nexomedic.com.pe/</span>
         <div className='md:flex md:flex-row md:items-center md:gap-[14px]'>
           <div className='hidden lg:block'><ItemBuscadorTwo/></div>
-          <IconFacebook/><IconInstagram/><IconTiktok/><IconYoutuve/></div>
+          <IconFacebook fill="#EEEFF3"/><IconInstagram fill="#EEEFF3"/><IconTiktok fill="#EEEFF3"/><IconYoutuve fill="#EEEFF3"/></div>
         <span className='md:flex md:flex-row md:items-center md:gap-[14px] lg:hidden'><IconTelefono/>(511) 758-3872</span>
     </div>
   )

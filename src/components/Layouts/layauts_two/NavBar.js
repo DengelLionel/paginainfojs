@@ -4,15 +4,16 @@ import { PaginaContextValue } from '@/context/contextpaginaifno';
 import { useDatosMenu } from "@/hooks/useDatosMenu";
 import Image from 'next/legacy/image';
 import IconTelefono from '@/components/icons/IconTelefono';
+import Link from 'next/link';
 
 const NavBar = ({ logo }) => {
   const { datos } = useDatosMenu();
-  const {isOopen, setIsOopen}=useContext(PaginaContextValue)
+  const {isOopen}=useContext(PaginaContextValue)
   const [isHovered, setIsHovered] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [bgColor, setBgColor] = useState('lg:bg-transparent');
   const [topPosition, setTopPosition] = useState('top-[40px]');
-
+console.log(datos)
   const updateScrollPosition = () => {
     const position = window.scrollY || document.documentElement.scrollTop;
     setScrollPosition(position);
@@ -55,7 +56,7 @@ const NavBar = ({ logo }) => {
       </div>
 
       <div className={`${isOopen ? 'block' : 'hidden'} md:block`}>
-        <ul className="md:flex list-none p-0 m-0 ">
+        <ul className="md:flex  list-none p-0 m-0 md:gap-[30px]">
           {
             datos?.map((menu, index) => {
               const depthLevel = 0
@@ -66,7 +67,7 @@ const NavBar = ({ logo }) => {
           }
         </ul>
       </div>
-      <span className={`${isHovered ? 'lg:text-black' : 'lg:text-white'} hidden lg:flex lg:flex-row lg:items-center lg:gap-[8px] lg:transiton-all lg:duration-[800ms]`}><IconTelefono fill={`${isHovered?'#222222':'#EEEFF3'}`}/>(511) 758-3872</span>
+      <Link href={"#"} className={`${isHovered ? 'lg:text-black hover:text-blueOne' : 'lg:text-white'}  hidden lg:flex lg:flex-row lg:items-center font-notosans font-medium lg:gap-[8px] lg:transiton-all lg:duration-[800ms]`}><IconTelefono  fill={`${isHovered?'#222222':'#EEEFF3'}`}/>(511) 758-3872</Link>
     </nav>
   )
 }

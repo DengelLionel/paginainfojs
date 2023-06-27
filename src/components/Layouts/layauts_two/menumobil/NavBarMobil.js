@@ -31,7 +31,7 @@ const NavBarMobil = ({logo}) => {
 
   return (
     <nav className={`h-[70px] md:h-[70px] pt-[16px] pb-[16px] transition-all duration-[700ms] border-b-[1px] border-white shadow fixed z-[999] w-full lg:hidden ${navBackground}`}> 
-    <div className="flex justify-between items-center mb-[20px]">
+    <div className="flex justify-between items-center mb-[10px]">
       <div className='relative w-[190px] h-[42px] ml-[16px]'> 
         <Image layout='fill' objectFit='cover' src={logo} alt="Descripción del logo" /> 
       </div>
@@ -43,7 +43,7 @@ const NavBarMobil = ({logo}) => {
       </div>
     </div>
 
-    <div  className={`${isOopen ? 'block bg-blue-700 w-full' : 'hidden'} lg:block`}>
+    <div  className={`${isOopen ? 'block bg-blueTwo w-full' : 'hidden'} lg:block`}>
       <ul className=" list-none p-[16px]">
         {
           datos?.map((menu, index) => {

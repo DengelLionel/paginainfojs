@@ -19,8 +19,20 @@ const Marcas = () => {
   }, []);
 
   let bottomPosition = 0;
+  const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768;
+
   if (typeof window !== 'undefined') {
-    bottomPosition = scrollPosition + window.innerHeight < document.body.offsetHeight ? 0 : 160;
+    const scrollHeight = document.body.offsetHeight;
+    const windowHeight = window.innerHeight;
+    const bottomEdge = scrollHeight - scrollPosition - windowHeight;
+
+    if(isMobile) {
+      // mobile behavior
+      bottomPosition = bottomEdge <= 110 ? 110 : 0;
+    } else {
+      // desktop behavior
+      bottomPosition = bottomEdge <= 50 ? 50 : 0;
+    }
   }
 
   return (
