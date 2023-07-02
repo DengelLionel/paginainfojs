@@ -27,7 +27,7 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
   const onMouseLeave = () => {
     window.innerWidth > 960 && setDropdawn(false);
   };
-console.log("depth",depthLevel)
+
   return (
     <li
       className="relative font-normal text-base text-white "

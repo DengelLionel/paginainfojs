@@ -3,6 +3,7 @@ import axios from '@/lib/axios'
 import { useContext, useState, useRef, useEffect } from 'react'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
 import useSWR from 'swr'
+import { useToSlug } from '@/hooks/useToSlug'
 const EditarItem = () => {
     const modalRef = useRef()
     const [nombre, setNombre] = useState('')
@@ -38,7 +39,9 @@ const EditarItem = () => {
             setErrorserv(error)
         }
     }
-    useEffect(() => {}, [errorserv])
+    useEffect(() => {
+        setEnlace('/'+ useToSlug(nombre))
+    }, [errorserv,enlace,nombre])
     return (
         isOpen && (
             <div
@@ -98,18 +101,9 @@ const EditarItem = () => {
                                         className="text-sm text-gray-500 font-bold">
                                         Link
                                     </label>
-                                    <input
-                                        type="text"
-                                        id="link"
-                                        placeholder="link"
-                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                                        value={enlace}
-                                        onChange={e =>
-                                            setEnlace(e.target.value)
-                                        }
-                                    />
+                                    <span  className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200">{enlace}</span>
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-3 hidden">
                                     <label
                                         htmlFor="link"
                                         className="text-sm text-gray-500 font-bold">

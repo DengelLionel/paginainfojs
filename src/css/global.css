@@ -1,0 +1,9 @@
+.embla_slide{
+    @apply relative transition-opacity duration-200 ease-in-out;
+}
+.embla_slide{
+    flex:0 50 100%;
+    min-width: 300px;
+    padding-left: 1rem;
+   
+}

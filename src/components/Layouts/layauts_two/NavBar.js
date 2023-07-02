@@ -13,7 +13,7 @@ const NavBar = ({ logo }) => {
   const [scrollPosition, setScrollPosition] = useState(0);
   const [bgColor, setBgColor] = useState('lg:bg-transparent');
   const [topPosition, setTopPosition] = useState('top-[40px]');
-console.log(datos)
+
   const updateScrollPosition = () => {
     const position = window.scrollY || document.documentElement.scrollTop;
     setScrollPosition(position);
@@ -39,7 +39,7 @@ console.log(datos)
 
   const handleMouseLeave = () => {
     setIsHovered(false);
-    setBgColor(scrollPosition > 50 ? 'lg:bg-black' : 'lg:bg-transparent');
+    setBgColor(scrollPosition > 50 ? 'lg:bg-plomo' : 'lg:bg-transparent');
   };
 
   return (
@@ -47,7 +47,7 @@ console.log(datos)
          className={`${bgColor} ${topPosition} 
                     hidden lg:fixed lg:z-[999] lg:transition-all lg:duration-[800ms] lg:shadow lg:px-4 lg:flex 
                     lg:justify-between lg:items-center lg:h-[80px] lg:w-full 
-                    lg:border-b-[0.5px] lg:pr-[40px] lg:pl-[40px] xl:pr-[78px] xl:pl-[78px]
+                    lg:border-b-[0.5px] lg:pr-[40px] lg:shadow-xl lg:pl-[40px] xl:pr-[78px] xl:pl-[78px]
                     lg:border-white lg:border-opacity-25`}> 
       <div className="flex justify-between items-center">
         <div className='relative w-[266px] h-[60px] '> 

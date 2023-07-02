@@ -30,7 +30,7 @@ const NavBarMobil = ({logo}) => {
     const navBackground = scrollPosition > 50 ? "bg-plomo" : "bg-transparent";
 
   return (
-    <nav className={`h-[70px] md:h-[70px] pt-[16px] pb-[16px] transition-all duration-[700ms] border-b-[1px] border-white shadow fixed z-[999] w-full lg:hidden ${navBackground}`}> 
+    <nav className={`h-[70px] shadow-md md:h-[70px] pt-[16px] pb-[16px] transition-all duration-[700ms] border-b-[1px] border-white border-opacity-25 fixed z-[9999] w-full lg:hidden ${navBackground}`}> 
     <div className="flex justify-between items-center mb-[10px]">
       <div className='relative w-[190px] h-[42px] ml-[16px]'> 
         <Image layout='fill' objectFit='cover' src={logo} alt="Descripción del logo" /> 
@@ -44,7 +44,7 @@ const NavBarMobil = ({logo}) => {
     </div>
 
     <div  className={`${isOopen ? 'block bg-blueTwo w-full' : 'hidden'} lg:block`}>
-      <ul className=" list-none p-[16px]">
+      <ul className=" list-none pr-[16px] pt-[20px] pb-[20px] pl-[16px]">
         {
           datos?.map((menu, index) => {
             const depthLevel = 0

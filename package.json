@@ -11,9 +11,11 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.4.2",
-    "axios": "^0.21.1",
-    "next": "^13.0.3",
     "@next/font": "13.1.1",
+    "axios": "^0.21.1",
+    "embla-carousel-autoplay": "^8.0.0-rc07",
+    "embla-carousel-react": "^8.0.0-rc07",
+    "next": "^13.0.3",
     "nuka-carousel": "^6.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

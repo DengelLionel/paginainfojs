@@ -47,18 +47,14 @@ const Navigation = ({ user }) => {
                             <NavLink
                                 href="/item_products"
                                 active={router.pathname === '/item_products'}>
-                                Items de productos
+                                Productos
                             </NavLink>
                             <NavLink
                                 href="/producto_imagen"
                                 active={router.pathname === '/producto_imagen'}>
                                 Imagenes de Producto
                             </NavLink>
-                            <NavLink
-                                href="/colecciones"
-                                active={router.pathname === '/colecciones'}>
-                                Items de colecciones
-                            </NavLink>
+                           
                             <NavLink
                                 href="/sliders"
                                 active={router.pathname === '/sliders'}>

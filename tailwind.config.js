@@ -21,7 +21,12 @@ module.exports = {
                      },
             fontFamily:{
                 notosans:'var(--font-notosans)'
-            }
+            },
+            boxShadow: {
+                'marca': '35px 0 60px -15px rgba(0, 0, 0, 0.5)',
+                'nav': '35px 0 60px -15px rgba(0, 0, 0, 0.5)',
+                'areas':'0 0 7px 0 rgba(0, 125, 255, 0.8)'
+              }
         },
     },
     variants: {

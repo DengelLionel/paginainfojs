@@ -29,8 +29,17 @@ const CreacionItem = () => {
         axios.get('/api/producto').then(res => res.data),
     )
     const dato = data.data
-
-    useEffect(() => {}, [errorserv])
+    const productoNombre=()=>{
+        dato?.[0].filter((producto) =>{
+            if(producto.id===product){
+                setTitulo(producto.nombre)
+            }
+        } )
+    }
+    
+    useEffect(() => {
+        productoNombre()
+    }, [errorserv,titulo,product])
 
     return (
         <div>
@@ -54,11 +63,12 @@ const CreacionItem = () => {
                                 setProduct(Number(e.target.value))
                             }>
                             <option value={'no'}>No hay producto</option>
-                            {dato?.[0].map((product, index) => (
-                                <option key={index} value={product.id}>
-                                    {product.nombre}
-                                </option>
-                            ))}
+                            {dato?.[0].map((product, index) =>   (
+                                    <option key={index} value={product.id}>
+                                        {product.nombre}
+                                    </option>
+                                )
+                             )}
                         </select>
                     </div>
                     <div className="mb-3">
@@ -84,14 +94,7 @@ const CreacionItem = () => {
                             className="text-sm text-gray-500 font-bold">
                             Titulo
                         </label>
-                        <input
-                            type="text"
-                            id="titulo"
-                            placeholder="Titulo"
-                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={titulo}
-                            onChange={e => setTitulo(e.target.value)}
-                        />
+                        <span  className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200">{titulo}</span>
                     </div>
                    
                     <div className="mb-3">

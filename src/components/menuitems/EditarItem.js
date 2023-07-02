@@ -2,7 +2,7 @@ import React from 'react'
 import axios from '@/lib/axios'
 import { useContext, useState, useRef, useEffect } from 'react'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
-
+import { useToSlug } from '@/hooks/useToSlug'
 const EditarItem = () => {
     const modalRef = useRef()
     const [nombre, setNombre] = useState('')
@@ -31,7 +31,9 @@ const EditarItem = () => {
             setErrorserv(error)
         }
     }
-    useEffect(() => {}, [errorserv])
+    useEffect(() => {
+        setLink('/'+ useToSlug(nombre))
+    }, [errorserv,link,nombre])
     return (
         isOpen && (
             <div
@@ -70,16 +72,9 @@ const EditarItem = () => {
                                         className="text-sm text-gray-500 font-bold">
                                         Link
                                     </label>
-                                    <input
-                                        type="text"
-                                        id="link"
-                                        placeholder="link"
-                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                                        value={link}
-                                        onChange={e => setLink(e.target.value)}
-                                    />
+                                    <span  className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200">{link}</span>
                                 </div>
-                                <div className="mb-3">
+                                <div className="mb-3 hidden">
                                     <label
                                         htmlFor="link"
                                         className="text-sm text-gray-500 font-bold">

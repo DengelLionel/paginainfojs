@@ -10,7 +10,7 @@ const MenuItems = ({ items, depthLevel}) => {
  
 
   return (
-    <li className="relative font-normal text-base">
+    <li className="relative font-normal text-base p-[10px]">
     {items.submenu && items.submenu.length > 0 ? (
       <>
         <button

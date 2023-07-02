@@ -14,7 +14,7 @@ const HeaderDesktop = ({LinksNavDesktop, logo}) => {
           setOpenSubsubNav(false);
         }
       }
-console.log("opensubnavd",openSubsubNav)
+
       window.addEventListener("click", onClickOutsideHandler);
       return () => {
         window.removeEventListener("click", onClickOutsideHandler);

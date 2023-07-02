@@ -1,29 +1,43 @@
 import Head from 'next/head'
-import { useAuth } from '@/hooks/auth'
 import HeaderPrincipal from '@/components/Layouts/layauts_two/HeaderPrincipal'
-import Carousel from "nuka-carousel"
 import Anuncio from '@/components/paginainfo/Anuncio'
 import Slider from '@/components/paginainfo/Slider'
-import IconPrev from '@/components/icons/IconPrev'
-import IconNext from '@/components/icons/IconNext'
-import Servicios from '@/components/paginainfo/Servicios'
-import Info from '@/components/paginainfo/Info'
-import NuestrasAreas from '@/components/paginainfo/NuestrasAreas'
-import ProductosDestacados from '@/components/paginainfo/ProductosDestacados'
 import ConocePromocines from '@/components/paginainfo/ConocePromocines'
 import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
-
-export default function Home() {
+import { useRouter } from 'next/router'
+import { useState,useEffect,memo } from 'react'
+import useSWR from 'swr'
+import axios from '@/lib/axios'
+const Producto=()=> {
+    const [datos,setDatos]=useState('')
+    const data = useSWR('/api/producto_destacado', () =>
+    axios.get('/api/producto_destacado').then(res => res.data),
+  )
+  const dato = data.data
+  const router=useRouter()
+  const {producto}=router.query
+  let interval
+    useEffect(()=>{
+        interval=setInterval(()=>{
+         
+          setDatos(dato?.filter((destacado)=>producto===destacado.meta_title_link
+          ))
+        
+       
+        },0.001)
+       
+       return ()=>clearInterval(interval)
+    },[interval,producto,datos,dato])
 
     return (
         <>
             <Head>
-                <title>Equipos medicos</title>
+                <title>{datos?.length > 0 ? datos?.[0]?.meta_title : 'Cargando...'}</title>
             </Head>
             <Anuncio/>
             <HeaderPrincipal  logo={'https://res.cloudinary.com/darps1cta/image/upload/v1687493114/nexo/Nexo-Medic_Logo_dklapo.png'}/>
-            <Carousel className='lg:h-[500px] mb-0' adaptiveHeightAnimation={true} adaptiveHeight={true} defaultControlsConfig={{prevButtonText:<IconPrev/>,nextButtonText:<IconNext/>,containerClassName:'bg-blancoTransparente',prevButtonClassName:'rounded-full',nextButtonClassName:'rounded-full'}} wrapAround={true} autoplay={true}>
+          
        
           <>
 
@@ -36,14 +50,10 @@ export default function Home() {
     
    
        
-       
-  </Carousel>
+
 
             <main className='bg-blancoOne'>
-            <Servicios/>
-  <Info/>    
-  <NuestrasAreas/>  
-  <ProductosDestacados/> 
+          
   <ConocePromocines/> 
   <Marcas/>
   <Footer/>
@@ -54,3 +64,4 @@ export default function Home() {
         </>
     )
 }
+export default memo(Producto)
