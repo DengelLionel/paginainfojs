@@ -2,14 +2,13 @@ import React from 'react'
 import axios from '@/lib/axios'
 import { useContext, useState, useRef, useEffect } from 'react'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
-import useSWR from 'swr'
 const EditarItem = () => {
     const modalRef = useRef()
     const [imagen, setImagen] = useState('')
     const csrf = () => axios.get('/sanctum/csrf-cookie')
     const { isOpen, setIsOpen, idProductItem } = useContext(PaginaContextValue)
     const [errorserv, setErrorserv] = useState(null)
-  
+
     const togglePopup = event => {
         if (modalRef.current === event.target) {
             setIsOpen(!isOpen)
@@ -19,10 +18,13 @@ const EditarItem = () => {
     const handleUpdate = async () => {
         try {
             const clientes_marca = {
-                imagen: imagen
+                imagen: imagen,
             }
             await csrf()
-            await axios.put(`/api/clientes_marcas/${idProductItem}`, clientes_marca)
+            await axios.put(
+                `/api/clientes_marcas/${idProductItem}`,
+                clientes_marca,
+            )
             window.location.reload()
             setIsOpen(false)
         } catch (error) {
@@ -46,22 +48,24 @@ const EditarItem = () => {
                                         Editar Clientes Marca
                                     </h4>
                                 </div>
-                             
-                    <div className="mb-3">
-                        <label
-                            htmlFor="name"
-                            className="text-sm text-gray-500 font-bold">
-                            Imagen
-                        </label>
-                        <input
-                            type="text"
-                            id="imagen"
-                            placeholder="Imagen"
-                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={imagen}
-                            onChange={e => setImagen(e.target.value)}
-                        />
-                    </div>
+
+                                <div className="mb-3">
+                                    <label
+                                        htmlFor="name"
+                                        className="text-sm text-gray-500 font-bold">
+                                        Imagen
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="imagen"
+                                        placeholder="Imagen"
+                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
+                                        value={imagen}
+                                        onChange={e =>
+                                            setImagen(e.target.value)
+                                        }
+                                    />
+                                </div>
                                 <div className="mb-3">
                                     <button
                                         onClick={handleUpdate}

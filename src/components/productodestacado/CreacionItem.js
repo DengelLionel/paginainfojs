@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from '@/lib/axios'
-import { useToSlug } from '@/hooks/useToSlug'
 import useSWR from 'swr'
 const CreacionItem = () => {
     const [producto, setProducto] = useState(null)
@@ -41,14 +40,12 @@ const CreacionItem = () => {
                         <label
                             htmlFor="link"
                             className="text-sm text-gray-500 font-bold">
-                           Producto
+                            Producto
                         </label>
 
                         <select
                             className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            onChange={e =>
-                                setProducto(Number(e.target.value))
-                            }>
+                            onChange={e => setProducto(Number(e.target.value))}>
                             <option value={'no'}>No hay producto</option>
                             {dato?.[0].map((producto, index) => (
                                 <option key={index} value={producto.id}>
@@ -57,7 +54,7 @@ const CreacionItem = () => {
                             ))}
                         </select>
                     </div>
-                   
+
                     <div className="mb-3">
                         <button
                             onClick={handleCrearProducto}

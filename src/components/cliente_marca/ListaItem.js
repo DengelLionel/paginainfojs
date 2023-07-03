@@ -6,9 +6,7 @@ import { useContext, useEffect, useState } from 'react'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
 import EditarItem from './EditarItem'
 const ListaItem = () => {
-    const { isOpen, setIsOpen, setIdItem } = useContext(
-        PaginaContextValue,
-    )
+    const { isOpen, setIsOpen, setIdItem } = useContext(PaginaContextValue)
     const data = useSWR('/api/clientes_marcas', () =>
         axios.get('/api/clientes_marcas').then(res => res.data),
     )
@@ -35,14 +33,11 @@ const ListaItem = () => {
                     <table className="min-w-full">
                         <thead className="bg-gray-200 border-b">
                             <tr>
-                               
                                 <th
                                     scope="col"
                                     className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                   Imagen
+                                    Imagen
                                 </th>
-                              
-                               
                             </tr>
                         </thead>
                         <tbody>
@@ -50,18 +45,16 @@ const ListaItem = () => {
                                 <tr
                                     key={index}
                                     className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                
                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
-                                    <Image
+                                        <Image
                                             layout="fill"
                                             objectFit="cover"
                                             className="w-[100px] h-[100px]"
-                                            alt='imagen marca'
+                                            alt="imagen marca"
                                             src={item.imagen}
                                         />
                                     </td>
-                                  
-                                   
+
                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex flex-col justify-center items-center lg:flex-row">
                                         <button
                                             onClick={() => {

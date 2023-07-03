@@ -22,10 +22,10 @@ const EditarItem = () => {
             const slider = {
                 titulo: titulo,
                 imagen: imagen,
-                enlace:enlace
+                enlace: enlace,
             }
             await csrf()
-            await axios.put(`/api/slider/${idItem}`,slider)
+            await axios.put(`/api/slider/${idItem}`, slider)
             window.location.reload()
             setIsOpen(false)
         } catch (error) {
@@ -50,52 +50,57 @@ const EditarItem = () => {
                                     </h4>
                                 </div>
                                 <div className="mb-3">
-                        <label
-                            htmlFor="titulo"
-                            className="text-sm text-gray-500 font-bold">
-                           Titulo
-                        </label>
-                        <input
-                            type="text"
-                            id="titulo"
-                            placeholder="Titulo"
-                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={titulo}
-                            onChange={e => setTitulo(e.target.value)}
-                        />
-                    </div>
-                   
+                                    <label
+                                        htmlFor="titulo"
+                                        className="text-sm text-gray-500 font-bold">
+                                        Titulo
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="titulo"
+                                        placeholder="Titulo"
+                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
+                                        value={titulo}
+                                        onChange={e =>
+                                            setTitulo(e.target.value)
+                                        }
+                                    />
+                                </div>
 
-                    <div className="mb-3">
-                        <label
-                            htmlFor="imagen"
-                            className="text-sm text-gray-500 font-bold">
-                            Imagen
-                        </label>
-                        <input
-                            type="text"
-                            id="imagen"
-                            placeholder="Imagen"
-                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={imagen}
-                            onChange={e => setImagen(e.target.value)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <label
-                            htmlFor="imagen"
-                            className="text-sm text-gray-500 font-bold">
-                           Enlace
-                        </label>
-                        <input
-                            type="text"
-                            id="enlace"
-                            placeholder="Enlace"
-                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={enlace}
-                            onChange={e => setEnlace(e.target.value)}
-                        />
-                    </div>
+                                <div className="mb-3">
+                                    <label
+                                        htmlFor="imagen"
+                                        className="text-sm text-gray-500 font-bold">
+                                        Imagen
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="imagen"
+                                        placeholder="Imagen"
+                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
+                                        value={imagen}
+                                        onChange={e =>
+                                            setImagen(e.target.value)
+                                        }
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label
+                                        htmlFor="imagen"
+                                        className="text-sm text-gray-500 font-bold">
+                                        Enlace
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="enlace"
+                                        placeholder="Enlace"
+                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
+                                        value={enlace}
+                                        onChange={e =>
+                                            setEnlace(e.target.value)
+                                        }
+                                    />
+                                </div>
                                 <div className="mb-3">
                                     <button
                                         onClick={handleUpdate}

@@ -16,7 +16,7 @@ const CreacionItem = () => {
             const slider = {
                 titulo: titulo,
                 imagen: imagen,
-                enlace:enlace
+                enlace: enlace,
             }
             await axios.post('/api/slider', slider)
             window.location.reload()
@@ -24,8 +24,6 @@ const CreacionItem = () => {
             setErrorserv(error)
         }
     }
-
-
 
     useEffect(() => {}, [errorserv])
 
@@ -38,12 +36,12 @@ const CreacionItem = () => {
                             Creando Sliders
                         </h4>
                     </div>
-                  
+
                     <div className="mb-3">
                         <label
                             htmlFor="titulo"
                             className="text-sm text-gray-500 font-bold">
-                           Titulo
+                            Titulo
                         </label>
                         <input
                             type="text"
@@ -54,7 +52,6 @@ const CreacionItem = () => {
                             onChange={e => setTitulo(e.target.value)}
                         />
                     </div>
-                   
 
                     <div className="mb-3">
                         <label
@@ -75,7 +72,7 @@ const CreacionItem = () => {
                         <label
                             htmlFor="imagen"
                             className="text-sm text-gray-500 font-bold">
-                           Enlace
+                            Enlace
                         </label>
                         <input
                             type="text"
@@ -86,7 +83,7 @@ const CreacionItem = () => {
                             onChange={e => setEnlace(e.target.value)}
                         />
                     </div>
-                   
+
                     <div className="mb-3">
                         <button
                             onClick={handleCrear}

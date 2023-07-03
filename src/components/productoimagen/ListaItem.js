@@ -38,19 +38,18 @@ const ListaItem = () => {
                                 <th
                                     scope="col"
                                     className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                  Producto
+                                    Producto
                                 </th>
                                 <th
                                     scope="col"
                                     className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                   Imagen
+                                    Imagen
                                 </th>
                                 <th
                                     scope="col"
                                     className="text-sm font-medium text-gray-900 w-[150px] lg:w-[400px] px-6 py-4 text-left">
-                                   Titulo
+                                    Titulo
                                 </th>
-                               
                             </tr>
                         </thead>
                         <tbody>
@@ -64,7 +63,7 @@ const ListaItem = () => {
                                             : item.product_nombre}
                                     </td>
                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
-                                    <Image
+                                        <Image
                                             layout="fill"
                                             objectFit="cover"
                                             className="w-[100px] h-[100px]"
@@ -73,9 +72,9 @@ const ListaItem = () => {
                                         />
                                     </td>
                                     <td className="text-sm text-gray-900 font-light  px-6 py-4 ">
-                                            {item.titulo}
+                                        {item.titulo}
                                     </td>
-                                   
+
                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex flex-col justify-center items-center lg:flex-row">
                                         <button
                                             onClick={() => {

@@ -111,7 +111,8 @@ const ListaItem = () => {
                                         {item.nombre}
                                     </td>
                                     <td className="text-sm text-gray-900 font-light  px-6 py-4 ">
-                                            {item.descripcion!==null&&"Si existe descripción"}
+                                        {item.descripcion !== null &&
+                                            'Si existe descripción'}
                                     </td>
                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                         {item.marca}

@@ -1,66 +1,56 @@
 import Head from 'next/head'
 import HeaderPrincipal from '@/components/Layouts/layauts_two/HeaderPrincipal'
 import Anuncio from '@/components/paginainfo/Anuncio'
-import Slider from '@/components/paginainfo/Slider'
 import ConocePromocines from '@/components/paginainfo/ConocePromocines'
 import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
+import PaginaProducto from '@/components/producto'
 import { useRouter } from 'next/router'
-import { useState,useEffect,memo } from 'react'
+import { useState, useEffect, memo } from 'react'
 import useSWR from 'swr'
 import axios from '@/lib/axios'
-const Producto=()=> {
-    const [datos,setDatos]=useState('')
+const Producto = () => {
+    const [datos, setDatos] = useState(null)
     const data = useSWR('/api/producto_destacado', () =>
-    axios.get('/api/producto_destacado').then(res => res.data),
-  )
-  const dato = data.data
-  const router=useRouter()
-  const {producto}=router.query
-  let interval
-    useEffect(()=>{
-        interval=setInterval(()=>{
-         
-          setDatos(dato?.filter((destacado)=>producto===destacado.meta_title_link
-          ))
-        
-       
-        },0.001)
-       
-       return ()=>clearInterval(interval)
-    },[interval,producto,datos,dato])
+        axios.get('/api/producto_destacado').then(res => res.data),
+    )
+    const dato = data.data
+    const router = useRouter()
+    const { producto } = router.query
+
+    let interval
+    useEffect(() => {
+        interval = setInterval(() => {
+            setDatos(
+                dato?.filter(
+                    destacado => producto === destacado.meta_title_link,
+                ),
+            )
+        }, 0.001)
+
+        return () => clearInterval(interval)
+    }, [interval, producto, datos, dato])
 
     return (
         <>
             <Head>
-                <title>{datos?.length > 0 ? datos?.[0]?.meta_title : 'Cargando...'}</title>
+                <title>
+                    {datos?.length > 0 ? datos?.[0]?.meta_title : 'Cargando...'}
+                </title>
             </Head>
-            <Anuncio/>
-            <HeaderPrincipal  logo={'https://res.cloudinary.com/darps1cta/image/upload/v1687493114/nexo/Nexo-Medic_Logo_dklapo.png'}/>
-          
-       
-          <>
+            <Anuncio />
+            <HeaderPrincipal
+                logo={
+                    'https://res.cloudinary.com/darps1cta/image/upload/v1687493114/nexo/Nexo-Medic_Logo_dklapo.png'
+                }
+            />
+            <PaginaProducto datosProducto={datos} />
 
-                 <Slider 
-                 
-                 imagen={'https://res.cloudinary.com/darps1cta/image/upload/v1676389141/samples/landscapes/beach-boat.jpg'}
-                 titulo={'Ok laboratorio'}
-                 />
-                 </>
-    
-   
-       
-
-
-            <main className='bg-blancoOne'>
-          
-  <ConocePromocines/> 
-  <Marcas/>
-  <Footer/>
+            <main className="bg-blancoOne">
+                <ConocePromocines />
+                <Marcas />
+                <Footer />
             </main>
-           
-          
-          
         </>
     )
 }

@@ -1,6 +1,4 @@
-import ApplicationLogo from '@/components/ApplicationLogo'
 import Dropdown from '@/components/Dropdown'
-import Link from 'next/link'
 import NavLink from '@/components/NavLink'
 import ResponsiveNavLink, {
     ResponsiveNavButton,
@@ -24,11 +22,9 @@ const Navigation = ({ user }) => {
                 <div className="flex justify-between h-16">
                     <div className="flex">
                         {/* Logo */}
-                    
 
                         {/* Navigation Links */}
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                          
                             <NavLink
                                 href="/item_menus"
                                 active={router.pathname === '/item_menus'}>
@@ -54,7 +50,7 @@ const Navigation = ({ user }) => {
                                 active={router.pathname === '/producto_imagen'}>
                                 Imagenes de Producto
                             </NavLink>
-                           
+
                             <NavLink
                                 href="/sliders"
                                 active={router.pathname === '/sliders'}>
@@ -63,7 +59,7 @@ const Navigation = ({ user }) => {
                             <NavLink
                                 href="/clientes"
                                 active={router.pathname === '/clientes'}>
-                               Clientes
+                                Clientes
                             </NavLink>
                         </div>
                     </div>

@@ -40,8 +40,8 @@ const EditarItem = () => {
         }
     }
     useEffect(() => {
-        setEnlace('/'+ useToSlug(nombre))
-    }, [errorserv,enlace,nombre])
+        setEnlace('/' + useToSlug(nombre))
+    }, [errorserv, enlace, nombre])
 
     return (
         isOpen && (
@@ -106,7 +106,9 @@ const EditarItem = () => {
                                         className="text-sm text-gray-500 font-bold">
                                         Link
                                     </label>
-                                    <span  className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200">{enlace}</span>
+                                    <span className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200">
+                                        {enlace}
+                                    </span>
                                 </div>
                                 <div className="mb-3">
                                     <button

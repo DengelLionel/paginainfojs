@@ -1,19 +1,15 @@
 import React from 'react'
 import useSWR from 'swr'
 import axios from '@/lib/axios'
-import { useContext, useEffect, useState } from 'react'
-import { PaginaContextValue } from '@/context/contextpaginaifno'
+import { useEffect, useState } from 'react'
+
 const ListaItem = () => {
-    const {setIdProductItem } = useContext(
-        PaginaContextValue,
-    )
     const data = useSWR('/api/producto_destacado', () =>
         axios.get('/api/producto_destacado').then(res => res.data),
     )
     const dato = data.data
 
     const [errorserv, setErrorserv] = useState(null)
-
 
     const EliminarItem = async item_eliminado => {
         try {
@@ -31,13 +27,11 @@ const ListaItem = () => {
                     <table className="min-w-full">
                         <thead className="bg-gray-200 border-b">
                             <tr>
-                         
                                 <th
                                     scope="col"
                                     className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
                                     Nombre
                                 </th>
-                              
                             </tr>
                         </thead>
                         <tbody>
@@ -45,13 +39,11 @@ const ListaItem = () => {
                                 <tr
                                     key={index}
                                     className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                   
                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                         {item.nombre}
                                     </td>
-                                  
+
                                     <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex flex-col justify-center items-center lg:flex-row">
-                                      
                                         <button
                                             onClick={() =>
                                                 EliminarItem(item.id)
@@ -66,7 +58,6 @@ const ListaItem = () => {
                     </table>
                 </div>
             </div>
-       
         </div>
     )
 }

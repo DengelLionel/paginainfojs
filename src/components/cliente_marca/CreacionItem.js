@@ -10,7 +10,7 @@ const CreacionItem = () => {
         try {
             await csrf()
             const clientes_marca = {
-                imagen: imagen
+                imagen: imagen,
             }
             await axios.post('/api/clientes_marcas', clientes_marca)
             window.location.reload()
@@ -27,10 +27,10 @@ const CreacionItem = () => {
                 <div className="!z-5 relative flex flex-col rounded-[20px] w-full md:w-[500px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col  !p-6 3xl:p-![18px] bg-white undefined">
                     <div className="relative flex flex-row justify-between">
                         <h4 className="text-xl font-bold text-red-500  mb-3">
-                            Creando  Imagen Cliente Marca
+                            Creando Imagen Cliente Marca
                         </h4>
                     </div>
-                    
+
                     <div className="mb-3">
                         <label
                             htmlFor="name"
