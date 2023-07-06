@@ -55,7 +55,7 @@ const Coleccion = () => {
                 }
             />
 
-            <main className="bg-blancoOne">
+            <main className="bg-white">
                 <ColeccionDesign datos={datos} />
                 <div className="lg:flex lg:flex-row lg:gap-[20px]">
                     <ListaProductos />

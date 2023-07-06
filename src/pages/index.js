@@ -57,7 +57,7 @@ export default function Home() {
                 </Carousel>
             )}
 
-            <main className="bg-blancoOne">
+            <main className="bg-white">
                 <Servicios />
                 <Info />
                 <NuestrasAreas />
