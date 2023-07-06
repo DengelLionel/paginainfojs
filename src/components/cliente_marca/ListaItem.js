@@ -41,7 +41,7 @@ const ListaItem = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {dato?.[0].map((item, index) => (
+                            {dato?.map((item, index) => (
                                 <tr
                                     key={index}
                                     className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">

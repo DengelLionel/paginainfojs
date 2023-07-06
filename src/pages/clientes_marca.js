@@ -2,7 +2,7 @@ import AppLayout from '@/components/Layouts/AppLayout'
 import Head from 'next/head'
 import CreacionItem from '@/components/cliente_marca/CreacionItem'
 import ListaItem from '@/components/cliente_marca/ListaItem'
-const Clientes = () => {
+const Clientes_marca = () => {
     return (
         <AppLayout
             header={
@@ -24,4 +24,4 @@ const Clientes = () => {
     )
 }
 
-export default Clientes
+export default Clientes_marca
