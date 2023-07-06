@@ -37,7 +37,7 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
     }
     return (
         <li
-            className="relative font-normal text-base text-white "
+            className="relative font-normal text-md text-white "
             ref={ref}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}>
@@ -46,12 +46,12 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
                     <Link
                         className={`${
                             isHovered
-                                ? 'text-black hover:text-blueOne'
-                                : 'text-white '
+                                ? 'text-black text-md hover:text-blueOne'
+                                : 'text-white text-md'
                         } ${
                             depthLevel > 0 &&
                             ' hover:text-blancoOne text-blueOne hover:bg-blueOne'
-                        }  transition-all duration-[800ms] font-notosans font-medium flex flex-row items-center justify-between text-left px-[10px] py-[15px] w-full `}
+                        }  transition-all duration-[800ms] font-notosans text-md font-medium flex flex-row items-center justify-between text-left px-[10px] py-[15px] w-full `}
                         type="button"
                         href={`${
                             items.coleccion.length > 0
@@ -83,7 +83,7 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
                         isHovered
                             ? 'text-black'
                             : 'text-blueOne font-notosans font-medium hover:bg-blueOne hover:text-blancoOne'
-                    }   block text-left px-2 py-1 w-full`}
+                    }   block text-left text-md px-2 py-1 w-full`}
                     href={`${
                         items.coleccion.length > 0
                             ? '/coleccion' + items.enlace

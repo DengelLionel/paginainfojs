@@ -6,8 +6,9 @@ import ConocePromocines from '@/components/paginainfo/ConocePromocines'
 import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
 import BannerGeneral from '@/components/paginainfo/BannerGeneral'
-import Contactanos from '@/components/contactanos'
-const contactanos = () => {
+import PostVenta from '@/components/postventa'
+
+const postventa = () => {
     return (
         <>
             <Head>
@@ -27,7 +28,8 @@ const contactanos = () => {
                 titulo={'banner'}
             />
             <main className="bg-white">
-                <Contactanos />
+                <PostVenta />
+
                 <ConocePromocines />
                 <Marcas />
                 <Footer />
@@ -36,4 +38,4 @@ const contactanos = () => {
     )
 }
 
-export default memo(contactanos)
+export default memo(postventa)
