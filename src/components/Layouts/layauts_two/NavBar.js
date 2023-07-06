@@ -87,12 +87,12 @@ const NavBar = ({ logo }) => {
                 </ul>
             </div>
             <Link
-                href={'#'}
+                href={'tel:+517583872'}
                 className={`${
                     isHovered
                         ? 'lg:text-black hover:text-blueOne'
                         : 'lg:text-white'
-                }  hidden lg:flex lg:flex-row lg:items-center font-notosans font-medium lg:gap-[8px] lg:transiton-all lg:duration-[800ms]`}>
+                }  hidden xl:flex xl:flex-row xl:items-center font-notosans font-medium lg:gap-[8px] lg:transiton-all lg:duration-[800ms]`}>
                 <IconTelefono fill={`${isHovered ? '#222222' : '#EEEFF3'}`} />
                 (511) 758-3872
             </Link>

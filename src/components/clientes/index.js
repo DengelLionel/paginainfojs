@@ -6,8 +6,8 @@ const TodoCliente = () => {
     const { datos } = useDatosMarca()
     return (
         <div className="p-[16px] lg:pl-[100px] lg:pt-[100px] lg:pb-[100px] lg:pr-[100px]">
-            <h1 className="text-3xl font-bold mb-5 text-blueOne">CLIENTES</h1>
-            <p className="mb-5 text-lg text-justify">
+            <h1 className="text-xl font-bold mb-5 text-blueOne">CLIENTES</h1>
+            <p className="lg:mb-5 text-sm lg:text-md text-justify p-[30px] bg-blueTwo">
                 Trabajamos con las mejores marcas del mercado con el fin de
                 garantizar a nuestros clientes Productos de alta calidad a los
                 mejores precios todas nuestras marcas cuentan con cerfificación

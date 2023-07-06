@@ -12,7 +12,7 @@ const postventa = () => {
     return (
         <>
             <Head>
-                <title>Contáctanos</title>
+                <title>Post venta</title>
             </Head>
             <Anuncio />
             <HeaderPrincipal

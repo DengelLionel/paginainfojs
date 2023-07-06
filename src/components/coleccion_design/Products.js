@@ -19,7 +19,9 @@ const Products = ({ datos }) => {
         )
     }
 
-    return <div>{renderProducts()}</div>
+    return (
+        <div className="flex-wrap p-[16px] lg:p-[30px]">{renderProducts()}</div>
+    )
 }
 
 export default Products
