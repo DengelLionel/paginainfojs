@@ -45,7 +45,7 @@ const Producto = () => {
             />
             <PaginaProducto datosProducto={datos} />
 
-            <main className="bg-blancoOne">
+            <main className="bg-white">
                 <ConocePromocines />
                 <Marcas />
                 <Footer />
