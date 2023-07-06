@@ -11,7 +11,7 @@ const CuadroProductos = ({ imagen, titulo, link }) => {
                         src={imagen}
                         layout="fill"
                         objectFit="cover"
-                        alt="image destacado"
+                        alt={titulo}
                     />
                 </div>
                 <div className="border-t-[1px] border-blueOne w-full pl-[10px] pr-[10px] pt-[7px] ">

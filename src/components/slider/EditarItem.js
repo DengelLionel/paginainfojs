@@ -5,7 +5,8 @@ import { PaginaContextValue } from '@/context/contextpaginaifno'
 const EditarItem = () => {
     const modalRef = useRef()
     const [enlace, setEnlace] = useState('')
-    const [imagen, setImagen] = useState('')
+    const [imagen_mobil, setImagen_mobil] = useState('')
+    const [imagen_desktop, setImagen_desktop] = useState('')
     const [titulo, setTitulo] = useState('')
     const csrf = () => axios.get('/sanctum/csrf-cookie')
     const { isOpen, setIsOpen, idItem } = useContext(PaginaContextValue)
@@ -21,7 +22,8 @@ const EditarItem = () => {
         try {
             const slider = {
                 titulo: titulo,
-                imagen: imagen,
+                imagen_desktop: imagen_desktop,
+                imagen_mobil: imagen_mobil,
                 enlace: enlace,
             }
             await csrf()
@@ -69,18 +71,35 @@ const EditarItem = () => {
 
                                 <div className="mb-3">
                                     <label
-                                        htmlFor="imagen"
+                                        htmlFor="name"
                                         className="text-sm text-gray-500 font-bold">
-                                        Imagen
+                                        Imagen mobil
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="name"
+                                        placeholder="Nombre"
+                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
+                                        value={imagen_mobil}
+                                        onChange={e =>
+                                            setImagen_mobil(e.target.value)
+                                        }
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label
+                                        htmlFor="name"
+                                        className="text-sm text-gray-500 font-bold">
+                                        Imagen desktop
                                     </label>
                                     <input
                                         type="text"
                                         id="imagen"
                                         placeholder="Imagen"
                                         className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                                        value={imagen}
+                                        value={imagen_desktop}
                                         onChange={e =>
-                                            setImagen(e.target.value)
+                                            setImagen_desktop(e.target.value)
                                         }
                                     />
                                 </div>

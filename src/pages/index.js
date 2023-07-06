@@ -12,8 +12,10 @@ import ProductosDestacados from '@/components/paginainfo/ProductosDestacados'
 import ConocePromocines from '@/components/paginainfo/ConocePromocines'
 import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
-
+import { useDatosSlider } from '@/hooks/useDatosSlider'
 export default function Home() {
+    const { datos } = useDatosSlider()
+
     return (
         <>
             <Head>
@@ -25,28 +27,35 @@ export default function Home() {
                     'https://res.cloudinary.com/darps1cta/image/upload/v1687493114/nexo/Nexo-Medic_Logo_dklapo.png'
                 }
             />
-            <Carousel
-                className="lg:h-[500px] mb-0"
-                adaptiveHeightAnimation={true}
-                adaptiveHeight={true}
-                defaultControlsConfig={{
-                    prevButtonText: <IconPrev />,
-                    nextButtonText: <IconNext />,
-                    containerClassName: 'bg-blancoTransparente',
-                    prevButtonClassName: 'rounded-full',
-                    nextButtonClassName: 'rounded-full',
-                }}
-                wrapAround={true}
-                autoplay={true}>
-                <>
-                    <Slider
-                        imagen={
-                            'https://res.cloudinary.com/darps1cta/image/upload/v1676389141/samples/landscapes/beach-boat.jpg'
-                        }
-                        titulo={'Ok laboratorio'}
-                    />
-                </>
-            </Carousel>
+            {datos?.length > 0 && (
+                <Carousel
+                    adaptiveHeightAnimation={true}
+                    adaptiveHeight={true}
+                    defaultControlsConfig={{
+                        prevButtonText: <IconPrev />,
+                        nextButtonText: <IconNext />,
+                        containerClassName: 'bg-blancoTransparente',
+                        prevButtonClassName: 'rounded-full',
+                        nextButtonClassName: 'rounded-full',
+                    }}
+                    wrapAround={true}
+                    autoplay={true}>
+                    {datos?.map(imagen => (
+                        <div key={imagen.id}>
+                            <Slider
+                                imagen_mobil={imagen.imagen_mobil}
+                                titulo={imagen.titulo}
+                                mobile={true}
+                            />
+                            <Slider
+                                imagen_desktop={imagen.imagen_desktop}
+                                titulo={imagen.titulo}
+                                mobile={false}
+                            />
+                        </div>
+                    ))}
+                </Carousel>
+            )}
 
             <main className="bg-blancoOne">
                 <Servicios />

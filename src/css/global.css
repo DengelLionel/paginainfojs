@@ -1,3 +1,13 @@
+main{
+  background-color: #EEEFF3;
+}
+.descripcion ul li{
+  list-style-type: disc !important;
+ 
+}
+.descripcion{
+  padding-left: 25px;
+}
 .embla_slide{
     @apply relative transition-opacity duration-200 ease-in-out;
 }
@@ -23,7 +33,7 @@
   --slide-height: 5rem;
 }
 .embla__viewport {
-  @apply overflow-hidden w-[400px];
+  @apply overflow-hidden w-[300px] lg:w-[500px];
 }
 .embla__container {
   @apply flex row-auto ;
@@ -51,15 +61,15 @@
   -webkit-text-fill-color: transparent;
 }
 .embla-thumbs {
-  @apply mt-2;
+  @apply mt-2 w-auto lg:w-[500px];
 }
 
 .embla-thumbs__viewport {
-  @apply overflow-hidden;
+  @apply overflow-hidden w-[200px] h-[200px] lg:w-[500px];
 }
 
 .embla-thumbs__container {
-  @apply flex flex-row;
+  @apply flex flex-row w-auto lg:w-[500px];
 }
 
 .embla-thumbs__slide {
@@ -68,22 +78,19 @@
 
 @media (min-width: 576px) {
   .embla-thumbs__slide {
-    @apply w-[200px];
+    @apply w-[200px] h-[200px]; 
   }
 }
 
 .embla-thumbs__slide__button {
-  @apply bg-transparent block cursor-pointer border-0 p-0 m-0 w-full opacity-20 transition-opacity duration-200;
+  @apply bg-transparent block cursor-pointer border-0 p-0 m-0 w-auto opacity-20 transition-opacity duration-200;
 }
 
 .embla-thumbs__slide--selected .embla-thumbs__slide__button {
   @apply opacity-100;
 }
 
-.embla-thumbs__slide__img {
-  @apply block object-cover w-full;
-  height: 2.25rem; /* Approximation, consider creating a custom utility class */
-}
+
 
 .embla-thumbs__slide__number {
   @apply w-12 h-12 z-10 absolute top-3 right-3 rounded-full bg-opacity-80 text-center pointer-events-none;

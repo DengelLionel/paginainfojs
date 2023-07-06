@@ -1,13 +1,39 @@
 import { memo } from 'react'
-import BannerProducto from './BannerProducto'
+import BannerGeneral from '@/components/paginainfo/BannerGeneral'
 import CarruselProducto from './CarruselProducto'
+import InfoProducto from './InfoProducto'
+import Descripcion from './Descripcion'
+import ListaProductos from './ListaProductos'
+
 const PaginaProducto = ({ datosProducto }) => {
     const OPTION = {}
-    const Imagenes = datosProducto?.map(imagen => imagen.product_imagen)
+    const Imagenes = datosProducto?.map(imagen => imagen.imagenes_producto)
+
     return (
-        <div>
-            <BannerProducto />
-            <CarruselProducto slides={Imagenes} options={OPTION} />
+        <div className="w-auto ">
+            <BannerGeneral
+                imagen={
+                    'https://res.cloudinary.com/darps1cta/image/upload/v1687643443/nexo/medico-tecnico-laboratorio-analizando-evolucion-virus-tableta-digital-equipo-cientificos-que-llevan-cabo-desarrollo-vacunas-utilizando-alta-tecnologia-investigar-tratamiento-contra-pandem_hykvlk.jpg'
+                }
+                titulo={'banner'}
+            />
+            <div className="flex flex-col p-[16px] lg:flex-row lg:gap-[30px] lg:pt-[30px]">
+                <ListaProductos className="lg:w-1/3" />
+                <div className="flex flex-col lg:w-2/3">
+                    <div className="flex flex-col lg:flex-row">
+                        <CarruselProducto
+                            slides={Imagenes}
+                            options={OPTION}
+                            className="lg:w-1/2"
+                        />
+                        <InfoProducto
+                            datos={datosProducto}
+                            className="lg:w-1/2"
+                        />
+                    </div>
+                    <Descripcion datos={datosProducto} />
+                </div>
+            </div>
         </div>
     )
 }

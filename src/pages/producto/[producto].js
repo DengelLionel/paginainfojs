@@ -11,25 +11,24 @@ import useSWR from 'swr'
 import axios from '@/lib/axios'
 const Producto = () => {
     const [datos, setDatos] = useState(null)
-    const data = useSWR('/api/producto_destacado', () =>
-        axios.get('/api/producto_destacado').then(res => res.data),
+    const data = useSWR('/api/productos_todo', () =>
+        axios.get('/api/productos_todo').then(res => res.data),
     )
     const dato = data.data
     const router = useRouter()
     const { producto } = router.query
-
-    let interval
     useEffect(() => {
-        interval = setInterval(() => {
-            setDatos(
-                dato?.filter(
-                    destacado => producto === destacado.meta_title_link,
-                ),
+        if (dato) {
+            const newDatos = dato.filter(
+                destacado => producto === destacado.meta_title_link,
             )
-        }, 0.001)
 
-        return () => clearInterval(interval)
-    }, [interval, producto, datos, dato])
+            // Solo llama a setDatos si newDatos es diferente a datos
+            if (JSON.stringify(newDatos) !== JSON.stringify(datos)) {
+                setDatos(newDatos)
+            }
+        }
+    }, [dato, producto])
 
     return (
         <>

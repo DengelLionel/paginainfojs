@@ -39,13 +39,13 @@ const CarruselProducto = props => {
                             <div className="embla__slide__number">
                                 <span>{index + 1}</span>
                             </div>
-                            <div className="relative w-[500px] h-[500px]">
+                            <div className="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px]">
                                 <Image
                                     layout="fill"
                                     objectFit="cover"
-                                    className="embla__slide__img"
                                     src={imagen.imagen}
-                                    alt="Your alt text"
+                                    alt={imagen.titulo}
+                                    quality={100}
                                 />
                             </div>
                         </div>
@@ -61,6 +61,7 @@ const CarruselProducto = props => {
                                 onClick={() => onThumbClick(index)}
                                 selected={index === selectedIndex}
                                 index={index}
+                                titulo={imagen.titulo}
                                 imgSrc={imagen.imagen}
                                 key={index}
                             />

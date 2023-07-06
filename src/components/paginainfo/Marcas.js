@@ -64,7 +64,7 @@ const Marcas = () => {
             </div>
             <div className=" overflow-hidden lg:w-[900px]" ref={emblaRef}>
                 <div className="flex flex-row gap-[10px] touch-pan-y ml-[calc(1rem * -1)] ">
-                    {datos?.[0].map((marca, index) => {
+                    {datos?.map((marca, index) => {
                         return (
                             <div key={index} className="embla_slide">
                                 <div className="relative w-[300px] h-[70px] ">

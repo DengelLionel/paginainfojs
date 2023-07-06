@@ -1,8 +1,6 @@
 import React from 'react'
 import Image from 'next/legacy/image'
-export const Thumb = props => {
-    const { selected, imgSrc, index, onClick } = props
-
+export const Thumb = ({ selected, imgSrc, index, onClick, titulo }) => {
     return (
         <div
             className={'embla-thumbs__slide'.concat(
@@ -15,13 +13,13 @@ export const Thumb = props => {
                 <div className="embla-thumbs__slide__number">
                     <span>{index + 1}</span>
                 </div>
-                <div className="relative w-full h-[300px]">
+                <div className="relative w-[100px] h-[100px] lg:w-[200px] lg:h-[200px]">
                     <Image
                         layout="fill"
                         objectFit="cover"
-                        className="embla-thumbs__slide__img"
+                        quality={100}
                         src={imgSrc}
-                        alt="Your alt text"
+                        alt={titulo}
                     />
                 </div>
             </button>

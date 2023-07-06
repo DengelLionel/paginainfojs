@@ -1,7 +1,6 @@
 import React from 'react'
 import useSWR from 'swr'
 import axios from '@/lib/axios'
-import Image from 'next/legacy/image'
 import { useContext, useEffect, useState } from 'react'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
 import EditarItem from './EditarItem'
@@ -51,11 +50,11 @@ const ListaItem = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {dato?.[0].map((item, index) => (
+                            {dato?.map((item, index) => (
                                 <tr
                                     key={index}
                                     className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
+                                    {/*   <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
                                         <Image
                                             layout="fill"
                                             objectFit="cover"
@@ -63,7 +62,7 @@ const ListaItem = () => {
                                             alt={item.titulo}
                                             src={item.imagen}
                                         />
-                                    </td>
+                                    </td> */}
                                     <td className="text-sm text-gray-900 font-light  px-6 py-4 ">
                                         {item.titulo}
                                     </td>

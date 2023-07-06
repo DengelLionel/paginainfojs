@@ -5,7 +5,8 @@ import useSWR from 'swr'
 import { useToSlug } from '@/hooks/useToSlug'
 const CreacionItem = () => {
     const [nombre, setNombre] = useState('')
-    const [imagen, setImagen] = useState('')
+    const [imagen_mobil, setImagen_mobil] = useState('')
+    const [imagen_desktop, setImagen_desktop] = useState('')
     const [meta_title, setMeta_title] = useState('')
     const [meta_description, setMeta_description] = useState('')
     const [meta_title_link, setMeta_title_link] = useState('')
@@ -37,7 +38,8 @@ const CreacionItem = () => {
                         ? null
                         : subsubmenu_id,
                 nombre: nombre,
-                imagen: imagen,
+                imagen_desktop: imagen_desktop,
+                imagen_mobil: imagen_mobil,
                 meta_title: meta_title,
                 meta_description: meta_description,
                 meta_title_link: useToSlug(meta_title_link),
@@ -78,15 +80,30 @@ const CreacionItem = () => {
                         <label
                             htmlFor="name"
                             className="text-sm text-gray-500 font-bold">
-                            Imagen
+                            Imagen mobil
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Nombre"
+                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
+                            value={imagen_mobil}
+                            onChange={e => setImagen_mobil(e.target.value)}
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label
+                            htmlFor="name"
+                            className="text-sm text-gray-500 font-bold">
+                            Imagen desktop
                         </label>
                         <input
                             type="text"
                             id="imagen"
                             placeholder="Imagen"
                             className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={imagen}
-                            onChange={e => setImagen(e.target.value)}
+                            value={imagen_desktop}
+                            onChange={e => setImagen_desktop(e.target.value)}
                         />
                     </div>
                     <div className="mb-3">

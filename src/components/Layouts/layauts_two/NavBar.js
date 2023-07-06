@@ -59,12 +59,15 @@ const NavBar = ({ logo }) => {
                     lg:border-white lg:border-opacity-25`}>
             <div className="flex justify-between items-center">
                 <div className="relative w-[266px] h-[60px] ">
-                    <Image
-                        layout="fill"
-                        objectFit="cover"
-                        src={logo}
-                        alt="Descripción del logo"
-                    />
+                    <Link href={'/'}>
+                        <Image
+                            layout="fill"
+                            quality={100}
+                            objectFit="cover"
+                            src={logo}
+                            alt="Descripción del logo"
+                        />
+                    </Link>
                 </div>
             </div>
 

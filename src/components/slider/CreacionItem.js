@@ -4,9 +4,9 @@ import axios from '@/lib/axios'
 
 const CreacionItem = () => {
     const [enlace, setEnlace] = useState('')
-    const [imagen, setImagen] = useState('')
     const [titulo, setTitulo] = useState('')
-
+    const [imagen_mobil, setImagen_mobil] = useState('')
+    const [imagen_desktop, setImagen_desktop] = useState('')
     const [errorserv, setErrorserv] = useState(null)
 
     const csrf = () => axios.get('/sanctum/csrf-cookie')
@@ -15,7 +15,8 @@ const CreacionItem = () => {
             await csrf()
             const slider = {
                 titulo: titulo,
-                imagen: imagen,
+                imagen_desktop: imagen_desktop,
+                imagen_mobil: imagen_mobil,
                 enlace: enlace,
             }
             await axios.post('/api/slider', slider)
@@ -52,22 +53,37 @@ const CreacionItem = () => {
                             onChange={e => setTitulo(e.target.value)}
                         />
                     </div>
-
                     <div className="mb-3">
                         <label
-                            htmlFor="imagen"
+                            htmlFor="name"
                             className="text-sm text-gray-500 font-bold">
-                            Imagen
+                            Imagen mobil
+                        </label>
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Nombre"
+                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
+                            value={imagen_mobil}
+                            onChange={e => setImagen_mobil(e.target.value)}
+                        />
+                    </div>
+                    <div className="mb-3">
+                        <label
+                            htmlFor="name"
+                            className="text-sm text-gray-500 font-bold">
+                            Imagen desktop
                         </label>
                         <input
                             type="text"
                             id="imagen"
                             placeholder="Imagen"
                             className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={imagen}
-                            onChange={e => setImagen(e.target.value)}
+                            value={imagen_desktop}
+                            onChange={e => setImagen_desktop(e.target.value)}
                         />
                     </div>
+
                     <div className="mb-3">
                         <label
                             htmlFor="imagen"

@@ -53,7 +53,11 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
                             ' hover:text-blancoOne text-blueOne hover:bg-blueOne'
                         }  transition-all duration-[800ms] font-notosans font-medium flex flex-row items-center justify-between text-left px-[10px] py-[15px] w-full `}
                         type="button"
-                        href={items.enlace}
+                        href={`${
+                            items.coleccion.length > 0
+                                ? '/coleccion' + items.enlace
+                                : items.enlace
+                        }`}
                         aria-haspopup="menu"
                         aria-expanded={dropdawn ? 'true' : 'false'}
                         onClick={() => setDropdawn(prev => !prev)}>
@@ -80,7 +84,11 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
                             ? 'text-black'
                             : 'text-blueOne font-notosans font-medium hover:bg-blueOne hover:text-blancoOne'
                     }   block text-left px-2 py-1 w-full`}
-                    href={items.enlace}>
+                    href={`${
+                        items.coleccion.length > 0
+                            ? '/coleccion' + items.enlace
+                            : items.enlace
+                    }`}>
                     {items.nombre}
                 </Link>
             )}

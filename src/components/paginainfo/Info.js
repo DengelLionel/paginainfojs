@@ -7,6 +7,8 @@ const Info = () => {
             <Image
                 className="object-cover"
                 layout="fill"
+                priority={true}
+                quality={75}
                 src={
                     'https://res.cloudinary.com/darps1cta/image/upload/v1687643443/nexo/medico-tecnico-laboratorio-analizando-evolucion-virus-tableta-digital-equipo-cientificos-que-llevan-cabo-desarrollo-vacunas-utilizando-alta-tecnologia-investigar-tratamiento-contra-pandem_hykvlk.jpg'
                 }

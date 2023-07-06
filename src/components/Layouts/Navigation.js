@@ -57,8 +57,8 @@ const Navigation = ({ user }) => {
                                 Sliders
                             </NavLink>
                             <NavLink
-                                href="/clientes"
-                                active={router.pathname === '/clientes'}>
+                                href="/clientes_marca"
+                                active={router.pathname === '/clientes_marca'}>
                                 Clientes
                             </NavLink>
                         </div>

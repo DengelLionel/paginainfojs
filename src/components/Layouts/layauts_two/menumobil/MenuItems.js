@@ -7,7 +7,7 @@ const MenuItems = ({ items, depthLevel }) => {
     const handleToggle = () => setIsOpen(!isOpen)
 
     return (
-        <li className="relative font-normal text-base p-[10px]">
+        <li className="relative font-normal text-base p-[10px] overflow-y-auto">
             {items.submenu && items.submenu.length > 0 ? (
                 <>
                     <button
@@ -24,7 +24,7 @@ const MenuItems = ({ items, depthLevel }) => {
                     </button>
                     {isOpen &&
                         items.submenu.map((submenuItem, index) => (
-                            <div className="pl-4" key={index}>
+                            <div className="pl-4 overflow-y-auto" key={index}>
                                 <MenuItems
                                     items={submenuItem}
                                     depthLevel={depthLevel + 1}
@@ -35,7 +35,11 @@ const MenuItems = ({ items, depthLevel }) => {
             ) : (
                 <Link
                     className="font-notosans font-medium text-blueOne"
-                    href={items.enlace}>
+                    href={`${
+                        items.coleccion.length > 0
+                            ? '/coleccion' + items.enlace
+                            : items.enlace
+                    }`}>
                     {' '.repeat(depthLevel)} {items.nombre}
                 </Link>
             )}
