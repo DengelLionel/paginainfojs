@@ -4,11 +4,17 @@ import CarruselProducto from './CarruselProducto'
 import InfoProducto from './InfoProducto'
 import Descripcion from './Descripcion'
 import ListaProductos from './ListaProductos'
+/* import ProductosRelacionados from './ProductosRelacionados' */
 
 const PaginaProducto = ({ datosProducto }) => {
     const OPTION = {}
     const Imagenes = datosProducto?.map(imagen => imagen.imagenes_producto)
+    /*   const [idproductoRelacionado,setIdproductoRelacionado]=useState(null) */
 
+    /*   useEffect(()=>{
+        if (datosProducto && datosProducto.length > 0) {
+            setIdproductoRelacionado(datosProducto[0].id);
+        }},[datosProducto]) */
     return (
         <div className="w-auto ">
             <BannerGeneral
@@ -32,6 +38,7 @@ const PaginaProducto = ({ datosProducto }) => {
                         />
                     </div>
                     <Descripcion datos={datosProducto} />
+                    {/*    <ProductosRelacionados idproducto={idproductoRelacionado}/> */}
                 </div>
             </div>
         </div>

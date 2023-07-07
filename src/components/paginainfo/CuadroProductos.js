@@ -4,9 +4,11 @@ import Image from 'next/legacy/image'
 import IconArrow from '../icons/IconArrow'
 const CuadroProductos = ({ imagen, titulo, link }) => {
     return (
-        <div className="relative w-[322px] h-[354px] shadow-lg lg:shadow-2xl rounded-md bg-blancoTwo flex flex-col justify-center items-center p-[10px] group">
-            <Link href={link}>
-                <div className="w-[265px] h-[247px] relative">
+        <div className="relative w-[322px] h-[354px] border-[1px] border-gray-400 border-opacity-25 shadow-lg lg:shadow-2xl rounded-md bg-blancoTwo flex flex-col justify-center items-center p-[10px] group">
+            <Link
+                className="flex flex-col items-center justify-center"
+                href={link}>
+                <div className="w-[265px] h-[247px] lg:w-[230px] lg:h-[200px] relative">
                     <Image
                         src={imagen}
                         layout="fill"

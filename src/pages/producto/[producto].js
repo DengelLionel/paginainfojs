@@ -11,10 +11,12 @@ import useSWR from 'swr'
 import axios from '@/lib/axios'
 const Producto = () => {
     const [datos, setDatos] = useState(null)
+
     const data = useSWR('/api/productos_todo', () =>
         axios.get('/api/productos_todo').then(res => res.data),
     )
     const dato = data.data
+
     const router = useRouter()
     const { producto } = router.query
     useEffect(() => {

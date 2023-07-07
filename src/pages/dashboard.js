@@ -10,7 +10,7 @@ const Dashboard = () => {
                 </div>
             }>
             <Head>
-                <title>Laravel - Dashboard</title>
+                <title>Dashboard Nexomedic</title>
             </Head>
 
             <div className="py-12">

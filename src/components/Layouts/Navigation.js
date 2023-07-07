@@ -26,6 +26,11 @@ const Navigation = ({ user }) => {
                         {/* Navigation Links */}
                         <div className="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <NavLink
+                                href="/dashboard"
+                                active={router.pathname === '/dashboard'}>
+                                Dashboard
+                            </NavLink>
+                            <NavLink
                                 href="/item_menus"
                                 active={router.pathname === '/item_menus'}>
                                 Items de menú

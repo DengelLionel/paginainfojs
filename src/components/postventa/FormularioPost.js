@@ -12,9 +12,76 @@ const FormularioPost = () => {
     const [serie, setSerie] = useState('')
     const [descripcion, setDescripcion] = useState('')
     const [errorserv, setErrorserv] = useState(null)
+    const [enviando, setEnviando] = useState(false)
+    const [enviado, setEnviado] = useState(false)
+    const [errorNombre, setErrorNombre] = useState('')
+    const [errorCorreo, setErrorCorreo] = useState('')
+    const [errorInstitucion, setErrorInstitucion] = useState('')
+    const [errorTelefono, setErrorTelefono] = useState('')
+    const [errorTelefonos, setErrorTelefonos] = useState('')
+    const [errorEquipo, setErrorEquipo] = useState('')
+    const [errorMarca, setErrorMarca] = useState('')
+    const [errorModelo, setErrorModelo] = useState('')
+    const [errorSerie, setErrorSerie] = useState('')
+    const [errorDescripcion, setErrorDescripcion] = useState('')
     const csrf = () => axios.get('/sanctum/csrf-cookie')
     const handleEnviarPost = async event => {
         event.preventDefault()
+        setEnviando(true)
+
+        if (!nombre.trim()) {
+            setErrorNombre(
+                'Por favor, ingrese el nombre de quien reporta el incidente.',
+            )
+            setEnviando(false)
+            return
+        } else setErrorNombre('')
+
+        if (!correo.trim()) {
+            setErrorCorreo('Por favor, ingrese un correo electrónico válido.')
+            setEnviando(false)
+            return
+        } else setErrorCorreo('')
+        if (!institucion.trim()) {
+            setErrorInstitucion('Por favor, ingrese su institución.')
+            setEnviando(false)
+            return
+        } else setErrorInstitucion('')
+        if (!telefono.trim()) {
+            setErrorTelefono('Por favor, ingrese su telefono.')
+            setEnviando(false)
+            return
+        } else setErrorTelefono('')
+        if (!telefonos.trim()) {
+            setErrorTelefonos('Por favor, ingrese sus telefonos.')
+            setEnviando(false)
+            return
+        } else setErrorTelefonos('')
+        if (!equipo.trim()) {
+            setErrorEquipo('Por favor, ingrese su equipo.')
+            setEnviando(false)
+            return
+        } else setErrorEquipo('')
+        if (!marca.trim()) {
+            setErrorMarca('Por favor, ingrese su marca.')
+            setEnviando(false)
+            return
+        } else setErrorMarca('')
+        if (!modelo.trim()) {
+            setErrorModelo('Por favor, ingrese su modelo.')
+            setEnviando(false)
+            return
+        } else setErrorModelo('')
+        if (!serie.trim()) {
+            setErrorSerie('Por favor, ingrese su serie.')
+            setEnviando(false)
+            return
+        } else setErrorSerie('')
+        if (!descripcion.trim()) {
+            setErrorDescripcion('Por favor, ingrese su descripción.')
+            setEnviando(false)
+            return
+        } else setErrorDescripcion('')
         try {
             await csrf()
             const postventa = {
@@ -30,9 +97,21 @@ const FormularioPost = () => {
                 descripcion: descripcion,
             }
             await axios.post('/api/enviarpostventa', postventa)
-            window.location.reload()
+            setEnviado(true)
+            setNombre('')
+            setCorreo('')
+            setInstitucion('')
+            setTelefono('')
+            setTelefonos('')
+            setEquipo('')
+            setMarca('')
+            setModelo('')
+            setSerie('')
+            setDescripcion('')
         } catch (error) {
             setErrorserv(error)
+        } finally {
+            setEnviando(false)
         }
     }
     useEffect(() => {}, [errorserv])
@@ -51,6 +130,11 @@ const FormularioPost = () => {
                         onChange={e => setNombre(e.target.value)}
                         placeholder="Nombre de quien reporta el incidente"
                     />
+                    {errorNombre && (
+                        <p className="w-ful p-[10px] rounded-sm bg-red-500 text-white font-medium mt-[2px] text-xs">
+                            {errorNombre}
+                        </p>
+                    )}
                 </div>
                 <div className="mb-4">
                     <input
@@ -61,6 +145,11 @@ const FormularioPost = () => {
                         onChange={e => setTelefono(e.target.value)}
                         placeholder="Télefono móvil"
                     />
+                    {errorTelefono && (
+                        <p className="w-ful p-[10px] rounded-sm bg-red-500 text-white font-medium mt-[2px] text-xs">
+                            {errorTelefono}
+                        </p>
+                    )}
                 </div>
                 <div className="mb-4">
                     <input
@@ -71,6 +160,11 @@ const FormularioPost = () => {
                         onChange={e => setCorreo(e.target.value)}
                         placeholder="Correo electrónico"
                     />
+                    {errorCorreo && (
+                        <p className="w-ful p-[10px] rounded-sm bg-red-500 text-white font-medium mt-[2px] text-xs">
+                            {errorCorreo}
+                        </p>
+                    )}
                 </div>
                 <div className="mb-4">
                     <input
@@ -81,6 +175,11 @@ const FormularioPost = () => {
                         onChange={e => setInstitucion(e.target.value)}
                         placeholder="Institución"
                     />
+                    {errorInstitucion && (
+                        <p className="w-ful p-[10px] rounded-sm bg-red-500 text-white font-medium mt-[2px] text-xs">
+                            {errorInstitucion}
+                        </p>
+                    )}
                 </div>
                 <div className="mb-4">
                     <input
@@ -91,6 +190,11 @@ const FormularioPost = () => {
                         onChange={e => setTelefonos(e.target.value)}
                         placeholder="Telefonos"
                     />
+                    {errorTelefonos && (
+                        <p className="w-ful p-[10px] rounded-sm bg-red-500 text-white font-medium mt-[2px] text-xs">
+                            {errorTelefonos}
+                        </p>
+                    )}
                 </div>
                 <div className="mb-4">
                     <input
@@ -101,6 +205,11 @@ const FormularioPost = () => {
                         onChange={e => setEquipo(e.target.value)}
                         placeholder="Equipo"
                     />
+                    {errorEquipo && (
+                        <p className="w-ful p-[10px] rounded-sm bg-red-500 text-white font-medium mt-[2px] text-xs">
+                            {errorEquipo}
+                        </p>
+                    )}
                 </div>
                 <div className="mb-4">
                     <input
@@ -111,6 +220,11 @@ const FormularioPost = () => {
                         onChange={e => setMarca(e.target.value)}
                         placeholder="Marca"
                     />
+                    {errorMarca && (
+                        <p className="w-ful p-[10px] rounded-sm bg-red-500 text-white font-medium mt-[2px] text-xs">
+                            {errorMarca}
+                        </p>
+                    )}
                 </div>
                 <div className="mb-4">
                     <input
@@ -121,6 +235,11 @@ const FormularioPost = () => {
                         onChange={e => setModelo(e.target.value)}
                         placeholder="Modelo"
                     />
+                    {errorModelo && (
+                        <p className="w-ful p-[10px] rounded-sm bg-red-500 text-white font-medium mt-[2px] text-xs">
+                            {errorModelo}
+                        </p>
+                    )}
                 </div>
                 <div className="mb-4">
                     <input
@@ -131,6 +250,11 @@ const FormularioPost = () => {
                         onChange={e => setSerie(e.target.value)}
                         placeholder="Serie"
                     />
+                    {errorSerie && (
+                        <p className="w-ful p-[10px] rounded-sm bg-red-500 text-white font-medium mt-[2px] text-xs">
+                            {errorSerie}
+                        </p>
+                    )}
                 </div>
                 <div className="mb-4">
                     <textarea
@@ -140,10 +264,15 @@ const FormularioPost = () => {
                         className="w-full h-[150px] px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-sky-100  text-sm"
                     />
                 </div>
+                {errorDescripcion && (
+                    <p className="w-ful p-[10px] rounded-sm bg-red-500 text-white font-medium mt-[2px] text-xs">
+                        {errorDescripcion}
+                    </p>
+                )}
                 <button
                     className="w-full bg-white text-gray-500 text-sm font-bold py-2 px-4 rounded-md hover:bg-blueTwo transition duration-300 mb-[20px]"
                     type="submit">
-                    Enviar
+                    {enviando ? 'Enviando...' : 'Enviar'}
                 </button>
                 <p className="text-[12px]">
                     Todos los campos son obligatorios
@@ -153,6 +282,12 @@ const FormularioPost = () => {
                     error involucrado, anótelo.
                 </p>
             </form>
+            {enviado && (
+                <p className="text-blueOne font-medium mt-4">
+                    ¡Gracias por tu mensaje! Nos pondremos en contacto contigo
+                    pronto.
+                </p>
+            )}
         </div>
     )
 }
