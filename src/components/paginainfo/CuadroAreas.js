@@ -1,16 +1,19 @@
 import React from 'react'
 import IconArrow from '@/components/icons/IconArrow'
 import { useHover } from '@/hooks/useHover'
-const CuadroAreas = ({ titulo, IconComponent }) => {
+import Link from 'next/link'
+const CuadroAreas = ({ titulo, IconComponent, link }) => {
     const [hoverRef, isHovered] = useHover()
     return (
-        <div className="w-[328px] h-[300px] flex flex-col items-center justify-center">
+        <Link
+            href={link}
+            className="w-[328px] h-[300px] flex flex-col items-center justify-center ">
             <div
                 ref={hoverRef}
                 className={`relative w-[328px] h-[232px] lg:h-[280px] lg:p-[20px] rounded-md flex flex-col justify-center items-center transition-all ${
                     isHovered
                         ? 'bg-blueOne text-white shadow-areas'
-                        : 'bg-blancoTwo text-negro'
+                        : 'bg-blancoTwo text-negro shadow-md lg:shadow-lg'
                 }`}>
                 <IconComponent color={isHovered ? '#FAFAFA' : '#2F6AAD'} />
                 <h2 className="text-[16px] font-semibold mt-[26px] mb-[14px] lg:text-[20px]">
@@ -25,7 +28,7 @@ const CuadroAreas = ({ titulo, IconComponent }) => {
                     Ver productos <IconArrow fill={`#2F6AAD`} />
                 </button>
             </div>
-        </div>
+        </Link>
     )
 }
 

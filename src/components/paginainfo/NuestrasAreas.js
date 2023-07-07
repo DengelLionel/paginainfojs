@@ -15,14 +15,17 @@ const NuestrasAreas = () => {
                 <CuadroAreas
                     titulo="EQUIPOS MEDICOS"
                     IconComponent={EquiposMedicos}
+                    link={'/equipos-medicos'}
                 />
                 <CuadroAreas
                     titulo="EQUIPOS DE LABORATORIO"
                     IconComponent={EquiposLaboratorio}
+                    link={'/equipos-de-laboratorio'}
                 />
                 <CuadroAreas
                     titulo="EQUIPOS VETERINARIOS"
                     IconComponent={EquiposVeterinarios}
+                    link={'/equipos-veterinarios'}
                 />
             </div>
         </div>
