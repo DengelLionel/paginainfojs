@@ -20,7 +20,9 @@ const Products = ({ datos }) => {
     }
 
     return (
-        <div className="flex-wrap p-[16px] lg:p-[30px]">{renderProducts()}</div>
+        <div className="flex-wrap flex items-center justify-center p-[16px] lg:p-[30px] lg:justify-start lg:items-start">
+            {renderProducts()}
+        </div>
     )
 }
 
