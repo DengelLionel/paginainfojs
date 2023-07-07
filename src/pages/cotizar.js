@@ -1,22 +1,18 @@
 import { memo } from 'react'
-import Head from 'next/head'
-import HeaderPrincipal from '@/components/Layouts/layauts_two/HeaderPrincipal'
-import Anuncio from '@/components/paginainfo/Anuncio'
+import Cotizar from '@/components/cotizar'
 import ConocePromocines from '@/components/paginainfo/ConocePromocines'
 import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
+import Head from 'next/head'
+import Anuncio from '@/components/paginainfo/Anuncio'
+import HeaderPrincipal from '@/components/Layouts/layauts_two/HeaderPrincipal'
 import BannerGeneral from '@/components/paginainfo/BannerGeneral'
-import PostVenta from '@/components/postventa'
-
-const postventa = () => {
+const cotizar = () => {
     return (
         <>
-            <Head>
-                <title>Post venta</title>
-            </Head>
+            <Head>Cotizar</Head>
             <Anuncio />
             <HeaderPrincipal />
-
             <BannerGeneral
                 imagen={
                     'https://res.cloudinary.com/darps1cta/image/upload/v1687643443/nexo/medico-tecnico-laboratorio-analizando-evolucion-virus-tableta-digital-equipo-cientificos-que-llevan-cabo-desarrollo-vacunas-utilizando-alta-tecnologia-investigar-tratamiento-contra-pandem_hykvlk.jpg'
@@ -24,8 +20,7 @@ const postventa = () => {
                 titulo={'banner'}
             />
             <main className="bg-white">
-                <PostVenta />
-
+                <Cotizar />
                 <ConocePromocines />
                 <Marcas />
                 <Footer />
@@ -34,4 +29,4 @@ const postventa = () => {
     )
 }
 
-export default memo(postventa)
+export default memo(cotizar)

@@ -2,7 +2,7 @@ import React from 'react'
 
 const InformacionContacto = () => {
     return (
-        <div className="text-blueOne rounded-lg shadow-lg lg:rounded-xl lg:shadow-xl w-full h-[200px] lg:h-[300px] lg:w-[300px] p-[10px] lg:p-[20px]">
+        <div className="text-blueOne rounded-xl shadow-lg lg:rounded-2xl lg:shadow-xl w-[300px] h-[300px] lg:h-[350px] lg:w-[300px] p-[30px] lg:p-[40px]">
             <h1 className="font-medium text-lg">CONTÁCTANOS</h1>
             <div>
                 <ul>

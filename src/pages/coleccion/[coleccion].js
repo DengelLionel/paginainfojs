@@ -49,11 +49,7 @@ const Coleccion = () => {
                 <title>{datos?.coleccion[0].meta_title}</title>
             </Head>
             <Anuncio />
-            <HeaderPrincipal
-                logo={
-                    'https://res.cloudinary.com/darps1cta/image/upload/v1687493114/nexo/Nexo-Medic_Logo_dklapo.png'
-                }
-            />
+            <HeaderPrincipal />
 
             <main className="bg-white">
                 <ColeccionDesign datos={datos} />

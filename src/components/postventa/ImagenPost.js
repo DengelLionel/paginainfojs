@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from 'next/legacy/image'
+import Link from 'next/link'
 const ImagenPost = () => {
     return (
         <div>
@@ -16,11 +17,12 @@ const ImagenPost = () => {
             <h2 className="text-blueOne font-medium text-xl">
                 Para consultas llamar al:
             </h2>
-            <button
-                className="w-[200px] lg:ml-[50px] lg:mt-[15px] lg:mb-[15px] bg-blueOne text-white text-sm font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300"
+            <Link
+                href={'tel:+51999780748'}
+                className="w-[200px] lg:ml-[50px] lg:mt-[15px] lg:mb-[15px] text-center bg-blueOne text-white text-sm font-bold py-2 px-4 rounded-full hover:bg-blue-600 transition duration-300"
                 type="submit">
                 999-780-748
-            </button>
+            </Link>
             <h2 className="text-blueOne font-medium text-xl text-center">
                 serviciotecnico@nexomedic.com.pe
             </h2>

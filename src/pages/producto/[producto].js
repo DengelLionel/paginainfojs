@@ -38,11 +38,7 @@ const Producto = () => {
                 </title>
             </Head>
             <Anuncio />
-            <HeaderPrincipal
-                logo={
-                    'https://res.cloudinary.com/darps1cta/image/upload/v1687493114/nexo/Nexo-Medic_Logo_dklapo.png'
-                }
-            />
+            <HeaderPrincipal />
             <PaginaProducto datosProducto={datos} />
 
             <main className="bg-white">

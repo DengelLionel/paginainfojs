@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 const InfoProducto = ({ datos }) => {
     return (
         <div className="flex flex-col justify-center items-left lg:h-[250px] lg:justify-between">
@@ -22,11 +22,12 @@ const InfoProducto = ({ datos }) => {
                     <span>{datos?.[0]?.procedencia}</span>
                 </span>
             </section>
-            <button
+            <Link
+                href={'/cotizar'}
                 type="button"
-                className="border border-blueOne bg-blueOne text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blue-600 focus:outline-none focus:shadow-outline">
+                className=" text-center border border-blueOne bg-blueOne text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blue-600 focus:outline-none focus:shadow-outline">
                 COTIZAR
-            </button>
+            </Link>
         </div>
     )
 }

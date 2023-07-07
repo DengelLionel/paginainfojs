@@ -13,11 +13,7 @@ const empresa = () => {
                 <title>Empresa</title>
             </Head>
             <Anuncio />
-            <HeaderPrincipal
-                logo={
-                    'https://res.cloudinary.com/darps1cta/image/upload/v1687493114/nexo/Nexo-Medic_Logo_dklapo.png'
-                }
-            />
+            <HeaderPrincipal />
             <SobreNosotros />
 
             <main className="bg-blancoOne">

@@ -14,11 +14,7 @@ const clientes = () => {
                 <title>Clientes</title>
             </Head>
             <Anuncio />
-            <HeaderPrincipal
-                logo={
-                    'https://res.cloudinary.com/darps1cta/image/upload/v1687493114/nexo/Nexo-Medic_Logo_dklapo.png'
-                }
-            />
+            <HeaderPrincipal />
             <BannerGeneral
                 imagen={
                     'https://res.cloudinary.com/darps1cta/image/upload/v1687643443/nexo/medico-tecnico-laboratorio-analizando-evolucion-virus-tableta-digital-equipo-cientificos-que-llevan-cabo-desarrollo-vacunas-utilizando-alta-tecnologia-investigar-tratamiento-contra-pandem_hykvlk.jpg'

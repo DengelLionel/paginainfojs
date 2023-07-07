@@ -10,7 +10,7 @@ const CuadroProductos = ({ imagen, titulo, link }) => {
                     <Image
                         src={imagen}
                         layout="fill"
-                        objectFit="cover"
+                        objectFit="contain"
                         alt={titulo}
                     />
                 </div>

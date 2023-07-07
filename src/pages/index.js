@@ -22,11 +22,7 @@ export default function Home() {
                 <title>Equipos medicos</title>
             </Head>
             <Anuncio />
-            <HeaderPrincipal
-                logo={
-                    'https://res.cloudinary.com/darps1cta/image/upload/v1687493114/nexo/Nexo-Medic_Logo_dklapo.png'
-                }
-            />
+            <HeaderPrincipal />
             {datos?.length > 0 && (
                 <Carousel
                     adaptiveHeightAnimation={true}

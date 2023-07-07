@@ -6,7 +6,7 @@ import IconMenuOne from '@/components/icons/IconMenuOne'
 import IconBuscador from '@/components/icons/IconBuscador'
 import Image from 'next/legacy/image'
 import Link from 'next/link'
-const NavBarMobil = ({ logo }) => {
+const NavBarMobil = () => {
     const { datos } = useDatosMenu()
     const { isOopen, setIsOopen } = useContext(PaginaContextValue)
 
@@ -37,9 +37,13 @@ const NavBarMobil = ({ logo }) => {
                     <Link href={'/'}>
                         <Image
                             layout="fill"
-                            objectFit="cover"
-                            src={logo}
-                            alt="Descripción del logo"
+                            objectFit="contain"
+                            src={`${
+                                navBackground === 'lg:bg-white'
+                                    ? 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/LOGO_DE_COLOR_unovda.png'
+                                    : 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/TRANSPARANTE_tzfj6x.png'
+                            }`}
+                            alt="Nexomedic"
                         />
                     </Link>
                 </div>

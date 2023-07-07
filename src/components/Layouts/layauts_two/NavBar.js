@@ -6,7 +6,7 @@ import Image from 'next/legacy/image'
 import IconTelefono from '@/components/icons/IconTelefono'
 import Link from 'next/link'
 
-const NavBar = ({ logo }) => {
+const NavBar = () => {
     const { datos } = useDatosMenu()
     const { isOopen } = useContext(PaginaContextValue)
     const [isHovered, setIsHovered] = useState(false)
@@ -63,9 +63,13 @@ const NavBar = ({ logo }) => {
                         <Image
                             layout="fill"
                             quality={100}
-                            objectFit="cover"
-                            src={logo}
-                            alt="Descripción del logo"
+                            objectFit="contain"
+                            src={`${
+                                bgColor === 'lg:bg-white'
+                                    ? 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/LOGO_DE_COLOR_unovda.png'
+                                    : 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/TRANSPARANTE_tzfj6x.png'
+                            }`}
+                            alt="Nexomedic"
                         />
                     </Link>
                 </div>
