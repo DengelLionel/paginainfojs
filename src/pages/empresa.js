@@ -6,6 +6,7 @@ import Anuncio from '@/components/paginainfo/Anuncio'
 import ConocePromocines from '@/components/paginainfo/ConocePromocines'
 import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
+import Whatsapp from '@/components/paginainfo/Whatsapp'
 const empresa = () => {
     return (
         <>
@@ -18,6 +19,7 @@ const empresa = () => {
 
             <main className="bg-blancoOne">
                 <ConocePromocines />
+                <Whatsapp />
                 <Marcas />
                 <Footer />
             </main>

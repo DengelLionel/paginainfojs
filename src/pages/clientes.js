@@ -7,6 +7,7 @@ import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
 import TodoCliente from '@/components/clientes'
 import BannerGeneral from '@/components/paginainfo/BannerGeneral'
+import Whatsapp from '@/components/paginainfo/Whatsapp'
 const clientes = () => {
     return (
         <>
@@ -24,6 +25,7 @@ const clientes = () => {
             <TodoCliente />
 
             <main className="bg-blancoOne">
+                <Whatsapp />
                 <ConocePromocines />
                 <Marcas />
                 <Footer />

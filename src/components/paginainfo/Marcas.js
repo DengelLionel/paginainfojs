@@ -56,10 +56,12 @@ const Marcas = () => {
         <div
             className={`h-[65px] lg:h-[70px] bg-white mt-[20px] flex flex-col justify-center items-center  z-0 lg:fixed lg:z-[9998] w-full shadow-marca transition-all lg:flex-row lg:justify-between lg:pl-[30px] lg:pr-[30px]`}
             style={{ bottom: `${bottomPosition}px` }}>
-            <div className="text-negro  mb-0 lg:mb-0">
+            <div className="text-negro lg:pl-[50px]  mb-0 lg:mb-0">
                 <span className="font-medium text-sm lg:text-lg">
                     LAS MEJORES{' '}
-                    <span className="font-bold text-sm lg:text-xl">MARCAS</span>{' '}
+                    <span className="font-semibold text-sm lg:text-xl">
+                        MARCAS
+                    </span>{' '}
                 </span>
             </div>
             <div

@@ -9,6 +9,7 @@ import { useRouter } from 'next/router'
 import { useState, useEffect, memo } from 'react'
 import useSWR from 'swr'
 import axios from '@/lib/axios'
+import Whatsapp from '@/components/paginainfo/Whatsapp'
 const Producto = () => {
     const [datos, setDatos] = useState(null)
 
@@ -44,6 +45,7 @@ const Producto = () => {
             <PaginaProducto datosProducto={datos} />
 
             <main className="bg-white">
+                <Whatsapp />
                 <ConocePromocines />
                 <Marcas />
                 <Footer />

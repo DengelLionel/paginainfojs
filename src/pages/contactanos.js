@@ -7,6 +7,7 @@ import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
 import BannerGeneral from '@/components/paginainfo/BannerGeneral'
 import Contactanos from '@/components/contactanos'
+import Whatsapp from '@/components/paginainfo/Whatsapp'
 const contactanos = () => {
     return (
         <>
@@ -24,6 +25,7 @@ const contactanos = () => {
             />
             <main className="bg-white">
                 <Contactanos />
+                <Whatsapp />
                 <ConocePromocines />
                 <Marcas />
                 <Footer />

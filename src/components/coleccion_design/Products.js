@@ -7,16 +7,21 @@ const Products = ({ datos }) => {
 
         if (!Array.isArray(products)) return null
 
-        return products.map((product, index) =>
-            product.product_imagen?.map((imagen, imgIndex) => (
+        return products.map((product, index) => {
+            const firstImage = product.product_imagen?.[0]
+            if (!firstImage) return null
+
+            return (
                 <CuadroProductos
-                    imagen={imagen.imagen}
+                    imagen={firstImage.imagen}
                     titulo={product.nombre}
+                    nuevo={product.new}
+                    oferta={product.oferta}
                     link={`/producto/${product.meta_title_link}`}
-                    key={`${index}-${imgIndex}`}
+                    key={index}
                 />
-            )),
-        )
+            )
+        })
     }
 
     return (

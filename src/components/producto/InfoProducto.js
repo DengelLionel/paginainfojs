@@ -2,7 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 const InfoProducto = ({ datos }) => {
     return (
-        <div className="flex flex-col justify-center items-left lg:h-[250px] lg:justify-between">
+        <div className="flex flex-col justify-center items-left lg:items-center lg:h-[250px] lg:justify-between">
             <h1 className="text-blueOne font-bold text-center text-[20px] lg:text-[26px]">
                 {datos?.[0]?.nombre}
             </h1>
@@ -25,7 +25,7 @@ const InfoProducto = ({ datos }) => {
             <Link
                 href={'/cotizar'}
                 type="button"
-                className=" text-center border border-blueOne bg-blueOne text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blue-600 focus:outline-none focus:shadow-outline">
+                className=" text-center w-[170px] border border-blueOne bg-blueOne text-white rounded-full px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-blue-600 focus:outline-none focus:shadow-outline">
                 COTIZAR
             </Link>
         </div>

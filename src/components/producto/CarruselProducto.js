@@ -31,18 +31,20 @@ const CarruselProducto = props => {
         emblaMainApi.on('reInit', onSelect)
     }, [emblaMainApi, onSelect])
     return (
-        <div className="embla">
-            <div className="embla__viewport" ref={emblaMainRef}>
+        <div className="embla ">
+            <div
+                className="embla__viewport shadow-md lg:shadow-lg"
+                ref={emblaMainRef}>
                 <div className="embla__container">
                     {slides?.[0]?.map((imagen, index) => (
                         <div className="embla_slide_product" key={index}>
-                            <div className="embla__slide__number">
+                            {/* <div className="embla__slide__number">
                                 <span>{index + 1}</span>
-                            </div>
-                            <div className="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px]">
+                            </div> */}
+                            <div className="relative w-[300px] h-[300px] lg:w-[400px] lg:h-[400px] shadow-md lg:shadow-lg">
                                 <Image
                                     layout="fill"
-                                    objectFit="cover"
+                                    objectFit="contain"
                                     src={imagen.imagen}
                                     alt={imagen.titulo}
                                     quality={100}
@@ -60,7 +62,6 @@ const CarruselProducto = props => {
                             <Thumb
                                 onClick={() => onThumbClick(index)}
                                 selected={index === selectedIndex}
-                                index={index}
                                 titulo={imagen.titulo}
                                 imgSrc={imagen.imagen}
                                 key={index}

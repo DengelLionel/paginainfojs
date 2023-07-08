@@ -7,6 +7,7 @@ import Head from 'next/head'
 import Anuncio from '@/components/paginainfo/Anuncio'
 import HeaderPrincipal from '@/components/Layouts/layauts_two/HeaderPrincipal'
 import BannerGeneral from '@/components/paginainfo/BannerGeneral'
+import Whatsapp from '@/components/paginainfo/Whatsapp'
 const cotizar = () => {
     return (
         <>
@@ -21,6 +22,7 @@ const cotizar = () => {
             />
             <main className="bg-white">
                 <Cotizar />
+                <Whatsapp />
                 <ConocePromocines />
                 <Marcas />
                 <Footer />

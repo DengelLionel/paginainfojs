@@ -11,7 +11,7 @@ import useSWR from 'swr'
 import axios from '@/lib/axios'
 import ListaProductos from '@/components/producto/ListaProductos'
 import Products from '@/components/coleccion_design/Products'
-
+import Whatsapp from '@/components/paginainfo/Whatsapp'
 const Coleccion = () => {
     const buscarEnDatos = (array, coleccion) => {
         let resultado = null
@@ -53,10 +53,11 @@ const Coleccion = () => {
 
             <main className="bg-white">
                 <ColeccionDesign datos={datos} />
-                <div className="lg:flex lg:flex-row lg:gap-[20px]">
+                <div className="lg:flex mb-[120px] lg:flex-row lg:gap-[20px]">
                     <ListaProductos />
                     <Products datos={datos} />
                 </div>
+                <Whatsapp />
                 <ConocePromocines />
                 <Marcas />
                 <Footer />

@@ -9,7 +9,7 @@ const ProductosDestacados = () => {
     const dato = data.data
 
     return (
-        <div className="flex flex-col items-center pt-[25px] transition-all duration-[500ms]">
+        <div className="flex flex-col items-center mb-[100px] pt-[25px] transition-all duration-[500ms]">
             <h2 className="text-negro font-extrabold md:text-[20px] lg:text-[24px]">
                 ProductosDestacados
             </h2>

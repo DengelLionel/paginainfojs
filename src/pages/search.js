@@ -6,7 +6,7 @@ import ConocePromocines from '@/components/paginainfo/ConocePromocines'
 import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
 import BannerGeneral from '@/components/paginainfo/BannerGeneral'
-
+import Whatsapp from '@/components/paginainfo/Whatsapp'
 import TodoSearch from '@/components/producto/TodoSearch'
 const search = () => {
     return (
@@ -25,6 +25,7 @@ const search = () => {
             />
             <main className="bg-white">
                 <TodoSearch />
+                <Whatsapp />
                 <ConocePromocines />
                 <Marcas />
                 <Footer />

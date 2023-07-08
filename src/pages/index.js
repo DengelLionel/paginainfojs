@@ -13,6 +13,7 @@ import ConocePromocines from '@/components/paginainfo/ConocePromocines'
 import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
 import { useDatosSlider } from '@/hooks/useDatosSlider'
+import Whatsapp from '@/components/paginainfo/Whatsapp'
 export default function Home() {
     const { datos } = useDatosSlider()
 
@@ -58,6 +59,7 @@ export default function Home() {
                 <Info />
                 <NuestrasAreas />
                 <ProductosDestacados />
+                <Whatsapp />
                 <ConocePromocines />
                 <Marcas />
                 <Footer />

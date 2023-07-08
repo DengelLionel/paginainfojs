@@ -18,7 +18,9 @@ module.exports = {
                 "blancoTwo":"#F7F8F7",
                 "negro":"#020507",
                 "blueTwo":"#E0E9EF",
-                "blueTres":"#6893AE"
+                "blueTres":"#6893AE",
+                "verde":"#3ddf59",
+                "verde_hover":"#00e576"
                      },
             fontFamily:{
                 notosans:'var(--font-notosans)'

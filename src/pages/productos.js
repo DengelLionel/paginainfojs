@@ -7,6 +7,7 @@ import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
 import BannerGeneral from '@/components/paginainfo/BannerGeneral'
 import MostrandoTodoProducto from '@/components/producto/MostrandoTodoProducto'
+import Whatsapp from '@/components/paginainfo/Whatsapp'
 const productos = () => {
     return (
         <>
@@ -24,6 +25,7 @@ const productos = () => {
 
             <main className="bg-white">
                 <MostrandoTodoProducto />
+                <Whatsapp />
                 <ConocePromocines />
                 <Marcas />
                 <Footer />

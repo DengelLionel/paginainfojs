@@ -7,7 +7,7 @@ import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
 import BannerGeneral from '@/components/paginainfo/BannerGeneral'
 import PostVenta from '@/components/postventa'
-
+import Whatsapp from '@/components/paginainfo/Whatsapp'
 const postventa = () => {
     return (
         <>
@@ -25,7 +25,7 @@ const postventa = () => {
             />
             <main className="bg-white">
                 <PostVenta />
-
+                <Whatsapp />
                 <ConocePromocines />
                 <Marcas />
                 <Footer />
