@@ -17,6 +17,10 @@ const Contextpaginaifno = ({ children }) => {
     const [capturarMenu, setCapturarMenu] = useState(0)
     const [capturarSubMenu, setCapturarSubMenu] = useState(0)
     const [dropdawn, setDropdawn] = useState(false)
+    const [search, setSearch] = useState(null)
+    const [datobuscar, setDatobuscar] = useState('')
+    const [errorSearch, setErrorSearch] = useState(null)
+    const [openSearch, setOpenSearch] = useState(false)
     const data = {
         isOpen,
         setIsOpen,
@@ -48,6 +52,14 @@ const Contextpaginaifno = ({ children }) => {
         setIsOopen,
         dropdawn,
         setDropdawn,
+        search,
+        setSearch,
+        errorSearch,
+        setErrorSearch,
+        datobuscar,
+        setDatobuscar,
+        openSearch,
+        setOpenSearch,
     }
     return (
         <PaginaContextValue.Provider value={data}>

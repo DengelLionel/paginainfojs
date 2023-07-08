@@ -54,23 +54,25 @@ const Marcas = () => {
 
     return (
         <div
-            className={`h-[133px] bg-blancoTwo mt-[20px] flex flex-col justify-center items-center fixed z-[9998] w-full shadow-marca transition-all lg:flex-row lg:justify-between lg:pl-[30px] lg:pr-[30px]`}
+            className={`h-[65px] lg:h-[70px] bg-white mt-[20px] flex flex-col justify-center items-center  z-0 lg:fixed lg:z-[9998] w-full shadow-marca transition-all lg:flex-row lg:justify-between lg:pl-[30px] lg:pr-[30px]`}
             style={{ bottom: `${bottomPosition}px` }}>
-            <div className="text-negro  mb-[10px] lg:mb-0">
-                <span className="font-medium lg:text-[20px]">
+            <div className="text-negro  mb-0 lg:mb-0">
+                <span className="font-medium text-sm lg:text-lg">
                     LAS MEJORES{' '}
-                    <span className="font-bold lg:text-[22px]">MARCAS</span>{' '}
+                    <span className="font-bold text-sm lg:text-xl">MARCAS</span>{' '}
                 </span>
             </div>
-            <div className=" overflow-hidden lg:w-[900px]" ref={emblaRef}>
+            <div
+                className=" overflow-hidden w-[360px] lg:w-[900px]"
+                ref={emblaRef}>
                 <div className="flex flex-row gap-[10px] touch-pan-y ml-[calc(1rem * -1)] ">
                     {datos?.map((marca, index) => {
                         return (
                             <div key={index} className="embla_slide">
-                                <div className="relative w-[300px] h-[70px] ">
+                                <div className="relative w-[300px] h-[50px] lg:h-[65px]">
                                     <Image
                                         layout="fill"
-                                        objectFit="cover"
+                                        objectFit="contain"
                                         src={marca.imagen}
                                         alt="clientes de nexomedic"
                                     />

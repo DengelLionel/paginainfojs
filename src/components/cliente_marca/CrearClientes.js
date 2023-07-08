@@ -1,18 +1,18 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from '@/lib/axios'
-const CreacionItem = () => {
+const CrearClientes = () => {
     const [imagen, setImagen] = useState('')
     const [errorserv, setErrorserv] = useState(null)
 
     const csrf = () => axios.get('/sanctum/csrf-cookie')
-    const handleCrearProducto = async () => {
+    const handleCrear = async () => {
         try {
             await csrf()
-            const clientes_marca = {
+            const clientes = {
                 imagen: imagen,
             }
-            await axios.post('/api/clientes_marcas', clientes_marca)
+            await axios.post('/api/soloclientes', clientes)
             window.location.reload()
         } catch (error) {
             setErrorserv(error)
@@ -20,14 +20,13 @@ const CreacionItem = () => {
     }
 
     useEffect(() => {}, [errorserv])
-
     return (
         <div>
             <div className="flex flex-col h-auto">
                 <div className="!z-5 relative flex flex-col rounded-[20px] w-full md:w-[500px] bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col  !p-6 3xl:p-![18px] bg-white undefined">
                     <div className="relative flex flex-row justify-between">
                         <h4 className="text-xl font-bold text-red-500  mb-3">
-                            Creando Imagen Marcas
+                            Creando Imagen Clientes
                         </h4>
                     </div>
 
@@ -48,7 +47,7 @@ const CreacionItem = () => {
                     </div>
                     <div className="mb-3">
                         <button
-                            onClick={handleCrearProducto}
+                            onClick={handleCrear}
                             className="p-[10px] bg-blue-500 text-white font-bold">
                             CREAR CLIENTE MARCA IMAGEN
                         </button>
@@ -59,4 +58,4 @@ const CreacionItem = () => {
     )
 }
 
-export default CreacionItem
+export default CrearClientes

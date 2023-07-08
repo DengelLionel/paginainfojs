@@ -1,10 +1,12 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useContext, useRef } from 'react'
 import Dropdawn from './Dropdawn'
 import Link from 'next/link'
 import IconSub from '@/components/icons/IconSub'
+import { PaginaContextValue } from '@/context/contextpaginaifno'
 const MenuItems = ({ items, depthLevel, isHovered }) => {
     const [dropdawn, setDropdawn] = useState(false)
     let ref = useRef()
+    const { setOpenSearch } = useContext(PaginaContextValue)
     useEffect(() => {
         const handler = event => {
             if (
@@ -56,11 +58,16 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
                         href={`${
                             items.coleccion.length > 0
                                 ? '/coleccion' + items.enlace
+                                : items.enlace === '/servicios'
+                                ? '#'
                                 : items.enlace
                         }`}
                         aria-haspopup="menu"
                         aria-expanded={dropdawn ? 'true' : 'false'}
-                        onClick={() => setDropdawn(prev => !prev)}>
+                        onClick={() => {
+                            setDropdawn(prev => !prev)
+                            setOpenSearch(false)
+                        }}>
                         {items.nombre}{' '}
                         {items.submenu &&
                             items.submenu.length > 0 &&

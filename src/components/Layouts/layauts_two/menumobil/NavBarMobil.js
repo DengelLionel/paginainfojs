@@ -6,16 +6,41 @@ import IconMenuOne from '@/components/icons/IconMenuOne'
 import IconBuscador from '@/components/icons/IconBuscador'
 import Image from 'next/legacy/image'
 import Link from 'next/link'
+import IconClose from '@/components/icons/IconClose'
+import axios from '@/lib/axios'
+import { useRouter } from 'next/router'
 const NavBarMobil = () => {
     const { datos } = useDatosMenu()
-    const { isOopen, setIsOopen } = useContext(PaginaContextValue)
+    const router = useRouter()
 
+    const {
+        isOopen,
+        setIsOopen,
+        setSearch,
+        setErrorSearch,
+        datobuscar,
+        setDatobuscar,
+    } = useContext(PaginaContextValue)
+    const [openSearch, setOpenSearch] = useState(false)
     const [scrollPosition, setScrollPosition] = useState(0)
 
     const updateScrollPosition = () => {
         setScrollPosition(window.scrollY || document.documentElement.scrollTop)
     }
 
+    const handleInputChange = event => {
+        setDatobuscar(event.target.value)
+    }
+
+    const handleSearch = () => {
+        // Aquí es donde deberías hacer la petición al servidor.
+        // Por ejemplo, puedes hacerlo con Axios de esta manera:
+        axios
+            .get(`/api/search?query=${datobuscar}`)
+            .then(res => setSearch(res.data))
+            .catch(err => setErrorSearch(err))
+        router.push('/search')
+    }
     useEffect(() => {
         if (typeof window !== 'undefined') {
             window.addEventListener('scroll', updateScrollPosition)
@@ -49,8 +74,16 @@ const NavBarMobil = () => {
                 </div>
 
                 <div className="mr-[16px] flex flex-row gap-[22px] lg:hidden">
-                    <IconBuscador />
-                    <IconMenuOne open={() => setIsOopen(!isOopen)} />
+                    {openSearch ? (
+                        <IconClose open={() => setOpenSearch(!openSearch)} />
+                    ) : (
+                        <IconBuscador open={() => setOpenSearch(!openSearch)} />
+                    )}
+                    {isOopen ? (
+                        <IconClose open={() => setIsOopen(!isOopen)} />
+                    ) : (
+                        <IconMenuOne open={() => setIsOopen(!isOopen)} />
+                    )}
                 </div>
             </div>
 
@@ -72,6 +105,34 @@ const NavBarMobil = () => {
                         )
                     })}
                 </ul>
+            </div>
+            {/* PARA EL BUSCADOR */}
+            <div
+                className={`w-full ${
+                    openSearch && 'fixed h-full  backdrop-blur-sm'
+                }`}>
+                <div
+                    className={` bg-white  ${
+                        openSearch ? 'h-[200px] opacity-100' : 'h-0 opacity-0'
+                    }`}>
+                    <div className="pt-[50px] pl-[20px] pr-[20px] flex flex-row gap-[20px] items-center justify-center text-gray-600 relative">
+                        <input
+                            className="border-2 w-full border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                            type="search"
+                            name="search"
+                            value={datobuscar}
+                            onChange={handleInputChange}
+                            placeholder="Buscar"
+                        />
+
+                        <button
+                            onClick={handleSearch}
+                            type="button"
+                            className="absolute right-[10%] top-[75%] md:right-[5%] transform -translate-y-1/2 bg-transparent w-[30px] h-[30px]">
+                            <IconBuscador fill="#2F6AAD" />
+                        </button>
+                    </div>
+                </div>
             </div>
         </nav>
     )

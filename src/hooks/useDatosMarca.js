@@ -7,3 +7,10 @@ export const useDatosMarca = () => {
     const datos = data.data
     return { datos }
 }
+export const useDatosClientes = () => {
+    const data = useSWR('/api/soloclientes', () =>
+        axios.get('/api/soloclientes').then(res => res.data),
+    )
+    const datos = data.data
+    return { datos }
+}

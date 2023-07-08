@@ -1,7 +1,8 @@
 import React from 'react'
+
 const Footer = () => {
     return (
-        <div className="bg-blueTwo text-gray-600 font-normal font-notosans text-[16px] flex flex-col items-center justify-center mt-[180px] pt-[22px] pb-[22px] lg:flex-row lg:items-center lg:pb-[10px] lg:pt-[15px]">
+        <div className="bg-blueTwo text-gray-600 font-normal font-notosans text-[16px] flex flex-col items-center justify-center mt-[18px] pt-[22px] pb-[22px] lg:flex-row lg:items-center lg:pb-[10px] lg:pt-[15px]">
             <span className="text-center w-[314px] mt-[10px] lg:w-[400px]  lg:mt-0">
                 NEXOMEDIC Todos los derechos reservados 2023
             </span>

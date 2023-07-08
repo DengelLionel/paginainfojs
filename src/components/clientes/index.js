@@ -1,9 +1,9 @@
 import React from 'react'
 import Image from 'next/legacy/image'
-import { useDatosMarca } from '@/hooks/useDatosMarca'
+import { useDatosClientes } from '@/hooks/useDatosMarca'
 
 const TodoCliente = () => {
-    const { datos } = useDatosMarca()
+    const { datos } = useDatosClientes()
     return (
         <div className="p-[16px] lg:pl-[100px] lg:pt-[100px] lg:pb-[100px] lg:pr-[100px]">
             <h1 className="text-xl font-bold mb-5 text-blueOne">CLIENTES</h1>

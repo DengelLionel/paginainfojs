@@ -64,6 +64,11 @@ const Navigation = ({ user }) => {
                             <NavLink
                                 href="/clientes_marca"
                                 active={router.pathname === '/clientes_marca'}>
+                                Marcas
+                            </NavLink>
+                            <NavLink
+                                href="/soloclientes"
+                                active={router.pathname === '/soloclientes'}>
                                 Clientes
                             </NavLink>
                         </div>
