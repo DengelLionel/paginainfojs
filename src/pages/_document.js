@@ -14,6 +14,10 @@ class MyDocument extends Document {
                         href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap"
                         rel="stylesheet"
                     />
+                    <script
+                        src="//code.tidio.co/b7z4h4ot07ah1xwnhnbl2skfxcca0qtl.js"
+                        async
+                    />
                 </Head>
                 <body className="antialiased">
                     <Main />
