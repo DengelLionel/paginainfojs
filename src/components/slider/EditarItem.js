@@ -5,6 +5,8 @@ import { PaginaContextValue } from '@/context/contextpaginaifno'
 const EditarItem = () => {
     const modalRef = useRef()
     const [enlace, setEnlace] = useState('')
+    const [subtitulo, setSubtitulo] = useState('')
+    const [nombreenlace, setNombreenlace] = useState('')
     const [imagen_mobil, setImagen_mobil] = useState('')
     const [imagen_desktop, setImagen_desktop] = useState('')
     const [titulo, setTitulo] = useState('')
@@ -22,9 +24,11 @@ const EditarItem = () => {
         try {
             const slider = {
                 titulo: titulo,
+                subtitulo: subtitulo,
                 imagen_desktop: imagen_desktop,
                 imagen_mobil: imagen_mobil,
                 enlace: enlace,
+                nombreenlace: nombreenlace,
             }
             await csrf()
             await axios.put(`/api/slider/${idItem}`, slider)
@@ -68,7 +72,23 @@ const EditarItem = () => {
                                         }
                                     />
                                 </div>
-
+                                <div className="mb-3">
+                                    <label
+                                        htmlFor="titulo"
+                                        className="text-sm text-gray-500 font-bold">
+                                        SubTitulo
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="subtitulo"
+                                        placeholder="Escriba subTitulo"
+                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
+                                        value={subtitulo}
+                                        onChange={e =>
+                                            setSubtitulo(e.target.value)
+                                        }
+                                    />
+                                </div>
                                 <div className="mb-3">
                                     <label
                                         htmlFor="name"
@@ -117,6 +137,23 @@ const EditarItem = () => {
                                         value={enlace}
                                         onChange={e =>
                                             setEnlace(e.target.value)
+                                        }
+                                    />
+                                </div>
+                                <div className="mb-3">
+                                    <label
+                                        htmlFor="enlacee"
+                                        className="text-sm text-gray-500 font-bold">
+                                        Nombre del boton
+                                    </label>
+                                    <input
+                                        type="text"
+                                        id="enlacee"
+                                        placeholder="Escriba su nombre del boton"
+                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
+                                        value={nombreenlace}
+                                        onChange={e =>
+                                            setNombreenlace(e.target.value)
                                         }
                                     />
                                 </div>

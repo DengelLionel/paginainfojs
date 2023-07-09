@@ -3,7 +3,7 @@ import Image from 'next/legacy/image'
 import Link from 'next/link'
 const Servicio = ({ enlace = '#' }) => {
     return (
-        <div className="pt-[20px] pb-[20px] lg:pt-[30px] lg:pb-[30px] ">
+        <div className="pt-[20px] pb-[20px] lg:pt-[30px] lg:pb-[120px] ">
             <div className="flex flex-col items-left lg:items-center lg:justify-left lg:flex-row lg:gap-[50px] bg-blueTwo p-[20px] lg:pb-[30px] lg:pt-[30px] lg:pr-[90px]  lg:pl-[90px]">
                 <h1 className="text-xl lg:text-2xl font-bold mb-5  text-blueOne">
                     Servicio Técnico

@@ -42,11 +42,17 @@ export default function Home() {
                             <Slider
                                 imagen_mobil={imagen.imagen_mobil}
                                 titulo={imagen.titulo}
+                                subtitulo={imagen.subtitulo}
+                                nombreenlace={imagen.nombreenlace}
+                                enlace={imagen.enlace}
                                 mobile={true}
                             />
                             <Slider
                                 imagen_desktop={imagen.imagen_desktop}
                                 titulo={imagen.titulo}
+                                subtitulo={imagen.subtitulo}
+                                nombreenlace={imagen.nombreenlace}
+                                enlace={imagen.enlace}
                                 mobile={false}
                             />
                         </div>
