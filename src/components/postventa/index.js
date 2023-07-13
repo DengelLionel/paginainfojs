@@ -4,7 +4,7 @@ import ImagenPost from './ImagenPost'
 const PostVenta = () => {
     return (
         <div>
-            <div className="p-[16px] lg:pl-[100px] lg:pt-[100px] lg:pb-[100px] lg:pr-[100px]">
+            <div className="p-[16px] pt-[100px] lg:pl-[100px] lg:pt-[100px] lg:pb-[100px] lg:pr-[100px]">
                 <h1 className="text-2xl font-bold mb-5 text-blueOne">
                     Post-Venta
                 </h1>

@@ -17,7 +17,13 @@ main{
     padding-left: 1rem;
    
 }
+@media screen and (min-width: 1024px) {
+  .embla_slide{
+    min-width: 150px;
 
+   
+}
+}
 .embla_slide_product {
   @apply relative transition-opacity duration-200 ease-in-out;
 }

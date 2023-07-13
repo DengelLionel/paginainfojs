@@ -92,7 +92,7 @@ const FormularioCotizar = () => {
     }
     useEffect(() => {}, [errorserv])
     return (
-        <div className="p-[16px] lg:p-[30px]">
+        <div className="p-[16px] pt-[100px] lg:p-[30px]">
             <form
                 onSubmit={handleEnviarCotizar}
                 className="w-full w-full md:w-[400px] bg-gray-300 p-8 rounded-md lg:rounded-xl shadow-md">

@@ -8,7 +8,7 @@ import EquiposMedicos from '../icons/EquiposMedicos'
 const NuestrasAreas = () => {
     return (
         <div className="flex flex-col items-center mt-[25px]">
-            <h2 className="text-negro font-extrabold md:text-[20px] mb-[20px] lg:text-[24px]">
+            <h2 className="text-blueOne font-bold md:text-[20px] mb-[20px] lg:text-[24px]">
                 Nuestras Áreas
             </h2>
             <div className="flex flex-wrap gap-[16px] justify-center items-center w-full">

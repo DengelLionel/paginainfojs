@@ -1,6 +1,6 @@
 import React from 'react'
 
-const IconClose = ({ open }, props) => {
+const IconClose = ({ open, color = '#EEEFF3' }, props) => {
     return (
         <svg
             onClick={open}
@@ -10,7 +10,7 @@ const IconClose = ({ open }, props) => {
             fill="none"
             {...props}>
             <path
-                fill="#EEEFF3"
+                fill={color}
                 d="M19.25 1.704 17.311 0 9.625 6.755 1.939 0 0 1.704l7.686 6.754L0 15.213l1.939 1.704 7.686-6.755 7.686 6.755 1.939-1.704-7.686-6.755 7.686-6.754Z"
             />
         </svg>

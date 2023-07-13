@@ -5,7 +5,7 @@ import { useDatosClientes } from '@/hooks/useDatosMarca'
 const TodoCliente = () => {
     const { datos } = useDatosClientes()
     return (
-        <div className="p-[16px] lg:pl-[100px] lg:pt-[100px] lg:pb-[100px] lg:pr-[100px]">
+        <div className="p-[16px] pt-[100px] lg:pl-[100px] lg:pt-[100px] lg:pb-[100px] lg:pr-[100px]">
             <h1 className="text-xl font-bold mb-5 text-blueOne">CLIENTES</h1>
             <p className="lg:mb-5 text-sm lg:text-md text-justify p-[30px] bg-blueTwo">
                 Trabajamos con las mejores marcas del mercado con el fin de

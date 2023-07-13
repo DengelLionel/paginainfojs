@@ -16,7 +16,7 @@ const Dropdawn = ({ submenus, dropdawn, depthLevel }) => {
                 return (
                     <ul
                         className={
-                            'bg-white text-blueOne font-notosans text-md font-medium md:w-[190px]'
+                            'bg-white text-blueOne font-notosans text-sm font-medium md:w-[190px]'
                         }
                         key={index}>
                         <MenuItems items={submenu} depthLevel={depthLevel} />

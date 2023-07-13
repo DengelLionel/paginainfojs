@@ -1,10 +1,10 @@
 import 'tailwindcss/tailwind.css'
 import Contextpaginaifno from '@/context/contextpaginaifno'
-import { Noto_Sans } from '@next/font/google'
+import { Work_Sans } from '@next/font/google'
 import '@/css/global.css'
-const noto_sans = Noto_Sans({
+const noto_sans = Work_Sans({
     style: ['normal'],
-    weight: ['400', '700'],
+    weight: ['300', '400', '700'],
     variable: '--font-notosans',
     subsets: ['latin'],
 })

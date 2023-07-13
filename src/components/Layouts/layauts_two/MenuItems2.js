@@ -3,7 +3,7 @@ import Dropdawn from './Dropdawn'
 import Link from 'next/link'
 import IconSub from '@/components/icons/IconSub'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
-const MenuItems = ({ items, depthLevel, isHovered }) => {
+const MenuItems2 = ({ items, depthLevel, isHovered }) => {
     const [dropdawn, setDropdawn] = useState(false)
     let ref = useRef()
     const { setOpenSearch } = useContext(PaginaContextValue)
@@ -39,22 +39,16 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
     }
     return (
         <li
-            className="relative font-normal text-md text-white "
+            className="relative font-normal text-md text-negro "
             ref={ref}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}>
             {items.submenu ? (
                 <>
                     <Link
-                        className={`${
-                            isHovered
-                                ? 'text-plomo text-md hover:text-blueOne'
-                                : 'text-white text-md'
-                        } ${
-                            depthLevel > 0 &&
-                            ' hover:text-blancoOne text-blueOne hover:bg-blueOne'
-                        }  transition-all duration-[800ms] font-notosans text-sm font-medium flex flex-row items-center justify-between text-left px-[10px] py-[15px] w-full `}
-                        type="button"
+                        className={
+                            'text-plomo text-md hover:text-blueOne transition-all duration-[800ms] font-notosans text-sm font-medium flex flex-row items-center justify-between text-left px-[10px] py-[15px] w-full '
+                        }
                         href={`${
                             items.coleccion.length > 0
                                 ? '/coleccion' + items.enlace
@@ -88,7 +82,7 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
                 <Link
                     className={`${
                         isHovered
-                            ? 'text-black'
+                            ? 'text-plomo'
                             : 'text-blueOne font-notosans font-medium hover:bg-blueOne hover:text-blancoOne'
                     }   block text-left text-md px-2 py-1 w-full`}
                     href={`${
@@ -103,4 +97,4 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
     )
 }
 
-export default MenuItems
+export default MenuItems2

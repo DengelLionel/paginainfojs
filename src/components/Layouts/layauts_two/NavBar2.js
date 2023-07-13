@@ -1,5 +1,5 @@
-import { useContext, useState, useEffect } from 'react'
-import MenuItems from './MenuItems'
+import { useContext, useState } from 'react'
+import MenuItems2 from './MenuItems2'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
 import { useDatosMenu } from '@/hooks/useDatosMenu'
 import Image from 'next/legacy/image'
@@ -9,7 +9,7 @@ import axios from '@/lib/axios'
 import { useRouter } from 'next/router'
 import IconBuscador from '@/components/icons/IconBuscador'
 import FondoOscurecido from '@/components/paginainfo/FondoOscurecido'
-const NavBar = () => {
+const NavBar2 = () => {
     const { datos } = useDatosMenu()
     const router = useRouter()
     const {
@@ -22,9 +22,7 @@ const NavBar = () => {
         setDatobuscar,
     } = useContext(PaginaContextValue)
     const [isHovered, setIsHovered] = useState(false)
-    const [scrollPosition, setScrollPosition] = useState(0)
-    const [bgColor, setBgColor] = useState('lg:bg-transparent')
-    const [topPosition, setTopPosition] = useState('top-[40px]')
+
     const handleInputChange = event => {
         setDatobuscar(event.target.value)
     }
@@ -40,49 +38,23 @@ const NavBar = () => {
         router.push('/search')
     }
 
-    const updateScrollPosition = () => {
-        const position = window.scrollY || document.documentElement.scrollTop
-        setScrollPosition(position)
-        setBgColor(
-            position > 50
-                ? 'lg:bg-plomo'
-                : isHovered
-                ? 'lg:bg-white'
-                : 'lg:bg-transparent',
-        )
-        setTopPosition(position > 50 ? 'top-0' : 'top-[40px]')
-    }
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            window.addEventListener('scroll', updateScrollPosition)
-        }
-        return () => {
-            if (typeof window !== 'undefined') {
-                window.removeEventListener('scroll', updateScrollPosition)
-            }
-        }
-    }, [isHovered])
-
     const handleMouseEnter = () => {
         setIsHovered(true)
-        setBgColor('lg:bg-white')
     }
 
     const handleMouseLeave = () => {
         setIsHovered(false)
-        setBgColor(scrollPosition > 50 ? 'lg:bg-plomo' : 'lg:bg-transparent')
     }
 
     return (
         <nav
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
-            className={`${bgColor} ${topPosition} 
-                    hidden lg:fixed lg:z-[999] lg:transition-all lg:duration-[800ms] lg:shadow  lg:flex 
+            className={`bg-white
+                    hidden  lg:transition-all lg:duration-[800ms]   lg:flex 
                     lg:justify-between lg:items-center lg:h-[80px] lg:w-full 
-                    lg:border-b-[0.5px] lg:pr-[40px] lg:shadow-xl lg:pl-[40px] xl:pr-[78px] xl:pl-[78px]
-                    lg:border-white lg:border-opacity-25`}>
+                    lg:border-b-[1px] lg:pr-[40px] shadow-nav lg:pl-[40px] xl:pr-[78px] xl:pl-[78px]
+                    lg:border-blueOne lg:border-opacity-25`}>
             <div className="flex justify-between items-center">
                 <div className="relative w-[266px] h-[60px] ">
                     <Link href={'/'}>
@@ -90,11 +62,9 @@ const NavBar = () => {
                             layout="fill"
                             quality={100}
                             objectFit="contain"
-                            src={`${
-                                bgColor === 'lg:bg-white'
-                                    ? 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/LOGO_DE_COLOR_unovda.png'
-                                    : 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/TRANSPARANTE_tzfj6x.png'
-                            }`}
+                            src={
+                                'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/LOGO_DE_COLOR_unovda.png'
+                            }
                             alt="Nexomedic"
                         />
                     </Link>
@@ -106,7 +76,7 @@ const NavBar = () => {
                     {datos?.map((menu, index) => {
                         const depthLevel = 0
                         return (
-                            <MenuItems
+                            <MenuItems2
                                 items={menu}
                                 key={index}
                                 depthLevel={depthLevel}
@@ -146,16 +116,14 @@ const NavBar = () => {
             </div>
             <Link
                 href={'tel:+517583872'}
-                className={`${
-                    isHovered
-                        ? 'lg:text-plomo hover:text-blueOne'
-                        : 'lg:text-white'
-                }  hidden xl:flex xl:flex-row xl:items-center font-notosans text-sm font-medium lg:gap-[8px] lg:transiton-all lg:duration-[800ms]`}>
-                <IconTelefono fill={`${isHovered ? '#595858' : '#EEEFF3'}`} />
+                className={
+                    'lg:text-plomo hover:text-blueOne hidden xl:flex xl:flex-row xl:items-center font-notosans text-sm font-medium lg:gap-[8px] lg:transiton-all lg:duration-[800ms]'
+                }>
+                <IconTelefono fill={`${isHovered ? '#595858' : '#595858'}`} />
                 (511) 758-3872
             </Link>
         </nav>
     )
 }
 
-export default NavBar
+export default NavBar2

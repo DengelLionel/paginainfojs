@@ -4,9 +4,9 @@ import Link from 'next/link'
 const Servicios = () => {
     return (
         <div className="flex flex-col items-center pt-[25px]">
-            <h2 className="text-negro font-extrabold md:text-[20px] lg:text-[24px]">
+            {/*   <h2 className="text-blueOne font-bold md:text-[20px] lg:text-[24px]">
                 Servicios
-            </h2>
+            </h2> */}
             <section className="flex flex-col md:flex-row-reverse md:gap-[75px]">
                 <Link
                     href={'/post-venta'}
@@ -17,7 +17,7 @@ const Servicios = () => {
                                 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609788/NEXOMEDIC/POST_VENTA_2023_NEW_NEW_2023_jlrlez.png'
                             }
                             layout="fill"
-                            objectFit="cover"
+                            objectFit="contain"
                             alt="imagen servicio"
                         />
                     </div>

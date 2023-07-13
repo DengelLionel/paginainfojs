@@ -6,7 +6,7 @@ import Footer from '@/components/paginainfo/Footer'
 import Whatsapp from '@/components/paginainfo/Whatsapp'
 import Head from 'next/head'
 import Anuncio from '@/components/paginainfo/Anuncio'
-import HeaderPrincipal from '@/components/Layouts/layauts_two/HeaderPrincipal'
+import HeaderPrincipal2 from '@/components/Layouts/layauts_two/HeaderPrincipal2'
 import ServicioTec from '@/components/serviciotec'
 const servicioTecnico = () => {
     return (
@@ -15,10 +15,9 @@ const servicioTecnico = () => {
                 <title>Servicio técnicos</title>
             </Head>
             <Anuncio />
-            <HeaderPrincipal />
-
+            <HeaderPrincipal2 />
+            <ServicioTec />
             <main className="bg-white">
-                <ServicioTec />
                 <Whatsapp />
                 <ConocePromocines />
                 <Marcas />

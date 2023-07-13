@@ -9,15 +9,21 @@ import IconClose from '../icons/IconClose'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
 import { useRedesSociales } from '@/hooks/useOtrosDatos'
 import IconTwiter from '../icons/IconTwiter'
+import IconMail from '../icons/IconMail'
 const Anuncio = () => {
     const { openSearch, setOpenSearch } = useContext(PaginaContextValue)
     const { facebook, youtube, instagram, twiter } = useRedesSociales()
     return (
-        <div className="hidden md:flex md:flex-row md:h-[38px] md:w-full  md:justify-between md:items-center md:bg-plomo md:text-white md:pl-[90px] md:pr-[32px] md:font-medium">
+        <div className="hidden  md:flex md:flex-row md:h-[38px] md:text-sm md:font-normal md:w-full  md:justify-between md:items-center md:bg-plomo md:text-white md:pl-[100px] md:pr-[32px] md:font-medium">
             <span className="block lg:hidden">
                 Siguenos en nuestras redes sociales
             </span>
-            <span className="hidden lg:block ">/ ventas@nexomedic.com.pe/</span>
+            <Link
+                href="mailto:ventas@nexomedic.com.pe"
+                className="hidden lg:flex lg:flex-row lg:gap-[10px] lg:items-center ">
+                <IconMail /> ventas@nexomedic.com.pe
+            </Link>
+
             <div className="md:flex md:flex-row md:items-center md:gap-[14px]">
                 <div className="hidden lg:block lg:cursor-pointer">
                     {openSearch ? (

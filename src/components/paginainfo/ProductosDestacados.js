@@ -10,7 +10,7 @@ const ProductosDestacados = () => {
 
     return (
         <div className="flex flex-col items-center mb-[100px] pt-[25px] transition-all duration-[500ms]">
-            <h2 className="text-negro font-extrabold md:text-[20px] lg:text-[24px]">
+            <h2 className="text-blueOne font-bold md:text-[20px] lg:text-[24px]">
                 Productos Destacados
             </h2>
             <div className="flex flex-wrap gap-[16px] justify-center items-center mb-[20px] mt-[20px] w-full">

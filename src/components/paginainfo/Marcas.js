@@ -56,10 +56,10 @@ const Marcas = () => {
         <div
             className={`h-[65px] lg:h-[70px] bg-white mt-[20px] flex flex-col justify-center items-center  z-0 lg:fixed lg:z-[9998] w-full shadow-marca transition-all lg:flex-row lg:justify-between lg:pl-[30px] lg:pr-[30px]`}
             style={{ bottom: `${bottomPosition}px` }}>
-            <div className="text-negro lg:pl-[50px]  mb-0 lg:mb-0">
-                <span className="font-medium text-sm lg:text-lg">
+            <div className="text-negro lg:pl-[70px] lg:w-[200px] mb-0 lg:mb-0 ">
+                <span className="font-medium text-plomo text-sm lg:text-end lg:text-lg">
                     LAS MEJORES{' '}
-                    <span className="font-semibold text-sm lg:text-xl">
+                    <span className="font-semibold text-negro lg:text-end text-sm lg:text-xl">
                         MARCAS
                     </span>{' '}
                 </span>
@@ -71,7 +71,7 @@ const Marcas = () => {
                     {datos?.map((marca, index) => {
                         return (
                             <div key={index} className="embla_slide">
-                                <div className="relative w-[300px] h-[50px] lg:h-[65px]">
+                                <div className="relative w-[300px] h-[50px] lg:h-[65px] lg:w-[200px]">
                                     <Image
                                         layout="fill"
                                         objectFit="contain"
