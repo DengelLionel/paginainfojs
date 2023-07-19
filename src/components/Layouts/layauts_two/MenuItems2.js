@@ -39,7 +39,7 @@ const MenuItems2 = ({ items, depthLevel, isHovered }) => {
     }
     return (
         <li
-            className="relative font-normal text-md text-negro "
+            className="relative font-normal text-md text-negro z-[9999] "
             ref={ref}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}>

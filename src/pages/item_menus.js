@@ -12,6 +12,7 @@ const ItemMenu = () => {
             }>
             <Head>
                 <title>Item Menú</title>
+                <meta name="robots" content="noindex,nofollow" />
             </Head>
 
             <div className="py-12">

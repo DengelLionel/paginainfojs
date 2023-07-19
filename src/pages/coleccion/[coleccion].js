@@ -47,6 +47,18 @@ const Coleccion = () => {
         <>
             <Head>
                 <title>{datos?.coleccion[0].meta_title}</title>
+                <meta
+                    name="description"
+                    content={
+                        datos?.length > 0 &&
+                        datos?.coleccion[0].meta_description
+                    }
+                />
+                <meta name="robots" content="index,follow" />
+                <link
+                    rel="canonical"
+                    href={`https://www.nexomedic.com.pe/coleccion/${coleccion}`}
+                />
             </Head>
             <Anuncio />
             <HeaderPrincipal />
@@ -56,11 +68,13 @@ const Coleccion = () => {
                 <div className="lg:flex mb-[120px] lg:flex-row lg:gap-[20px] lg:pl-[20px]">
                     <div className="hidden lg:flex lg:flex-col">
                         <h1 className="text-blueOne font-bold p-[20px]">
-                            {datos?.coleccion[0].meta_title}
+                            {datos?.coleccion[0].nombre}
                         </h1>
                         <ListaProductos />
                     </div>
-
+                    <h1 className=" block text-blueOne font-bold p-[20px] lg:hidden">
+                        {datos?.coleccion[0].nombre}
+                    </h1>
                     <Products datos={datos} />
                 </div>
                 <Whatsapp />

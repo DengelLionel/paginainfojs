@@ -12,7 +12,18 @@ const search = () => {
     return (
         <>
             <Head>
-                <title>Buscando</title>
+                <title>
+                    Buscando | Equipo medico | Laboratorio | Veterinario
+                </title>
+                <meta
+                    name="description"
+                    content="En NEXOMEDIC encontraras el equipo medico que tanto desea."
+                />
+                <meta name="robots" content="index,follow" />
+                <link
+                    rel="canonical"
+                    href={`https://www.nexomedic.com.pe/search`}
+                />
             </Head>
             <Anuncio />
             <HeaderPrincipal2 />

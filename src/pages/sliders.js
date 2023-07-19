@@ -12,6 +12,7 @@ const ItemProduct = () => {
             }>
             <Head>
                 <title>Item Sliders</title>
+                <meta name="robots" content="noindex,nofollow" />
             </Head>
 
             <div className="py-12">

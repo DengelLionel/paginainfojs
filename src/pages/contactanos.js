@@ -11,7 +11,19 @@ const contactanos = () => {
     return (
         <>
             <Head>
-                <title>Contáctanos</title>
+                <title>
+                    Contáctanos | NEXOMEDIC - Equipos y Soluciones Médicas en
+                    Perú
+                </title>
+                <meta
+                    name="description"
+                    content="¿Tienes alguna consulta o necesitas asesoría con nuestros productos o servicios? Contáctanos en NEXOMEDIC a través de nuestro formulario en línea, llámanos al ( 51 ) 01 -758 3872 o envíanos un correo electrónico. Estamos aquí para ayudarte con todas tus necesidades de equipos médicos."
+                />
+                <meta name="robots" content="index,follow" />
+                <link
+                    rel="canonical"
+                    href={`https://www.nexomedic.com.pe/contactanos`}
+                />
             </Head>
             <Anuncio />
             <HeaderPrincipal2 />

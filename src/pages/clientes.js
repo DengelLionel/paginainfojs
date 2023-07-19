@@ -11,7 +11,19 @@ const clientes = () => {
     return (
         <>
             <Head>
-                <title>Clientes</title>
+                <title>
+                    Clientes | Trabajamos con Marcas Certificadas de Alta
+                    Calidad - NEXOMEDIC Perú
+                </title>
+                <meta
+                    name="description"
+                    content="En NEXOMEDIC, trabajamos con las mejores marcas del mercado para ofrecer a nuestros clientes productos de alta calidad con certificación ISO, FDA, CE, a los mejores precios. Descubre cómo nuestras soluciones de alta calidad pueden beneficiar a tu práctica médica"
+                />
+                <meta name="robots" content="index,follow" />
+                <link
+                    rel="canonical"
+                    href={`https://www.nexomedic.com.pe/clientes`}
+                />
             </Head>
             <Anuncio />
             <HeaderPrincipal2 />

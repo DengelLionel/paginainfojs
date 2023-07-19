@@ -20,7 +20,15 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Equipos medicos</title>
+                <title>
+                    NEXOMEDIC: Equipos Médicos Avanzados en Perú | Inicio
+                </title>
+                <meta
+                    name="description"
+                    content="Bienvenido a NEXOMEDIC, tu socio estratégico en soluciones médicas y equipamiento de alta tecnología en Perú. Descubre cómo podemos potenciar tu práctica profesional con nuestro excelente servicio de postventa y soporte técnico personalizado."
+                />
+                <meta name="robots" content="index,follow" />
+                <link rel="canonical" href={`https://www.nexomedic.com.pe/`} />
             </Head>
             <Anuncio />
             <HeaderPrincipal />

@@ -12,7 +12,19 @@ const servicioTecnico = () => {
     return (
         <>
             <Head>
-                <title>Servicio técnicos</title>
+                <title>
+                    Servicio Técnico | Mantenimiento y Reparación de Equipos
+                    Médicos - NEXOMEDIC Perú
+                </title>
+                <meta
+                    name="description"
+                    content="Obtén asistencia de calidad con nuestro Servicio Técnico en NEXOMEDIC. Ofrecemos diagnóstico, mantenimiento preventivo y correctivo por profesionales altamente capacitados. Garantizamos el buen funcionamiento de tus equipos médicos con repuestos originales y cumpliendo los parámetros de calidad. Contáctanos hoy."
+                />
+                <meta name="robots" content="index,follow" />
+                <link
+                    rel="canonical"
+                    href={`https://www.nexomedic.com.pe/servicio-tecnico`}
+                />
             </Head>
             <Anuncio />
             <HeaderPrincipal2 />

@@ -12,6 +12,7 @@ const Clientes_marca = () => {
             }>
             <Head>
                 <title>Clientes</title>
+                <meta name="robots" content="noindex,nofollow" />
             </Head>
 
             <div className="py-12">

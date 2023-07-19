@@ -12,6 +12,7 @@ const Dashboard = () => {
             }>
             <Head>
                 <title>Dashboard Nexomedic</title>
+                <meta name="robots" content="noindex,nofollow" />
             </Head>
 
             <div className="py-12">

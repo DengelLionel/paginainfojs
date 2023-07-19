@@ -13,6 +13,7 @@ const ItemProduct = () => {
             }>
             <Head>
                 <title>Item Product</title>
+                <meta name="robots" content="noindex,nofollow" />
             </Head>
 
             <div className="py-12">

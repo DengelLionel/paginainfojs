@@ -7,9 +7,9 @@ const Dropdawn = ({ submenus, dropdawn, depthLevel }) => {
         <div
             className={`${
                 dropdawn ? 'block' : 'hidden'
-            } absolute right-0 list-none shadow-md rounded-md p-2 ${
+            } absolute right-0 list-none shadow-md  rounded-md z-[9999] p-2  ${
                 depthLevel > 1
-                    ? 'absolute left-full -mt-[50px] w-[150px] text-blueOne'
+                    ? 'absolute left-full -mt-[50px] w-[150px]  z-[9999] md:w-[190px] text-blueOne'
                     : ''
             }`}>
             {submenus?.map((submenu, index) => {

@@ -11,7 +11,19 @@ const empresa = () => {
     return (
         <>
             <Head>
-                <title>Empresa</title>
+                <title>
+                    NEXOMEDIC: Soluciones Tecnológicas y Equipos Médicos de
+                    Calidad | Perú
+                </title>
+                <meta
+                    name="description"
+                    content="En NEXOMEDIC, somos más que una empresa de equipamiento médico. Proveemos soluciones tecnológicas avanzadas y un servicio de postventa de calidad en Perú. Nuestro compromiso es agregar valor a tu práctica profesional con productos de alta tecnología, capacitación y soporte técnico personalizado."
+                />
+                <meta name="robots" content="index,follow" />
+                <link
+                    rel="canonical"
+                    href={`https://www.nexomedic.com.pe/empresa`}
+                />
             </Head>
             <Anuncio />
             <HeaderPrincipal />

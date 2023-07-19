@@ -11,7 +11,19 @@ const productos = () => {
     return (
         <>
             <Head>
-                <title>Productos</title>
+                <title>
+                    Productos | Equipos Médicos de Alta Tecnología - NEXOMEDIC
+                    Perú
+                </title>
+                <meta
+                    name="description"
+                    content="Explora nuestra amplia gama de productos en NEXOMEDIC. Ofrecemos equipos médicos de alta tecnología y soluciones avanzadas para profesionales de la salud en Perú. Descubre cómo nuestros productos pueden mejorar tu práctica médica."
+                />
+                <meta name="robots" content="index,follow" />
+                <link
+                    rel="canonical"
+                    href={`https://www.nexomedic.com.pe/productos`}
+                />
             </Head>
             <Anuncio />
             <HeaderPrincipal2 />

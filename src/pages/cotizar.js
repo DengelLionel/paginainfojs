@@ -10,7 +10,21 @@ import Whatsapp from '@/components/paginainfo/Whatsapp'
 const cotizar = () => {
     return (
         <>
-            <Head>Cotizar</Head>
+            <Head>
+                <title>
+                    Cotizar | Solicita una Cotización de Nuestros Productos -
+                    NEXOMEDIC Perú
+                </title>
+                <meta
+                    name="description"
+                    content="Solicita una cotización rápida y fácilmente con NEXOMEDIC. Completa nuestro formulario y un ejecutivo comercial se comunicará contigo para brindarte la asistencia necesaria. Descubre cómo nuestros productos de alta tecnología pueden beneficiar a tu práctica médica."
+                />
+                <meta name="robots" content="index,follow" />
+                <link
+                    rel="canonical"
+                    href={`https://www.nexomedic.com.pe/cotizar`}
+                />
+            </Head>
             <Anuncio />
             <HeaderPrincipal2 />
 
