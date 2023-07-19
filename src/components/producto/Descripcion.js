@@ -14,7 +14,7 @@ const Descripcion = ({ datos }) => {
             <Link
                 href={datos?.[0]?.ficha_tecnica}
                 download={true}
-                class="border border-blueOne bg-blueOne text-white rounded-full px-4 py-2 m-2 transition text-center duration-500 ease select-none hover:bg-blue-600 focus:outline-none focus:shadow-outline w-[170px]">
+                class="text-sm border border-blueOne bg-blueOne text-white rounded-full px-4 py-2 m-2 transition text-center duration-500 ease select-none hover:bg-blue-600 focus:outline-none focus:shadow-outline w-[170px]">
                 Ficha Técnica
             </Link>
         </div>

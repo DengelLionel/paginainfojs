@@ -2,6 +2,8 @@ import React from 'react'
 import CuadroProductos from './CuadroProductos'
 import useSWR from 'swr'
 import axios from '@/lib/axios'
+import ProductoDestacadoMobil from './ProductoDestacadoMobil'
+
 const ProductosDestacados = () => {
     const data = useSWR('/api/producto_destacado', () =>
         axios.get('/api/producto_destacado').then(res => res.data),
@@ -13,7 +15,7 @@ const ProductosDestacados = () => {
             <h2 className="text-blueOne font-bold md:text-[20px] lg:text-[24px]">
                 Productos Destacados
             </h2>
-            <div className="flex flex-wrap gap-[16px] justify-center items-center mb-[20px] mt-[20px] w-full">
+            <div className=" hidden lg:flex lg:flex-wrap lg:gap-[16px] lg:justify-center lg:items-center lg:mb-[20px] lg:mt-[20px] lg:w-full">
                 {dato?.map((destacados, index) => (
                     <CuadroProductos
                         key={index}
@@ -23,6 +25,7 @@ const ProductosDestacados = () => {
                     />
                 ))}
             </div>
+            <ProductoDestacadoMobil datos={dato} />
         </div>
     )
 }

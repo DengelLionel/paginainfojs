@@ -31,7 +31,7 @@ export default function Home() {
                     defaultControlsConfig={{
                         prevButtonText: <IconPrev />,
                         nextButtonText: <IconNext />,
-                        containerClassName: 'bg-blancoTransparente',
+
                         prevButtonClassName: 'rounded-full',
                         nextButtonClassName: 'rounded-full',
                     }}

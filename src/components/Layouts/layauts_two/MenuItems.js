@@ -50,7 +50,9 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
                             isHovered
                                 ? 'text-plomo text-md hover:text-blueOne'
                                 : 'text-white text-md'
-                        } ${
+                        }
+                   
+                        ${
                             depthLevel > 0 &&
                             ' hover:text-blancoOne text-blueOne hover:bg-blueOne'
                         }  transition-all duration-[800ms] font-notosans text-sm font-medium flex flex-row items-center justify-between text-left px-[10px] py-[15px] w-full `}

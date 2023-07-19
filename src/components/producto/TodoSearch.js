@@ -58,6 +58,8 @@ const TodoSearch = () => {
                     search?.map((producto, index) => (
                         <CuadroProductosTwo
                             key={index}
+                            nuevo={producto.new}
+                            oferta={producto.oferta}
                             titulo={producto.nombre}
                             link={`/producto/${producto.meta_title_link}`}
                             imagen={producto.product_imagen[0].imagen}

@@ -10,7 +10,7 @@ module.exports = {
             },
             colors:{
                 "blackTransparente":"rgba(0,0,0,.5)",
-                "blancoTransparente":"rgba(255.255.255)",
+                "blancoTransparente":"rgba(255,255,255,.7)",
                 "plomo":"#595858",
                 "plomoTwo":"#9998B3",
                 "blueOne":"#2F6AAD",
@@ -20,7 +20,9 @@ module.exports = {
                 "blueTwo":"#E0E9EF",
                 "blueTres":"#6893AE",
                 "verde":"#3ddf59",
-                "verde_hover":"#00e576"
+                "verde_hover":"#00e576",
+               
+                
                      },
             fontFamily:{
                 notosans:'var(--font-notosans)'
@@ -29,7 +31,10 @@ module.exports = {
                 'marca': '35px 0 60px -15px rgba(0, 0, 0, 0.5)',
                 'nav': '35px 0 60px -15px rgba(0, 0, 0, 0.5)',
                 'areas':'0 0 7px 0 rgba(0, 125, 255, 0.8)'
-              }
+              },
+            backgroundImage:{
+                'contactanos':"url('https://res.cloudinary.com/dxvqyh8ib/image/upload/v1689648196/contactenos_zmpcnq.jpg')"
+            }
         },
     },
     variants: {

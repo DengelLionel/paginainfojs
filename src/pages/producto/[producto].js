@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import HeaderPrincipal from '@/components/Layouts/layauts_two/HeaderPrincipal'
+import HeaderPrincipal2 from '@/components/Layouts/layauts_two/HeaderPrincipal2'
 import Anuncio from '@/components/paginainfo/Anuncio'
 import ConocePromocines from '@/components/paginainfo/ConocePromocines'
 import Marcas from '@/components/paginainfo/Marcas'
@@ -41,7 +41,7 @@ const Producto = () => {
                 </title>
             </Head>
             <Anuncio />
-            <HeaderPrincipal />
+            <HeaderPrincipal2 />
             <PaginaProducto datosProducto={datos} />
 
             <main className="bg-white">

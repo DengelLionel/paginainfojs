@@ -45,7 +45,7 @@ const NavBar = () => {
         setScrollPosition(position)
         setBgColor(
             position > 50
-                ? 'lg:bg-plomo'
+                ? 'lg:bg-blueOne'
                 : isHovered
                 ? 'lg:bg-white'
                 : 'lg:bg-transparent',
@@ -71,7 +71,7 @@ const NavBar = () => {
 
     const handleMouseLeave = () => {
         setIsHovered(false)
-        setBgColor(scrollPosition > 50 ? 'lg:bg-plomo' : 'lg:bg-transparent')
+        setBgColor(scrollPosition > 50 ? 'lg:bg-blueOne' : 'lg:bg-transparent')
     }
 
     return (

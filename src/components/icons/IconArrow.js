@@ -1,8 +1,9 @@
 import React from 'react'
 
-const IconArrow = ({ fill }) => {
+const IconArrow = ({ fill, clase }) => {
     return (
         <svg
+            className={clase}
             xmlns="http://www.w3.org/2000/svg"
             width={16}
             height={19}

@@ -52,7 +52,7 @@ const NavBarMobil = () => {
         }
     }, [])
 
-    const navBackground = scrollPosition > 50 ? 'bg-plomo' : 'bg-transparent'
+    const navBackground = scrollPosition > 50 ? 'bg-white' : 'bg-transparent'
 
     return (
         <nav
@@ -64,7 +64,7 @@ const NavBarMobil = () => {
                             layout="fill"
                             objectFit="contain"
                             src={`${
-                                navBackground === 'lg:bg-white'
+                                navBackground === 'bg-white'
                                     ? 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/LOGO_DE_COLOR_unovda.png'
                                     : 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/TRANSPARANTE_tzfj6x.png'
                             }`}
@@ -75,14 +75,42 @@ const NavBarMobil = () => {
 
                 <div className="mr-[16px] flex flex-row gap-[22px] lg:hidden">
                     {openSearch ? (
-                        <IconClose open={() => setOpenSearch(!openSearch)} />
+                        <IconClose
+                            color={`${
+                                navBackground === 'bg-white'
+                                    ? '#595858'
+                                    : '#fafafa'
+                            }`}
+                            open={() => setOpenSearch(!openSearch)}
+                        />
                     ) : (
-                        <IconBuscador open={() => setOpenSearch(!openSearch)} />
+                        <IconBuscador
+                            fill={`${
+                                navBackground === 'bg-white'
+                                    ? '#595858'
+                                    : '#fafafa'
+                            }`}
+                            open={() => setOpenSearch(!openSearch)}
+                        />
                     )}
                     {isOopen ? (
-                        <IconClose open={() => setIsOopen(!isOopen)} />
+                        <IconClose
+                            color={`${
+                                navBackground === 'bg-white'
+                                    ? '#595858'
+                                    : '#fafafa'
+                            }`}
+                            open={() => setIsOopen(!isOopen)}
+                        />
                     ) : (
-                        <IconMenuOne open={() => setIsOopen(!isOopen)} />
+                        <IconMenuOne
+                            color={`${
+                                navBackground === 'bg-white'
+                                    ? '#595858'
+                                    : '#fafafa'
+                            }`}
+                            open={() => setIsOopen(!isOopen)}
+                        />
                     )}
                 </div>
             </div>
@@ -90,7 +118,7 @@ const NavBarMobil = () => {
             <div
                 className={`${
                     isOopen
-                        ? 'block bg-blueTwo w-full h-[500px] overflow-y-auto'
+                        ? 'block bg-blueOne w-full h-[500px] overflow-y-auto'
                         : 'hidden'
                 } lg:block`}>
                 <ul className=" list-none pr-[16px] pt-[20px] pb-[20px] pl-[16px] ">

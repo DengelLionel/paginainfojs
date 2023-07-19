@@ -53,8 +53,14 @@ const Coleccion = () => {
 
             <main className="bg-white">
                 <ColeccionDesign datos={datos} />
-                <div className="lg:flex mb-[120px] lg:flex-row lg:gap-[20px]">
-                    <ListaProductos />
+                <div className="lg:flex mb-[120px] lg:flex-row lg:gap-[20px] lg:pl-[20px]">
+                    <div className="hidden lg:flex lg:flex-col">
+                        <h1 className="text-blueOne font-bold p-[20px]">
+                            {datos?.coleccion[0].meta_title}
+                        </h1>
+                        <ListaProductos />
+                    </div>
+
                     <Products datos={datos} />
                 </div>
                 <Whatsapp />

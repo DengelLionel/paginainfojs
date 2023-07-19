@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/legacy/image'
 import Link from 'next/link'
+import IconArrow from '../icons/IconArrow'
 const Servicios = () => {
     return (
         <div className="flex flex-col items-center pt-[25px]">
@@ -30,6 +31,9 @@ const Servicios = () => {
                             ello que la venta no finaliza con la entrega del
                             producto”
                         </p>
+                        <button className="mt-[10px] flex flex-row items-center gap-[10px] rounded-full w-auto text-blueOne font-semibold text-sm p-[10px] text-center bg-blueTwo border-blueOne border-2">
+                            Mas información <IconArrow fill={`#2F6AAD`} />
+                        </button>
                     </div>
                 </Link>
 
@@ -45,6 +49,9 @@ const Servicios = () => {
                             capacitados y preparados para poder brindar
                             asistencia de calidad.
                         </p>
+                        <button className="mt-[10px] flex flex-row items-center gap-[10px] rounded-full w-auto text-blueOne font-semibold text-sm p-[10px] text-center bg-blueTwo border-blueOne border-2">
+                            Mas información <IconArrow fill={`#2F6AAD`} />
+                        </button>
                     </div>
                     <div className="relative w-[106px] h-[106px] lg:w-[200px] lg:h-[200px] xl:w-[300px] xl:h-[300px]">
                         <Image

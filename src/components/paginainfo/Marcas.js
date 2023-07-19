@@ -65,7 +65,7 @@ const Marcas = () => {
                 </span>
             </div>
             <div
-                className=" overflow-hidden w-[360px] lg:w-[900px]"
+                className=" overflow-hidden w-[360px] lg:w-[1000px]"
                 ref={emblaRef}>
                 <div className="flex flex-row gap-[10px] touch-pan-y ml-[calc(1rem * -1)] ">
                     {datos?.map((marca, index) => {

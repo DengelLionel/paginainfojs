@@ -1,5 +1,5 @@
 import React from 'react'
-const IconSub = ({ clase, status, ...props }) => {
+const IconSub = ({ clase, ...props }) => {
     return (
         <svg
             className={clase}
@@ -9,7 +9,7 @@ const IconSub = ({ clase, status, ...props }) => {
             fill="none"
             {...props}>
             <path
-                fill={status ? '#EEEFF3' : '#2F6AAD'}
+                fill={'#fafafa'}
                 d="M0 8.825 3.09 5 0 1.175.951 0 5 5 .951 10 0 8.825Z"
             />
         </svg>

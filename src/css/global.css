@@ -13,7 +13,7 @@ main{
 }
 .embla_slide{
     flex:0 50 100%;
-    min-width: 300px;
+    min-width: 100px;
     padding-left: 1rem;
    
 }

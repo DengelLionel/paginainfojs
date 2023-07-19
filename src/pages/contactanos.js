@@ -15,8 +15,9 @@ const contactanos = () => {
             </Head>
             <Anuncio />
             <HeaderPrincipal2 />
-            <Contactanos />
-            <main className="bg-white ">
+
+            <main>
+                <Contactanos />
                 <Whatsapp />
                 <ConocePromocines />
                 <Marcas />
