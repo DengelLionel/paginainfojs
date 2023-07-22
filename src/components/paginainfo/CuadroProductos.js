@@ -5,16 +5,20 @@ import Image from 'next/legacy/image'
 const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
     return (
         <div className="relative w-[322px] h-[354px] lg:w-[279px] lg:h-[330px] border-[2px] border-gray-400 border-opacity-25 shadow-lg lg:shadow-2xl rounded-md bg-blancoTwo flex flex-col justify-center items-center p-[10px] group">
-            {nuevo === 1 && (
+            {nuevo === 1 ? (
                 <div className="absolute cursor-pointer z-[700] text-white flex items-center justify-center font-bold text-[10px] top-0 left-0 bg-red-500 rounded-full w-[50px] h-[50px]">
                     NUEVO!
                 </div>
+            ) : (
+                'no existe'
             )}
 
-            {oferta === 1 && (
+            {oferta === 1 ? (
                 <div className="absolute cursor-pointer z-[700] text-white flex items-center justify-center font-bold text-[10px] top-0 right-0 bg-green-500 rounded-md w-[70px] h-[40px]">
                     OFERTA!
                 </div>
+            ) : (
+                'no existe'
             )}
             <Link
                 className="absolute  top-0 flex flex-col items-center justify-center"
@@ -29,7 +33,7 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
                 </div>
                 <div className="border-t-[1px] border-blueOne w-full pb-[10px] pt-[10px] ">
                     <h2 className="text-blueOne text-center text-sm font-semibold mb-[14px] lg:text-md">
-                        {titulo} {nuevo} {oferta}
+                        {titulo} {nuevo !== 1 && 'error'} {oferta}
                     </h2>
                 </div>
             </Link>
