@@ -10,7 +10,9 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
                     NUEVO!
                 </div>
             ) : (
-                'no existe'
+                <div className="absolute cursor-pointer z-[700] text-white flex items-center justify-center font-bold text-[10px] top-0 right-0 bg-green-500 rounded-md w-[70px] h-[40px]">
+                    NO EXISTE
+                </div>
             )}
 
             {oferta === 1 ? (
@@ -18,7 +20,9 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
                     OFERTA!
                 </div>
             ) : (
-                'no existe'
+                <div className="absolute cursor-pointer z-[700] text-white flex items-center justify-center font-bold text-[10px] top-0 right-0 bg-green-500 rounded-md w-[70px] h-[40px]">
+                    NO EXISTE
+                </div>
             )}
             <Link
                 className="absolute  top-0 flex flex-col items-center justify-center"
