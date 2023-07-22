@@ -1,15 +1,15 @@
 import 'tailwindcss/tailwind.css'
 import Contextpaginaifno from '@/context/contextpaginaifno'
-import { Work_Sans } from '@next/font/google'
+/* import { Work_Sans } from '@next/font/google' */
 import '@/css/global.css'
-const noto_sans = Work_Sans({
+/* const noto_sans = Work_Sans({
     style: ['normal'],
     weight: ['300', '400', '700'],
     variable: '--font-notosans',
     subsets: ['latin'],
-})
+}) */
 const App = ({ Component, pageProps }) => (
-    <main className={`${noto_sans}`}>
+    <main>
         <Contextpaginaifno>
             <Component {...pageProps} />
         </Contextpaginaifno>
