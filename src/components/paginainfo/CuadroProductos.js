@@ -10,7 +10,7 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
                     NUEVO!
                 </div>
             )}
-            {nuevo} {oferta}
+            
             {oferta === 1 && (
                 <div className="absolute cursor-pointer z-[700] text-white flex items-center justify-center font-bold text-[10px] top-0 right-0 bg-green-500 rounded-md w-[70px] h-[40px]">
                     OFERTA!
@@ -29,7 +29,7 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
                 </div>
                 <div className="border-t-[1px] border-blueOne w-full pb-[10px] pt-[10px] ">
                     <h2 className="text-blueOne text-center text-sm font-semibold mb-[14px] lg:text-md">
-                        {titulo}
+                        {titulo} {nuevo} {oferta}
                     </h2>
                 </div>
             </Link>
