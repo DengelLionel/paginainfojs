@@ -10,7 +10,7 @@ module.exports = {
             },
             colors:{
                 "blackTransparente":"rgba(0,0,0,.5)",
-                "blancoTransparente":"rgba(255,255,255,.7)",
+                "blancoTransparente":"rgba(255,255,255,.9)",
                 "plomo":"#595858",
                 "plomoTwo":"#9998B3",
                 "blueOne":"#2F6AAD",
