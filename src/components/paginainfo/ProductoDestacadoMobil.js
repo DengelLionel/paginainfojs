@@ -23,6 +23,8 @@ const ProductoDestacadoMobil = ({ datos }) => {
                     {datos?.map((destacados, index) => (
                         <CuadroProductos
                             key={index}
+                            nuevo={destacados.new}
+                            oferta={destacados.oferta}
                             imagen={destacados.product_imagen[0].imagen}
                             titulo={destacados.nombre}
                             link={`/producto/${destacados.meta_title_link}`}
