@@ -26,7 +26,7 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
                         alt={titulo}
                     />
                 </div>
-                <div className="border-t-[1px] border-blueOne w-full  pt-[10px] ">
+                <div className="border-t-[1px] border-blueOne w-full pb-[10px] pt-[10px] ">
                     <h2 className="text-blueOne text-center text-sm font-semibold mb-[14px] lg:text-md">
                         {titulo}
                     </h2>

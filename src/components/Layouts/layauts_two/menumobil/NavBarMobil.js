@@ -59,7 +59,7 @@ const NavBarMobil = () => {
             className={`h-[70px] shadow-md md:h-[70px] pt-[16px] pb-[16px] transition-all duration-[700ms] border-b-[1px] border-white border-opacity-25 fixed z-[9999] w-full lg:hidden ${navBackground}`}>
             <div className="flex justify-between items-center mb-[10px]">
                 <div className="relative w-[190px] h-[42px] ml-[16px]">
-                    <Link href={'/'}>
+                    <Link onClick={() => setIsOopen(false)} href={'/'}>
                         <Image
                             layout="fill"
                             objectFit="contain"
