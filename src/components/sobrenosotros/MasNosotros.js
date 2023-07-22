@@ -11,7 +11,7 @@ const MasNosotros = () => {
                 “Somos una empresa Peruana dedicada a brindar soporte y
                 soluciones tecnológicas en el ámbito Médico”
             </p>
-            <p className="mb-4 text-sm sm:text-base md:text-md  text-plomo">
+            {/*  <p className="mb-4 text-sm sm:text-base md:text-md  text-plomo">
                 <span className="text-negro font-medium"> En NEXOMEDIC</span>{' '}
                 nos especializamos en la importación y comercialización de
                 Equipos y servicios para el sector de Salud. Nuestro compromiso
@@ -21,7 +21,7 @@ const MasNosotros = () => {
                 médicos. Nosotros Comercializamos mucho más que equipos. Sumamos
                 actualidad, tecnología, capacitación, servicio Técnico,
                 Postventa. Le sumamos éxito profesional.
-            </p>
+            </p> */}
             <div className="text-center text-xl sm:text-md md:text-lg font-bold my-4">
                 <h2 className="text-blueOne">VALORES</h2>
             </div>

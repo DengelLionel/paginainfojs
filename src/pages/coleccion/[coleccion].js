@@ -5,8 +5,8 @@ import Footer from '@/components/paginainfo/Footer'
 import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Anuncio from '@/components/paginainfo/Anuncio'
-import HeaderPrincipal from '@/components/Layouts/layauts_two/HeaderPrincipal'
-import ColeccionDesign from '@/components/coleccion_design'
+import HeaderPrincipal2 from '@/components/Layouts/layauts_two/HeaderPrincipal2'
+
 import useSWR from 'swr'
 import axios from '@/lib/axios'
 import ListaProductos from '@/components/producto/ListaProductos'
@@ -61,10 +61,9 @@ const Coleccion = () => {
                 />
             </Head>
             <Anuncio />
-            <HeaderPrincipal />
+            <HeaderPrincipal2 />
 
             <main className="bg-white">
-                <ColeccionDesign datos={datos} />
                 <div className="lg:flex mb-[120px] lg:flex-row lg:gap-[20px] lg:pl-[20px]">
                     <div className="hidden lg:flex lg:flex-col">
                         <h1 className="text-blueOne font-bold p-[20px]">

@@ -9,7 +9,7 @@ const InformacionContacto = () => {
                     <li>
                         {' '}
                         <span className="font-medium text-lg">Telf:</span>
-                        <ul className="font-normal text-sm">
+                        <ul className="font-normal font-bold text-sm">
                             <li>( 51 ) 01 -758 3872</li>
                             <li>Cel: 999 780 748</li>
                         </ul>
