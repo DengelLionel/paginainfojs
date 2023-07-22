@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/legacy/image'
 import { useEffect } from 'react'
 const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
-    useEffect(()=>{},[nuevo,oferta])
+    useEffect(() => {}, [nuevo, oferta])
     return (
         <div className="relative w-[322px] h-[354px] lg:w-[279px] lg:h-[330px] border-[2px] border-gray-400 border-opacity-25 shadow-lg lg:shadow-2xl rounded-md bg-blancoTwo flex flex-col justify-center items-center p-[10px] group">
             {nuevo === 1 ? (
