@@ -45,14 +45,13 @@ const NavBar = () => {
         setScrollPosition(position)
         setBgColor(
             position > 50
-                ? 'lg:bg-blueOne'
+                ? 'lg:bg-white' // Cambia a color blanco cuando se hace scroll
                 : isHovered
                 ? 'lg:bg-white'
                 : 'lg:bg-transparent',
         )
         setTopPosition(position > 50 ? 'top-0' : 'top-[40px]')
     }
-
     useEffect(() => {
         if (typeof window !== 'undefined') {
             window.addEventListener('scroll', updateScrollPosition)
@@ -71,7 +70,7 @@ const NavBar = () => {
 
     const handleMouseLeave = () => {
         setIsHovered(false)
-        setBgColor(scrollPosition > 50 ? 'lg:bg-blueOne' : 'lg:bg-transparent')
+        setBgColor(scrollPosition > 50 ? 'lg:bg-white' : 'lg:bg-transparent')
     }
 
     return (
@@ -107,6 +106,7 @@ const NavBar = () => {
                         const depthLevel = 0
                         return (
                             <MenuItems
+                                scrollPosition={scrollPosition}
                                 items={menu}
                                 key={index}
                                 depthLevel={depthLevel}
@@ -145,13 +145,17 @@ const NavBar = () => {
                 )}
             </div>
             <Link
-                href={'tel:+517583872'}
+                href={'tel:017583872'}
                 className={`${
-                    isHovered
+                    isHovered || scrollPosition > 50
                         ? 'lg:text-plomo hover:text-blueOne'
                         : 'lg:text-white'
                 }  hidden xl:flex xl:flex-row xl:items-center font-notosans text-sm font-medium lg:gap-[8px] lg:transiton-all lg:duration-[800ms]`}>
-                <IconTelefono fill={`${isHovered ? '#595858' : '#EEEFF3'}`} />
+                <IconTelefono
+                    fill={`${
+                        isHovered || scrollPosition > 50 ? '#595858' : '#EEEFF3'
+                    }`}
+                />
                 (511) 758-3872
             </Link>
         </nav>

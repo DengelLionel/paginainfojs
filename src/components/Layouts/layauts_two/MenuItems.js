@@ -3,7 +3,7 @@ import Dropdawn from './Dropdawn'
 import Link from 'next/link'
 import IconSub from '@/components/icons/IconSub'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
-const MenuItems = ({ items, depthLevel, isHovered }) => {
+const MenuItems = ({ items, depthLevel, isHovered, scrollPosition }) => {
     const [dropdawn, setDropdawn] = useState(false)
     let ref = useRef()
     const { setOpenSearch } = useContext(PaginaContextValue)
@@ -24,7 +24,7 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
             document.removeEventListener('mousedown', handler)
             document.removeEventListener('touchstart', handler)
         }
-    }, [dropdawn])
+    }, [dropdawn, scrollPosition])
 
     const onMouseEnter = () => {
         if (window.innerWidth > 960) {
@@ -39,7 +39,7 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
     }
     return (
         <li
-            className="relative font-normal text-md text-white "
+            className={`relative font-normal text-md`}
             ref={ref}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}>
@@ -47,7 +47,7 @@ const MenuItems = ({ items, depthLevel, isHovered }) => {
                 <>
                     <Link
                         className={`${
-                            isHovered
+                            isHovered || scrollPosition > 50
                                 ? 'text-plomo text-md hover:text-blueOne'
                                 : 'text-white text-md'
                         }
