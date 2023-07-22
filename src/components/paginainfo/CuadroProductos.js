@@ -10,7 +10,7 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
                     NUEVO!
                 </div>
             )}
-            
+
             {oferta === 1 && (
                 <div className="absolute cursor-pointer z-[700] text-white flex items-center justify-center font-bold text-[10px] top-0 right-0 bg-green-500 rounded-md w-[70px] h-[40px]">
                     OFERTA!
