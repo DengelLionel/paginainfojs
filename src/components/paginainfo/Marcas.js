@@ -75,6 +75,7 @@ const Marcas = () => {
                                     <Image
                                         layout="fill"
                                         objectFit="contain"
+                                        priority={true}
                                         src={marca.imagen}
                                         alt="clientes de nexomedic"
                                     />
