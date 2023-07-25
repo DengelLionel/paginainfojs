@@ -60,7 +60,7 @@ const MenuItems = ({ items, depthLevel, isHovered, scrollPosition }) => {
                         href={`${
                             items.coleccion.length > 0
                                 ? '/coleccion' + items.enlace
-                                : items.enlace === '/accesorios'
+                                : items.enlace === '/servicios'
                                 ? '#'
                                 : items.enlace
                         }`}
@@ -95,7 +95,7 @@ const MenuItems = ({ items, depthLevel, isHovered, scrollPosition }) => {
                     }   block text-left text-md px-2 py-1 w-full`}
                     href={`${
                         items.coleccion.length > 0
-                            ? '/servicios' + items.enlace
+                            ? '/coleccion' + items.enlace
                             : items.enlace
                     }`}>
                     {items.nombre}
