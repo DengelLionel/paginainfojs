@@ -95,7 +95,7 @@ const MenuItems = ({ items, depthLevel, isHovered, scrollPosition }) => {
                     }   block text-left text-md px-2 py-1 w-full`}
                     href={`${
                         items.coleccion.length > 0
-                            ? '/coleccion' + items.enlace
+                            ? '/servicios' + items.enlace
                             : items.enlace
                     }`}>
                     {items.nombre}

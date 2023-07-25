@@ -7,6 +7,7 @@ const BannerGeneral = ({ imagen, titulo }) => {
                 className="brightness-50"
                 quality={100}
                 objectFit="cover"
+                priority={true}
                 layout="fill"
                 src={imagen}
                 alt={titulo}
