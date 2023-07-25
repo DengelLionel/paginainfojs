@@ -52,7 +52,7 @@ const MenuItems2 = ({ items, depthLevel, isHovered }) => {
                         href={`${
                             items.coleccion.length > 0
                                 ? '/coleccion' + items.enlace
-                                : items.enlace === '/accesorios'
+                                : items.enlace === '/servicios'
                                 ? '#'
                                 : items.enlace
                         }`}
