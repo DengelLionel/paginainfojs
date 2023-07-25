@@ -16,8 +16,6 @@ const EditarItem = () => {
     const [nombre, setNombre] = useState('')
     const [descripcion, setDescripcion] = useState('')
     const [precio, setPrecio] = useState(0.0)
-    const [imagen_mobil, setImagen_mobil] = useState('')
-    const [imagen_desktop, setImagen_desktop] = useState('')
     const [marca, setMarca] = useState('')
     const [modelo, setModelo] = useState('')
     const [procedencia, setProcedencia] = useState('')
@@ -28,8 +26,11 @@ const EditarItem = () => {
     const [meta_description, setMeta_description] = useState('')
     const [meta_title_link, setMeta_title_link] = useState('')
     const csrf = () => axios.get('/sanctum/csrf-cookie')
-    const { isOpen, setIsOpen, idProductItem } = useContext(PaginaContextValue)
+    const { isOpen, setIsOpen, idProductItem, productoEditando } = useContext(
+        PaginaContextValue,
+    )
     const [errorserv, setErrorserv] = useState(null)
+
     const data = useSWR('/api/coleccion', () =>
         axios.get('/api/coleccion').then(res => res.data),
     )
@@ -39,6 +40,25 @@ const EditarItem = () => {
             setIsOpen(!isOpen)
         }
     }
+
+    useEffect(() => {
+        if (productoEditando) {
+            setColeccion(productoEditando[0][0].coleccionnombre || '')
+            setNombre(productoEditando[0][0].nombre || '')
+            setDescripcion(productoEditando[0][0].descripcion || '')
+            setPrecio(productoEditando[0][0].precio || 0.0)
+            setMarca(productoEditando[0][0].marca || '')
+            setModelo(productoEditando[0][0].modelo || '')
+            setProcedencia(productoEditando[0][0].procedencia || '')
+            setFicha_tecnica(productoEditando[0][0].ficha_tecnica || '')
+            setNuevo(productoEditando[0][0].new || 'true')
+            setOferta(productoEditando[0][0].oferta || 'true')
+            setMeta_title(productoEditando[0][0].meta_title || '')
+            setMeta_description(productoEditando[0][0].meta_description || '')
+            setMeta_title_link(productoEditando[0][0].meta_title_link || '')
+        }
+    }, [productoEditando])
+
     const modules = {
         toolbar: [
             ['bold', 'italic', 'underline', 'strike'],
@@ -70,8 +90,8 @@ const EditarItem = () => {
                 nombre: nombre,
                 descripcion: descripcion,
                 precio: parseFloat(precio),
-                imagen_desktop: imagen_desktop,
-                imagen_mobil: imagen_mobil,
+                imagen_desktop: 'imagen1',
+                imagen_mobil: 'imagen2',
                 marca: marca,
                 modelo: modelo,
                 procedencia: procedencia,
@@ -98,7 +118,7 @@ const EditarItem = () => {
                 ref={modalRef}
                 onClick={togglePopup}
                 className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-blackTransparente">
-                <div className="bg-white relative z-[60] rounded shadow-lg p-8 m-4 w-full max-h-full text-center md:w-[450px] lg:w-[800px] overflow-auto">
+                <div className="bg-white relative z-[60] rounded shadow-lg p-8 m-4 w-full max-h-full text-center md:w-[450px] lg:w-[1000px] overflow-auto">
                     <div>
                         <div className="flex flex-col h-auto">
                             <div className=" relative flex flex-col rounded-[20px] w-full  bg-white bg-clip-border shadow-3xl shadow-shadow-500 flex flex-col  !p-6 3xl:p-![18px] bg-white undefined">
@@ -111,7 +131,7 @@ const EditarItem = () => {
                                     <label
                                         htmlFor="link"
                                         className="text-sm text-gray-500 font-bold">
-                                        Colección
+                                        Colección = {coleccion}
                                     </label>
 
                                     <select
@@ -182,42 +202,6 @@ const EditarItem = () => {
                                         }
                                     />
                                 </div>
-
-                                <div className="mb-3">
-                                    <label
-                                        htmlFor="name"
-                                        className="text-sm text-gray-500 font-bold">
-                                        Imagen mobil
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        placeholder="Nombre"
-                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                                        value={imagen_mobil}
-                                        onChange={e =>
-                                            setImagen_mobil(e.target.value)
-                                        }
-                                    />
-                                </div>
-                                <div className="mb-3">
-                                    <label
-                                        htmlFor="name"
-                                        className="text-sm text-gray-500 font-bold">
-                                        Imagen desktop
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="imagen"
-                                        placeholder="Imagen"
-                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                                        value={imagen_desktop}
-                                        onChange={e =>
-                                            setImagen_desktop(e.target.value)
-                                        }
-                                    />
-                                </div>
-
                                 <div className="mb-3">
                                     <label
                                         htmlFor="marca"
@@ -288,7 +272,12 @@ const EditarItem = () => {
                                     <label
                                         htmlFor="nuevo"
                                         className="text-sm text-gray-500 font-bold">
-                                        Nuevo
+                                        Nuevo ={' '}
+                                        {parseInt(
+                                            productoEditando?.[0]?.[0].new,
+                                        ) === 1
+                                            ? 'Nuevo'
+                                            : 'NO NUEVO'}
                                     </label>
 
                                     <select
@@ -297,6 +286,9 @@ const EditarItem = () => {
                                         onChange={e =>
                                             setNuevo(e.target.value)
                                         }>
+                                        <option value="false">
+                                            Seleccione
+                                        </option>
                                         <option value="true">Nuevo</option>
                                         <option value="false">No nuevo</option>
                                     </select>
@@ -305,7 +297,12 @@ const EditarItem = () => {
                                     <label
                                         htmlFor="oferta"
                                         className="text-sm text-gray-500 font-bold">
-                                        Oferta
+                                        Oferta ={' '}
+                                        {parseInt(
+                                            productoEditando?.[0]?.[0].oferta,
+                                        ) === 1
+                                            ? 'OFERTA'
+                                            : 'NO OFERTA'}
                                     </label>
 
                                     <select
@@ -314,6 +311,9 @@ const EditarItem = () => {
                                         onChange={e =>
                                             setOferta(e.target.value)
                                         }>
+                                        <option value="false">
+                                            Seleccione
+                                        </option>
                                         <option value="true">Si, oferta</option>
                                         <option value="false">No oferta</option>
                                     </select>

@@ -16,9 +16,12 @@ const EditarItem = () => {
     const [submenu_id, setSubmenu_id] = useState(0)
     const [subsubmenu_id, setSubsubmenu_id] = useState(0)
     const csrf = () => axios.get('/sanctum/csrf-cookie')
-    const { isOpen, setIsOpen, idColeccionItem } = useContext(
-        PaginaContextValue,
-    )
+    const {
+        isOpen,
+        setIsOpen,
+        idColeccionItem,
+        coleccionEditando,
+    } = useContext(PaginaContextValue)
     const [errorserv, setErrorserv] = useState(null)
     const togglePopup = event => {
         if (modalRef.current === event.target) {
@@ -61,6 +64,20 @@ const EditarItem = () => {
             setErrorserv(error)
         }
     }
+
+    useEffect(() => {
+        if (coleccionEditando) {
+            setNombre(coleccionEditando[0][0].nombre || '')
+            setImagen_mobil(coleccionEditando[0][0].imagen_mobil || '')
+            setImagen_desktop(coleccionEditando[0][0].imagen_desktop || '')
+            setMeta_title(coleccionEditando[0][0].meta_title || '')
+            setMeta_description(coleccionEditando[0][0].meta_description || '')
+            setMeta_title_link(coleccionEditando[0][0].meta_title_link || '')
+            setMenu_id(coleccionEditando[0][0].menu_id || 0)
+            setSubmenu_id(coleccionEditando[0][0].submenu_id || 0)
+            setSubsubmenu_id(coleccionEditando[0][0].subsubmenu_id || 0)
+        }
+    }, [coleccionEditando])
 
     useEffect(() => {}, [errorserv])
     return (

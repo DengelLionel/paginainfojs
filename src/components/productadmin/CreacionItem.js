@@ -14,8 +14,8 @@ const CreacionItem = () => {
     const [nombre, setNombre] = useState('')
     const [descripcion, setDescripcion] = useState('')
     const [precio, setPrecio] = useState(0.0)
-    const [imagen_mobil, setImagen_mobil] = useState('')
-    const [imagen_desktop, setImagen_desktop] = useState('')
+    /*     const [imagen_mobil, setImagen_mobil] = useState('')
+    const [imagen_desktop, setImagen_desktop] = useState('') */
     const [marca, setMarca] = useState('')
     const [modelo, setModelo] = useState('')
     const [procedencia, setProcedencia] = useState('')
@@ -61,8 +61,8 @@ const CreacionItem = () => {
                 nombre: nombre,
                 descripcion: descripcion,
                 precio: parseFloat(precio),
-                imagen_desktop: imagen_desktop,
-                imagen_mobil: imagen_mobil,
+                imagen_desktop: 'imagen1',
+                imagen_mobil: 'imagen2',
                 marca: marca,
                 modelo: modelo,
                 procedencia: procedencia,
@@ -162,7 +162,7 @@ const CreacionItem = () => {
                         />
                     </div>
 
-                    <div className="mb-3">
+                    {/*   <div className="mb-3">
                         <label
                             htmlFor="name"
                             className="text-sm text-gray-500 font-bold">
@@ -191,7 +191,7 @@ const CreacionItem = () => {
                             value={imagen_desktop}
                             onChange={e => setImagen_desktop(e.target.value)}
                         />
-                    </div>
+                    </div> */}
                     <div className="mb-3">
                         <label
                             htmlFor="marca"
@@ -263,6 +263,7 @@ const CreacionItem = () => {
                             className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
                             value={nuevo}
                             onChange={e => setNuevo(e.target.value)}>
+                            <option value="false">Seleccione</option>
                             <option value="true">Nuevo</option>
                             <option value="false">No nuevo</option>
                         </select>
@@ -278,6 +279,7 @@ const CreacionItem = () => {
                             className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
                             value={oferta}
                             onChange={e => setOferta(e.target.value)}>
+                            <option value="false">Seleccione</option>
                             <option value="true">Si, oferta</option>
                             <option value="false">No oferta</option>
                         </select>

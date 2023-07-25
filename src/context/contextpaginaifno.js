@@ -21,6 +21,8 @@ const Contextpaginaifno = ({ children }) => {
     const [datobuscar, setDatobuscar] = useState('')
     const [errorSearch, setErrorSearch] = useState(null)
     const [openSearch, setOpenSearch] = useState(false)
+    const [productoEditando, setProductoEditando] = useState(null)
+    const [coleccionEditando, setColeccionEditando] = useState(null)
     const data = {
         isOpen,
         setIsOpen,
@@ -60,6 +62,10 @@ const Contextpaginaifno = ({ children }) => {
         setDatobuscar,
         openSearch,
         setOpenSearch,
+        productoEditando,
+        setProductoEditando,
+        coleccionEditando,
+        setColeccionEditando,
     }
     return (
         <PaginaContextValue.Provider value={data}>

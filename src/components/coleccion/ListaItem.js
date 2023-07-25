@@ -6,9 +6,13 @@ import { useContext, useEffect, useState } from 'react'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
 import EditarItem from './EditarItem'
 const ListaItem = () => {
-    const { isOpen, setIsOpen, setIdColeccionItem } = useContext(
-        PaginaContextValue,
-    )
+    const {
+        isOpen,
+        setIsOpen,
+        setIdColeccionItem,
+        idColeccionItem,
+        setColeccionEditando,
+    } = useContext(PaginaContextValue)
     const data = useSWR('/api/coleccion', () =>
         axios.get('/api/coleccion').then(res => res.data),
     )
@@ -16,6 +20,7 @@ const ListaItem = () => {
     const [errorserv, setErrorserv] = useState(null)
     const IdColeccion = item => {
         setIdColeccionItem(item)
+        handleColeccion()
     }
 
     const EliminarItem = async item_eliminado => {
@@ -25,6 +30,14 @@ const ListaItem = () => {
         } catch (error) {
             setErrorserv(error)
         }
+    }
+
+    const handleColeccion = () => {
+        // Aquí es donde deberías hacer la petición al servidor.
+        // Por ejemplo, puedes hacerlo con Axios de esta manera:
+        axios
+            .get(`/api/coleccion?coleccion=${idColeccionItem}`)
+            .then(res => setColeccionEditando(res.data))
     }
     useEffect(() => {}, [errorserv])
     return (

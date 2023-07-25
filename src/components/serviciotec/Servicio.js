@@ -1,7 +1,7 @@
 import React from 'react'
 import Image from 'next/legacy/image'
 import Link from 'next/link'
-const Servicio = ({ enlace = '#' }) => {
+const Servicio = () => {
     return (
         <div className="pt-[20px] pb-[20px] lg:pt-[30px] lg:pb-[120px] ">
             <div className="flex flex-col items-left lg:items-center lg:justify-left lg:flex-row lg:gap-[50px] bg-blueTwo p-[20px] lg:pb-[30px] lg:pt-[30px] lg:pr-[90px]  lg:pl-[90px]">
@@ -32,14 +32,14 @@ const Servicio = ({ enlace = '#' }) => {
                     </span>
                     <Link
                         className=" w-[200px] bg-blueOne text-center text-white text-sm font-medium border-[1px] border-transparent py-2 px-4 rounded-full hover:bg-blueTwo hover:text-blueOne hover:border-blueOne transition duration-300 mb-[20px]"
-                        href={enlace}>
+                        href="/contactanos">
                         Contactar a un asesor
                     </Link>
                 </article>
                 <section className="relative w-full h-[195px] lg:w-[440px] lg:h-[331px] xl:w-[500px] xl:h-[376px]">
                     <Image
                         src={
-                            'https://nexomedic.com.pe/wp-content/uploads/serv-tecnico-.jpg'
+                            'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1690257979/serv-tecnico-_rsqjvf.jpg'
                         }
                         layout="fill"
                         objectFit="contain"
@@ -52,7 +52,7 @@ const Servicio = ({ enlace = '#' }) => {
                 <section className="relative w-full h-[195px] mb-[20px] lg:mb-0 lg:w-[440px] lg:h-[331px] xl:w-[500px] xl:h-[376px]">
                     <Image
                         src={
-                            'https://nexomedic.com.pe/wp-content/uploads/serv-tecnico-1.jpg'
+                            'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1690257979/serv-tecnico-1_z4ggpo.jpg'
                         }
                         layout="fill"
                         objectFit="contain"
@@ -77,7 +77,7 @@ const Servicio = ({ enlace = '#' }) => {
                     </span>
                     <Link
                         className=" w-[200px] bg-blueOne text-center text-white text-sm font-medium border-[1px] border-transparent py-2 px-4 rounded-full hover:bg-blueTwo hover:text-blueOne hover:border-blueOne transition duration-300 mb-[20px]"
-                        href={enlace}>
+                        href="/contactanos">
                         Contactar a un asesor
                     </Link>
                 </article>
@@ -104,14 +104,14 @@ const Servicio = ({ enlace = '#' }) => {
                     </span>
                     <Link
                         className=" w-[200px] bg-blueOne text-center text-white text-sm font-medium border-[1px] border-transparent py-2 px-4 rounded-full hover:bg-blueTwo hover:text-blueOne hover:border-blueOne transition duration-300 mb-[20px]"
-                        href={enlace}>
+                        href="/contactanos">
                         Contactar a un asesor
                     </Link>
                 </article>
                 <section className="relative w-full h-[195px] mb-[20px] lg:mb-0 lg:w-[440px] lg:h-[331px] xl:w-[500px] xl:h-[376px]">
                     <Image
                         src={
-                            'https://nexomedic.com.pe/wp-content/uploads/serv-tecnico-2.jpg'
+                            'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1690257979/serv-tecnico-2_rloxyw.jpg'
                         }
                         layout="fill"
                         objectFit="contain"

@@ -6,9 +6,13 @@ import { useContext, useEffect, useState } from 'react'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
 import EditarItem from './EditarItem'
 const ListaItem = () => {
-    const { isOpen, setIsOpen, setIdProductItem } = useContext(
-        PaginaContextValue,
-    )
+    const {
+        isOpen,
+        setIsOpen,
+        setIdProductItem,
+        idProductItem,
+        setProductoEditando,
+    } = useContext(PaginaContextValue)
     const data = useSWR('/api/producto', () =>
         axios.get('/api/producto').then(res => res.data),
     )
@@ -17,6 +21,7 @@ const ListaItem = () => {
     const [errorserv, setErrorserv] = useState(null)
     const IdProducto = item => {
         setIdProductItem(item)
+        handleProduct()
     }
 
     const EliminarItem = async item_eliminado => {
@@ -26,6 +31,13 @@ const ListaItem = () => {
         } catch (error) {
             setErrorserv(error)
         }
+    }
+    const handleProduct = () => {
+        // Aquí es donde deberías hacer la petición al servidor.
+        // Por ejemplo, puedes hacerlo con Axios de esta manera:
+        axios
+            .get(`/api/producto?product=${idProductItem}`)
+            .then(res => setProductoEditando(res.data))
     }
     useEffect(() => {}, [errorserv])
     return (

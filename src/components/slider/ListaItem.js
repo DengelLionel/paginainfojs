@@ -4,6 +4,7 @@ import axios from '@/lib/axios'
 import { useContext, useEffect, useState } from 'react'
 import { PaginaContextValue } from '@/context/contextpaginaifno'
 import EditarItem from './EditarItem'
+import Image from 'next/legacy/image'
 const ListaItem = () => {
     const { isOpen, setIsOpen, setIdItem } = useContext(PaginaContextValue)
     const data = useSWR('/api/slider', () =>
@@ -35,7 +36,12 @@ const ListaItem = () => {
                                 <th
                                     scope="col"
                                     className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
-                                    Imagen
+                                    Imagen mobil
+                                </th>
+                                <th
+                                    scope="col"
+                                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    Imagen desktop
                                 </th>
                                 <th
                                     scope="col"
@@ -54,15 +60,28 @@ const ListaItem = () => {
                                 <tr
                                     key={index}
                                     className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                    {/*   <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
-                                        <Image
-                                            layout="fill"
-                                            objectFit="cover"
-                                            className="w-[100px] h-[100px]"
-                                            alt={item.titulo}
-                                            src={item.imagen}
-                                        />
-                                    </td> */}
+                                    <td>
+                                        <div className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
+                                            <Image
+                                                layout="fill"
+                                                objectFit="cover"
+                                                className="w-[100px] h-[100px]"
+                                                alt={item.titulo}
+                                                src={item.imagen_mobil}
+                                            />
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
+                                            <Image
+                                                layout="fill"
+                                                objectFit="cover"
+                                                className="w-[100px] h-[100px]"
+                                                alt={item.titulo}
+                                                src={item.imagen_desktop}
+                                            />
+                                        </div>
+                                    </td>
                                     <td className="text-sm text-gray-900 font-light  px-6 py-4 ">
                                         {item.titulo}
                                     </td>
