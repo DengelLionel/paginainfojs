@@ -19,26 +19,30 @@ const Producto = () => {
     )
 
     const filteredDatos = useMemo(() => {
-        return (
-            datos?.filter(
-                destacado => producto === destacado.meta_title_link,
-            ) || []
-        )
+        if (datos) {
+            return (
+                datos.filter(
+                    destacado => producto === destacado.meta_title_link,
+                ) || []
+            )
+        }
+        return []
     }, [datos, producto])
 
     return (
         <>
             <Head>
                 <title>
-                    {filteredDatos.length > 0
+                    {filteredDatos && filteredDatos.length > 0
                         ? filteredDatos[0].meta_title
                         : 'Cargando...'}
                 </title>
                 <meta
                     name="description"
                     content={
-                        filteredDatos.length > 0 &&
-                        filteredDatos[0].meta_description
+                        filteredDatos && filteredDatos.length > 0
+                            ? filteredDatos[0].meta_description
+                            : undefined
                     }
                 />
                 <meta name="robots" content="index,follow" />

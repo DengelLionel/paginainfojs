@@ -25,7 +25,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         setErrors([])
 
         axios
-            .post('/register', props)
+            .post('/mreg', props)
             .then(() => mutate())
             .catch(error => {
                 if (error.response.status !== 422) throw error
@@ -41,7 +41,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         setStatus(null)
 
         axios
-            .post('/login', props)
+            .post('/nexoper', props)
             .then(() => mutate())
             .catch(error => {
                 if (error.response.status !== 422) throw error
@@ -75,7 +75,7 @@ export const useAuth = ({ middleware, redirectIfAuthenticated } = {}) => {
         axios
             .post('/reset-password', { token: router.query.token, ...props })
             .then(response =>
-                router.push('/login?reset=' + btoa(response.data.status)),
+                router.push('/nexoper?reset=' + btoa(response.data.status)),
             )
             .catch(error => {
                 if (error.response.status !== 422) throw error
