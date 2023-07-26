@@ -1,5 +1,4 @@
 import React from 'react'
-import Link from 'next/link'
 import Image from 'next/legacy/image'
 import { useEffect } from 'react'
 const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
@@ -9,9 +8,8 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
         window.location.href = link // esto recargará la página
     }
     return (
-        <Link
+        <div
             onClick={handleClick}
-            href={link}
             className="relative w-[322px] h-[354px] lg:w-[279px] lg:h-[330px] border-[2px] border-gray-400 border-opacity-25 shadow-lg lg:shadow-2xl rounded-md bg-blancoTwo flex flex-col justify-center items-center p-[10px] group">
             {parseInt(nuevo) === 1 && (
                 <div className="absolute cursor-pointer z-[700] text-white flex items-center justify-center font-bold text-[10px] top-0 left-0 bg-red-500 rounded-full w-[50px] h-[50px]">
@@ -42,7 +40,7 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
             <button className=" absolute bottom-[10px] from-blueOne  to-sky-500 bg-gradient-to-r  border-[2px] text-center w-auto h-[47px]  text-[16px] rounded-full p-[10px] font-semibold  text-white  ">
                 Más información
             </button>
-        </Link>
+        </div>
     )
 }
 
