@@ -24,7 +24,7 @@ const EditarItem = () => {
     const [oferta, setOferta] = useState('true')
     const [meta_title, setMeta_title] = useState('')
     const [meta_description, setMeta_description] = useState('')
-    const [meta_title_link, setMeta_title_link] = useState('')
+
     const csrf = () => axios.get('/sanctum/csrf-cookie')
     const { isOpen, setIsOpen, idProductItem, productoEditando } = useContext(
         PaginaContextValue,
@@ -43,19 +43,18 @@ const EditarItem = () => {
 
     useEffect(() => {
         if (productoEditando) {
-            setColeccion(productoEditando[0][0].coleccionnombre || '')
-            setNombre(productoEditando[0][0].nombre || '')
-            setDescripcion(productoEditando[0][0].descripcion || '')
-            setPrecio(productoEditando[0][0].precio || 0.0)
-            setMarca(productoEditando[0][0].marca || '')
-            setModelo(productoEditando[0][0].modelo || '')
-            setProcedencia(productoEditando[0][0].procedencia || '')
-            setFicha_tecnica(productoEditando[0][0].ficha_tecnica || '')
-            setNuevo(productoEditando[0][0].new || 'true')
-            setOferta(productoEditando[0][0].oferta || 'true')
-            setMeta_title(productoEditando[0][0].meta_title || '')
-            setMeta_description(productoEditando[0][0].meta_description || '')
-            setMeta_title_link(productoEditando[0][0].meta_title_link || '')
+            setColeccion(productoEditando.coleccionnombre || '')
+            setNombre(productoEditando.nombre || '')
+            setDescripcion(productoEditando.descripcion || '')
+            setPrecio(productoEditando.precio || 0.0)
+            setMarca(productoEditando.marca || '')
+            setModelo(productoEditando.modelo || '')
+            setProcedencia(productoEditando.procedencia || '')
+            setFicha_tecnica(productoEditando.ficha_tecnica || '')
+            setNuevo(productoEditando.new || 'true')
+            setOferta(productoEditando.oferta || 'true')
+            setMeta_title(productoEditando.meta_title || '')
+            setMeta_description(productoEditando.meta_description || '')
         }
     }, [productoEditando])
 
@@ -100,7 +99,7 @@ const EditarItem = () => {
                 oferta: oferta === 'true' ? true : false,
                 meta_title: meta_title,
                 meta_description: meta_description,
-                meta_title_link: useToSlug(meta_title_link),
+                meta_title_link: useToSlug(nombre),
             }
             await csrf()
             await axios.put(`/api/producto/${idProductItem}`, product)
@@ -352,23 +351,7 @@ const EditarItem = () => {
                                         }
                                     />
                                 </div>
-                                <div className="mb-3">
-                                    <label
-                                        htmlFor="meta_title_link"
-                                        className="text-sm text-gray-500 font-bold">
-                                        Meta title link
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="meta_title_link"
-                                        placeholder="Escribe meta description"
-                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                                        value={meta_title_link}
-                                        onChange={e =>
-                                            setMeta_title_link(e.target.value)
-                                        }
-                                    />
-                                </div>
+
                                 <div className="mb-3">
                                     <button
                                         onClick={handleUpdate}

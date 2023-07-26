@@ -24,7 +24,7 @@ const CreacionItem = () => {
     const [oferta, setOferta] = useState('true')
     const [meta_title, setMeta_title] = useState('')
     const [meta_description, setMeta_description] = useState('')
-    const [meta_title_link, setMeta_title_link] = useState('')
+
     const [errorserv, setErrorserv] = useState(null)
 
     const csrf = () => axios.get('/sanctum/csrf-cookie')
@@ -71,7 +71,7 @@ const CreacionItem = () => {
                 oferta: oferta === 'true' ? true : false,
                 meta_title: meta_title,
                 meta_description: meta_description,
-                meta_title_link: useToSlug(meta_title_link),
+                meta_title_link: useToSlug(nombre),
             }
             await axios.post('/api/producto', product)
             window.location.reload()
@@ -314,21 +314,7 @@ const CreacionItem = () => {
                             onChange={e => setMeta_description(e.target.value)}
                         />
                     </div>
-                    <div className="mb-3">
-                        <label
-                            htmlFor="meta_title_link"
-                            className="text-sm text-gray-500 font-bold">
-                            Meta title link
-                        </label>
-                        <input
-                            type="text"
-                            id="meta_title_link"
-                            placeholder="Escribe meta description"
-                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={meta_title_link}
-                            onChange={e => setMeta_title_link(e.target.value)}
-                        />
-                    </div>
+
                     <div className="mb-3">
                         <button
                             onClick={handleCrearProducto}

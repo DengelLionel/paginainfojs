@@ -5,11 +5,9 @@ import useSWR from 'swr'
 import { useToSlug } from '@/hooks/useToSlug'
 const CreacionItem = () => {
     const [nombre, setNombre] = useState('')
-    const [imagen_mobil, setImagen_mobil] = useState('')
-    const [imagen_desktop, setImagen_desktop] = useState('')
     const [meta_title, setMeta_title] = useState('')
     const [meta_description, setMeta_description] = useState('')
-    const [meta_title_link, setMeta_title_link] = useState('')
+
     const [menu_id, setMenu_id] = useState(0)
     const [submenu_id, setSubmenu_id] = useState(0)
     const [subsubmenu_id, setSubsubmenu_id] = useState(0)
@@ -38,11 +36,11 @@ const CreacionItem = () => {
                         ? null
                         : subsubmenu_id,
                 nombre: nombre,
-                imagen_desktop: imagen_desktop,
-                imagen_mobil: imagen_mobil,
+                imagen_desktop: 'imagen1',
+                imagen_mobil: 'imagen2',
                 meta_title: meta_title,
                 meta_description: meta_description,
-                meta_title_link: useToSlug(meta_title_link),
+                meta_title_link: useToSlug(nombre),
             }
             await axios.post('/api/coleccion', coleccion)
             window.location.reload()
@@ -76,36 +74,7 @@ const CreacionItem = () => {
                             onChange={e => setNombre(e.target.value)}
                         />
                     </div>
-                    <div className="mb-3">
-                        <label
-                            htmlFor="name"
-                            className="text-sm text-gray-500 font-bold">
-                            Imagen mobil
-                        </label>
-                        <input
-                            type="text"
-                            id="name"
-                            placeholder="Nombre"
-                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={imagen_mobil}
-                            onChange={e => setImagen_mobil(e.target.value)}
-                        />
-                    </div>
-                    <div className="mb-3">
-                        <label
-                            htmlFor="name"
-                            className="text-sm text-gray-500 font-bold">
-                            Imagen desktop
-                        </label>
-                        <input
-                            type="text"
-                            id="imagen"
-                            placeholder="Imagen"
-                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={imagen_desktop}
-                            onChange={e => setImagen_desktop(e.target.value)}
-                        />
-                    </div>
+
                     <div className="mb-3">
                         <label
                             htmlFor="name"
@@ -135,21 +104,7 @@ const CreacionItem = () => {
                             onChange={e => setMeta_description(e.target.value)}
                         />
                     </div>
-                    <div className="mb-3">
-                        <label
-                            htmlFor="name"
-                            className="text-sm text-gray-500 font-bold">
-                            Meta Title Link
-                        </label>
-                        <input
-                            type="text"
-                            id="meta_title_link"
-                            placeholder="Meta Title Link"
-                            className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                            value={meta_title_link}
-                            onChange={e => setMeta_title_link(e.target.value)}
-                        />
-                    </div>
+
                     <div className="mb-3">
                         <label
                             htmlFor="menu_id"

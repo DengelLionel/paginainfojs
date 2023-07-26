@@ -35,7 +35,7 @@ const ListaItem = () => {
         // Aquí es donde deberías hacer la petición al servidor.
         // Por ejemplo, puedes hacerlo con Axios de esta manera:
         axios
-            .get(`/api/coleccion?coleccion=${id}`)
+            .get(`/api/coleccion/${id}`)
             .then(res => setColeccionEditando(res.data))
     }
     useEffect(() => {}, [errorserv])

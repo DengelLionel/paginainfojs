@@ -20,7 +20,6 @@ const ListaItem = () => {
     const [errorserv, setErrorserv] = useState(null)
     const IdProducto = item => {
         setIdProductItem(item)
-        handleProduct(item)
     }
 
     const EliminarItem = async item_eliminado => {
@@ -35,9 +34,10 @@ const ListaItem = () => {
         // Aquí es donde deberías hacer la petición al servidor.
         // Por ejemplo, puedes hacerlo con Axios de esta manera:
         axios
-            .get(`/api/producto?product=${id}`)
+            .get(`/api/producto/${id}`)
             .then(res => setProductoEditando(res.data))
     }
+
     useEffect(() => {}, [errorserv])
     return (
         <div className="overflow-x-auto w-[360px] p-[16px] lg:w-full sm:mx-0.5 lg:mx-0.5">
@@ -160,6 +160,7 @@ const ListaItem = () => {
                                             onClick={() => {
                                                 setIsOpen(!isOpen)
                                                 IdProducto(item.id ?? item.id)
+                                                handleProduct(item.id)
                                             }}
                                             className="border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline w-[100px]">
                                             EDITAR

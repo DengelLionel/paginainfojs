@@ -7,11 +7,10 @@ import useSWR from 'swr'
 const EditarItem = () => {
     const modalRef = useRef()
     const [nombre, setNombre] = useState('')
-    const [imagen_mobil, setImagen_mobil] = useState('')
-    const [imagen_desktop, setImagen_desktop] = useState('')
+
     const [meta_title, setMeta_title] = useState('')
     const [meta_description, setMeta_description] = useState('')
-    const [meta_title_link, setMeta_title_link] = useState('')
+
     const [menu_id, setMenu_id] = useState(0)
     const [submenu_id, setSubmenu_id] = useState(0)
     const [subsubmenu_id, setSubsubmenu_id] = useState(0)
@@ -50,11 +49,11 @@ const EditarItem = () => {
                         ? null
                         : subsubmenu_id,
                 nombre: nombre,
-                imagen_desktop: imagen_desktop,
-                imagen_mobil: imagen_mobil,
+                imagen_desktop: 'imagen1',
+                imagen_mobil: 'imagen2',
                 meta_title: meta_title,
                 meta_description: meta_description,
-                meta_title_link: useToSlug(meta_title_link),
+                meta_title_link: useToSlug(nombre),
             }
             await csrf()
             await axios.put(`/api/coleccion/${idColeccionItem}`, coleccion)
@@ -67,15 +66,12 @@ const EditarItem = () => {
 
     useEffect(() => {
         if (coleccionEditando) {
-            setNombre(coleccionEditando[0][0].nombre || '')
-            setImagen_mobil(coleccionEditando[0][0].imagen_mobil || '')
-            setImagen_desktop(coleccionEditando[0][0].imagen_desktop || '')
-            setMeta_title(coleccionEditando[0][0].meta_title || '')
-            setMeta_description(coleccionEditando[0][0].meta_description || '')
-            setMeta_title_link(coleccionEditando[0][0].meta_title_link || '')
-            setMenu_id(coleccionEditando[0][0].menu_id || 0)
-            setSubmenu_id(coleccionEditando[0][0].submenu_id || 0)
-            setSubsubmenu_id(coleccionEditando[0][0].subsubmenu_id || 0)
+            setNombre(coleccionEditando.nombre || '')
+            setMeta_title(coleccionEditando.meta_title || '')
+            setMeta_description(coleccionEditando.meta_description || '')
+            setMenu_id(coleccionEditando.menu_id || 0)
+            setSubmenu_id(coleccionEditando.submenu_id || 0)
+            setSubsubmenu_id(coleccionEditando.subsubmenu_id || 0)
         }
     }, [coleccionEditando])
 
@@ -113,40 +109,7 @@ const EditarItem = () => {
                                         }
                                     />
                                 </div>
-                                <div className="mb-3">
-                                    <label
-                                        htmlFor="name"
-                                        className="text-sm text-gray-500 font-bold">
-                                        Imagen mobil
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        placeholder="Nombre"
-                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                                        value={imagen_mobil}
-                                        onChange={e =>
-                                            setImagen_mobil(e.target.value)
-                                        }
-                                    />
-                                </div>
-                                <div className="mb-3">
-                                    <label
-                                        htmlFor="name"
-                                        className="text-sm text-gray-500 font-bold">
-                                        Imagen desktop
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="imagen"
-                                        placeholder="Imagen"
-                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                                        value={imagen_desktop}
-                                        onChange={e =>
-                                            setImagen_desktop(e.target.value)
-                                        }
-                                    />
-                                </div>
+
                                 <div className="mb-3">
                                     <label
                                         htmlFor="name"
@@ -180,23 +143,7 @@ const EditarItem = () => {
                                         }
                                     />
                                 </div>
-                                <div className="mb-3">
-                                    <label
-                                        htmlFor="name"
-                                        className="text-sm text-gray-500 font-bold">
-                                        Meta Title Link
-                                    </label>
-                                    <input
-                                        type="text"
-                                        id="meta_title_link"
-                                        placeholder="Meta Title Link"
-                                        className="mt-2 flex h-12 w-full items-center justify-center rounded-xl border bg-white/0 p-3 text-sm outline-none border-gray-200"
-                                        value={meta_title_link}
-                                        onChange={e =>
-                                            setMeta_title_link(e.target.value)
-                                        }
-                                    />
-                                </div>
+
                                 <div className="mb-3">
                                     <label
                                         htmlFor="menu_id"
