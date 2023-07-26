@@ -10,7 +10,7 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
     return (
         <div
             onClick={handleClick}
-            className="relative w-[322px] h-[354px] lg:w-[279px] lg:h-[330px] border-[2px] border-gray-400 border-opacity-25 shadow-lg lg:shadow-2xl rounded-md bg-blancoTwo flex flex-col justify-center items-center p-[10px] group">
+            className="relative cursor-pointer w-[322px] h-[354px] lg:w-[279px] lg:h-[330px] border-[2px] border-gray-400 border-opacity-25 shadow-lg lg:shadow-2xl rounded-md bg-blancoTwo flex flex-col justify-center items-center p-[10px] group">
             {parseInt(nuevo) === 1 && (
                 <div className="absolute cursor-pointer z-[700] text-white flex items-center justify-center font-bold text-[10px] top-0 left-0 bg-red-500 rounded-full w-[50px] h-[50px]">
                     NUEVO!

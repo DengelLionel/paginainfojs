@@ -6,7 +6,6 @@ import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
 import PaginaProducto from '@/components/producto'
 import { useRouter } from 'next/router'
-import { useMemo } from 'react'
 import useSWR from 'swr'
 import axios from '@/lib/axios'
 import Whatsapp from '@/components/paginainfo/Whatsapp'
@@ -18,16 +17,12 @@ const Producto = () => {
         axios.get('/api/productos_todo').then(res => res.data),
     )
 
-    const filteredDatos = useMemo(() => {
-        if (datos) {
-            return (
-                datos.filter(
-                    destacado => producto === destacado.meta_title_link,
-                ) || []
-            )
-        }
-        return []
-    }, [datos, producto])
+    let filteredDatos = []
+    if (datos) {
+        filteredDatos = datos.filter(
+            destacado => producto === destacado.meta_title_link,
+        )
+    }
 
     return (
         <>
