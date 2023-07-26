@@ -10,7 +10,6 @@ const ListaItem = () => {
         isOpen,
         setIsOpen,
         setIdColeccionItem,
-        idColeccionItem,
         setColeccionEditando,
     } = useContext(PaginaContextValue)
     const data = useSWR('/api/coleccion', () =>
@@ -20,7 +19,7 @@ const ListaItem = () => {
     const [errorserv, setErrorserv] = useState(null)
     const IdColeccion = item => {
         setIdColeccionItem(item)
-        handleColeccion()
+        handleColeccion(item)
     }
 
     const EliminarItem = async item_eliminado => {
@@ -32,11 +31,11 @@ const ListaItem = () => {
         }
     }
 
-    const handleColeccion = () => {
+    const handleColeccion = id => {
         // Aquí es donde deberías hacer la petición al servidor.
         // Por ejemplo, puedes hacerlo con Axios de esta manera:
         axios
-            .get(`/api/coleccion?coleccion=${idColeccionItem}`)
+            .get(`/api/coleccion?coleccion=${id}`)
             .then(res => setColeccionEditando(res.data))
     }
     useEffect(() => {}, [errorserv])
