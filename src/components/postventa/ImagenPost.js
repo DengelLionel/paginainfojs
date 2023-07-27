@@ -1,16 +1,28 @@
 import React from 'react'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import Link from 'next/link'
 const ImagenPost = () => {
     return (
         <div>
-            <div className="relative w-[200px] h-[200px] lg:w-[400px] lg:h-[400px]">
+            <div className="flex lg:hidden ">
                 <Image
-                    layout="fill"
-                    objectFit="contain"
+                    width={300}
+                    height={300}
                     quality={100}
+                    priority={true}
                     src={
-                        'https://nexomedic.com.pe/wp-content/uploads/Nexo-Medic_inicio_nosotros_01.png'
+                        'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1690429093/post_venta_new_k189qo.png'
+                    }
+                />
+            </div>
+            <div className="hidden lg:flex ">
+                <Image
+                    width={400}
+                    height={400}
+                    quality={100}
+                    priority={true}
+                    src={
+                        'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1690429093/post_venta_new_k189qo.png'
                     }
                 />
             </div>

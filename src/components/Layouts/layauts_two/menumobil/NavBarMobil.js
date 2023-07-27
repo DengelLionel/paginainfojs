@@ -63,6 +63,7 @@ const NavBarMobil = () => {
                         <Image
                             layout="fill"
                             objectFit="contain"
+                            priority={true}
                             src={`${
                                 navBackground === 'bg-white'
                                     ? 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/LOGO_DE_COLOR_unovda.png'
