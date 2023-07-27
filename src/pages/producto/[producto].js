@@ -6,24 +6,12 @@ import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
 import PaginaProducto from '@/components/producto'
 import { useRouter } from 'next/router'
-import useSWR from 'swr'
-import axios from '@/lib/axios'
 import Whatsapp from '@/components/paginainfo/Whatsapp'
-
+import { useDatosFiltrados } from '@/hooks/useDatosProducto'
 const Producto = () => {
     const router = useRouter()
     const { producto } = router.query
-    const { data: datos } = useSWR('/api/productos_todo', () =>
-        axios.get('/api/productos_todo').then(res => res.data),
-    )
-
-    let filteredDatos = []
-    if (datos) {
-        filteredDatos = datos.filter(
-            destacado => producto === destacado.meta_title_link,
-        )
-    }
-
+    const { filteredDatos } = useDatosFiltrados(producto)
     return (
         <>
             <Head>

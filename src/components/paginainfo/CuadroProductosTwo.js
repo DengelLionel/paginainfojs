@@ -21,9 +21,7 @@ const CuadroProductosTwo = ({ imagen, titulo, link, nuevo, oferta }) => {
                     OFERTA!
                 </div>
             )}
-            <Link
-                className="absolute top-0 flex flex-col items-center justify-center"
-                href={link}>
+            <div className="absolute top-0 flex flex-col items-center justify-center">
                 <div className="w-[109px] h-[136px] lg:w-[230px] lg:h-[200px] relative">
                     <Image
                         src={imagen}
@@ -37,13 +35,11 @@ const CuadroProductosTwo = ({ imagen, titulo, link, nuevo, oferta }) => {
                         {titulo}
                     </h2>
                 </div>
-            </Link>
+            </div>
 
-            <Link
-                className="absolute bottom-[10px] from-blueOne  to-sky-500 bg-gradient-to-r  text-center w-auto h-[47px] p-[10px] text-[16px] rounded-full  font-semibold  text-white  "
-                href={link}>
+            <button className="absolute bottom-[10px] from-blueOne  to-sky-500 bg-gradient-to-r  text-center w-auto h-[47px] p-[10px] text-[16px] rounded-full  font-semibold  text-white  ">
                 Más información
-            </Link>
+            </button>
         </div>
     )
 }

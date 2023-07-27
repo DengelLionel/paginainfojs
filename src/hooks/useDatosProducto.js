@@ -8,3 +8,16 @@ export const useDatosProducto = () => {
     const datos = data.data
     return { datos }
 }
+export const useDatosFiltrados = producto => {
+    const { data: datos } = useSWR('/api/productos_todo', () =>
+        axios.get('/api/productos_todo').then(res => res.data),
+    )
+
+    let filteredDatos = []
+    if (datos) {
+        filteredDatos = datos.filter(
+            destacado => producto === destacado.meta_title_link,
+        )
+    }
+    return { filteredDatos }
+}
