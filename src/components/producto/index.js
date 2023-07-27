@@ -1,4 +1,3 @@
-import { memo } from 'react'
 import CarruselProducto from './CarruselProducto'
 import InfoProducto from './InfoProducto'
 import Descripcion from './Descripcion'
@@ -38,4 +37,4 @@ const PaginaProducto = ({ datosProducto }) => {
     )
 }
 
-export default memo(PaginaProducto)
+export default PaginaProducto
