@@ -46,9 +46,7 @@ const NavBarMobil = () => {
                         <Image
                             layout="fill"
                             objectFit="contain"
-                            src={
-                                'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/LOGO_DE_COLOR_unovda.png'
-                            }
+                            src={'/logo-color-nexomedic.svg'}
                             alt="Nexomedic"
                         />
                     </Link>

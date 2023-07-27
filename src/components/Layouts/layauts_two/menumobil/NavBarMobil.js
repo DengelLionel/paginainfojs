@@ -66,7 +66,7 @@ const NavBarMobil = () => {
                             priority={true}
                             src={`${
                                 navBackground === 'bg-white'
-                                    ? 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/LOGO_DE_COLOR_unovda.png'
+                                    ? '/logo-color-nexomedic.svg'
                                     : 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/TRANSPARANTE_tzfj6x.png'
                             }`}
                             alt="Nexomedic"
@@ -142,7 +142,9 @@ const NavBarMobil = () => {
                 }`}>
                 <div
                     className={` bg-white  ${
-                        openSearch ? 'h-[200px] opacity-100' : 'h-0 opacity-0'
+                        openSearch
+                            ? 'h-[200px] opacity-100 visible'
+                            : 'h-0 opacity-0 invisible'
                     }`}>
                     <div className="pt-[50px] pl-[20px] pr-[20px] flex flex-row gap-[20px] items-center justify-center text-gray-600 relative">
                         <input

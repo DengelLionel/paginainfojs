@@ -62,9 +62,7 @@ const NavBar2 = () => {
                             layout="fill"
                             quality={100}
                             objectFit="contain"
-                            src={
-                                'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/LOGO_DE_COLOR_unovda.png'
-                            }
+                            src={'/logo-color-nexomedic.svg'}
                             alt="Nexomedic"
                         />
                     </Link>
@@ -88,28 +86,31 @@ const NavBar2 = () => {
                 {/* BUSCANDO */}
                 <FondoOscurecido open={openSearch} />
                 {openSearch && (
-                    <div
-                        className={`absolute right-0 w-full h-[150px] z-[555] bg-white`}>
+                    <div className={`absolute right-0 w-full z-[555] bg-white`}>
                         <div
                             className={` w-full h-[150px]  bg-white ${
-                                openSearch ? 'opacity-100' : 'opacity-0'
+                                openSearch
+                                    ? 'opacity-100 h-[150px] visible'
+                                    : 'opacity-0 h-0 invisible'
                             }`}>
-                            <div className="pt-[50px] pl-[20px] pr-[20px] flex flex-row gap-[20px] items-center justify-center text-gray-600 relative">
-                                <input
-                                    className="border-2 w-[600px] border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                                    type="search"
-                                    name="search"
-                                    value={datobuscar}
-                                    onChange={handleInputChange}
-                                    placeholder="Buscar"
-                                />
-                                <button
-                                    onClick={handleSearch}
-                                    type="button"
-                                    className="absolute cursor-pointer top-[75%] md:right-[30%] lg:right-[24%] transform -translate-y-1/2 bg-transparent w-[30px] h-[30px]">
-                                    <IconBuscador fill="#2F6AAD" />
-                                </button>
-                            </div>
+                            {openSearch && (
+                                <div className="pt-[50px] pl-[20px] pr-[20px] flex flex-row gap-[20px] items-center justify-center text-gray-600 relative">
+                                    <input
+                                        className="border-2 w-[600px] border-gray-300 bg-white h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                                        type="search"
+                                        name="search"
+                                        value={datobuscar}
+                                        onChange={handleInputChange}
+                                        placeholder="Buscar"
+                                    />
+                                    <button
+                                        onClick={handleSearch}
+                                        type="button"
+                                        className="absolute cursor-pointer top-[75%] md:right-[30%] lg:right-[24%] transform -translate-y-1/2 bg-transparent w-[30px] h-[30px]">
+                                        <IconBuscador fill="#2F6AAD" />
+                                    </button>
+                                </div>
+                            )}
                         </div>
                     </div>
                 )}

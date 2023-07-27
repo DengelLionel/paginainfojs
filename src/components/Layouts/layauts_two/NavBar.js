@@ -91,7 +91,7 @@ const NavBar = () => {
                             objectFit="contain"
                             src={`${
                                 bgColor === 'lg:bg-white'
-                                    ? 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/LOGO_DE_COLOR_unovda.png'
+                                    ? '/logo-color-nexomedic.svg'
                                     : 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609786/NEXOMEDIC/TRANSPARANTE_tzfj6x.png'
                             }`}
                             alt="Nexomedic"
@@ -126,7 +126,6 @@ const NavBar = () => {
                                     ? 'opacity-100 h-[150px] visible'
                                     : 'opacity-0 h-0 invisible'
                             }`}>
-                            $
                             {openSearch && (
                                 <div className="pt-[50px] pl-[20px] pr-[20px] flex flex-row gap-[20px] items-center justify-center text-gray-600 relative">
                                     <input
