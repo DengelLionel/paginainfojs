@@ -119,12 +119,12 @@ const NavBar = () => {
                 <FondoOscurecido open={openSearch} />
                 {openSearch && (
                     <div
-                        className={`absolute right-0 w-full h-[150px] z-[555] bg-white`}>
+                        className={`absolute right-0 w-full  z-[555] bg-white`}>
                         <div
                             className={` w-full h-[150px]  bg-white ${
                                 openSearch
-                                    ? 'opacity-100 visible'
-                                    : 'opacity-0 invisible'
+                                    ? 'opacity-100 h-[150px] visible'
+                                    : 'opacity-0 h-0 invisible'
                             }`}>
                             <div className="pt-[50px] pl-[20px] pr-[20px] flex flex-row gap-[20px] items-center justify-center text-gray-600 relative">
                                 <input
