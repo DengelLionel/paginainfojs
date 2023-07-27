@@ -11,7 +11,7 @@ import { useDatosFiltrados } from '@/hooks/useDatosProducto'
 const Producto = () => {
     const router = useRouter()
     const { producto } = router.query
-    const { filteredDatos } = useDatosFiltrados(producto)
+    const { filteredDatos } = useDatosFiltrados(producto && producto)
     return (
         <>
             <Head>
@@ -31,12 +31,14 @@ const Producto = () => {
                 <meta name="robots" content="index,follow" />
                 <link
                     rel="canonical"
-                    href={`https://www.nexomedic.com.pe/producto/${producto}`}
+                    href={`https://www.nexomedic.com.pe/producto/${
+                        producto && producto
+                    }`}
                 />
             </Head>
             <Anuncio />
             <HeaderPrincipal2 />
-            <PaginaProducto datosProducto={filteredDatos} />
+            <PaginaProducto datosProducto={filteredDatos && filteredDatos} />
 
             <main className="bg-white">
                 <Whatsapp />
