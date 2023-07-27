@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 
 const CuadroProductosTwo = ({ imagen, titulo, link, nuevo, oferta }) => {
     const handleClick = e => {
@@ -21,11 +21,20 @@ const CuadroProductosTwo = ({ imagen, titulo, link, nuevo, oferta }) => {
                 </div>
             )}
             <div className="absolute top-0 flex flex-col items-center justify-center">
-                <div className="w-[109px] h-[136px] lg:w-[230px] lg:h-[200px] relative">
+                <div className="flex lg:hidden">
                     <Image
+                        width={109}
+                        height={136}
                         src={imagen && imagen}
-                        layout="fill"
-                        objectFit="contain"
+                        priority={true}
+                        alt={titulo && titulo}
+                    />
+                </div>
+                <div className="hidden lg:flex">
+                    <Image
+                        width={230}
+                        height={200}
+                        src={imagen && imagen}
                         priority={true}
                         alt={titulo && titulo}
                     />
