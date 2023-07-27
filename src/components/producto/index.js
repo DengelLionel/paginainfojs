@@ -15,7 +15,7 @@ const PaginaProducto = ({ datosProducto }) => {
         }},[datosProducto]) */
     return (
         <div className="w-auto ">
-            <div className="flex flex-col p-[16px] lg:flex-row lg:gap-[30px] lg:pb-[100px] lg:pt-[30px]">
+            <div className="flex flex-col p-[16px] pt-[100px] lg:flex-row lg:gap-[30px] lg:pb-[100px] lg:pt-[30px]">
                 <ListaProductos className="lg:w-1/3" />
                 <div className="flex flex-col lg:w-2/3">
                     <div className="flex flex-col lg:flex-row">
