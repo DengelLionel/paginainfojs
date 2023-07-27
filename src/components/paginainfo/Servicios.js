@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 import Link from 'next/link'
 import IconArrow from '../icons/IconArrow'
 const Servicios = () => {
@@ -12,14 +12,23 @@ const Servicios = () => {
                 <Link
                     href={'/post-venta'}
                     className="flex flex-row items-center justify-center gap-[20px] mt-[12px]  lg:gap-[49px] lg:p-[10px] xl:p-[20px] transition-all duration-[500ms] lg:hover:bg-blueTwo lg:hover:shadow-lg">
-                    <div className="relative w-[176px] h-[176px] lg:w-[200px] lg:h-[200px] xl:w-[300px] xl:h-[300px]">
+                    <div className="flex lg:hidden">
                         <Image
+                            width={176}
+                            height={176}
                             src={
                                 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609788/NEXOMEDIC/POST_VENTA_2023_NEW_NEW_2023_jlrlez.png'
                             }
-                            layout="fill"
-                            objectFit="contain"
-                            priority={true}
+                            alt="imagen servicio"
+                        />
+                    </div>
+                    <div className="hidden lg:flex">
+                        <Image
+                            width={300}
+                            height={200}
+                            src={
+                                'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609788/NEXOMEDIC/POST_VENTA_2023_NEW_NEW_2023_jlrlez.png'
+                            }
                             alt="imagen servicio"
                         />
                     </div>
@@ -54,14 +63,23 @@ const Servicios = () => {
                             Mas información <IconArrow fill={`#2F6AAD`} />
                         </button>
                     </div>
-                    <div className="relative w-[176px] h-[176px] lg:w-[200px] lg:h-[200px] xl:w-[300px] xl:h-[300px]">
+                    <div className="flex lg:hidden">
                         <Image
                             src={
                                 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609787/NEXOMEDIC/servicio_tecnico_NEW_o67z49.png'
                             }
-                            layout="fill"
-                            objectFit="contain"
-                            priority={true}
+                            width={176}
+                            height={176}
+                            alt="imagen servicio"
+                        />
+                    </div>
+                    <div className="hidden lg:flex">
+                        <Image
+                            src={
+                                'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609787/NEXOMEDIC/servicio_tecnico_NEW_o67z49.png'
+                            }
+                            width={300}
+                            height={200}
                             alt="imagen servicio"
                         />
                     </div>
