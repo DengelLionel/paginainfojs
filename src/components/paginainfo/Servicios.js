@@ -19,6 +19,7 @@ const Servicios = () => {
                             }
                             layout="fill"
                             objectFit="contain"
+                            priority={true}
                             alt="imagen servicio"
                         />
                     </div>
@@ -59,7 +60,8 @@ const Servicios = () => {
                                 'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1688609787/NEXOMEDIC/servicio_tecnico_NEW_o67z49.png'
                             }
                             layout="fill"
-                            objectFit="cover"
+                            objectFit="contain"
+                            priority={true}
                             alt="imagen servicio"
                         />
                     </div>

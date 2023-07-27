@@ -28,6 +28,7 @@ const CuadroProductos = ({ imagen, titulo, link, nuevo, oferta }) => {
                         src={imagen && imagen}
                         layout="fill"
                         objectFit="contain"
+                        priority={true}
                         alt={titulo && titulo}
                     />
                 </div>

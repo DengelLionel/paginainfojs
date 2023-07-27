@@ -22,6 +22,7 @@ const Slider = ({
                 className="brightness-50 "
                 objectFit="cover"
                 layout="fill"
+                priority={true}
                 alt={titulo}
                 src={mobile ? imagen_mobil : imagen_desktop}
                 quality={100}
