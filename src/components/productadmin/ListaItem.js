@@ -40,7 +40,7 @@ const ListaItem = () => {
 
     useEffect(() => {}, [errorserv])
     return (
-        <div className="overflow-x-auto w-[360px] p-[16px] lg:w-full sm:mx-0.5 lg:mx-0.5">
+        <div className="overflow-x-auto w-[360px] p-[16px] lg:w-full lg:h-[600px] sm:mx-0.5 lg:mx-0.5">
             <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
                 <div className="">
                     <table className="min-w-full">
