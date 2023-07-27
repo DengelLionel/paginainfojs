@@ -76,7 +76,7 @@ const Marcas = () => {
                                         layout="fill"
                                         objectFit="contain"
                                         priority={true}
-                                        src={marca.imagen}
+                                        src={marca.imagen && marca.imagen}
                                         alt="clientes de nexomedic"
                                     />
                                 </div>
