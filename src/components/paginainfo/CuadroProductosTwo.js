@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from 'next/image'
+import Image from 'next/legacy/image'
 
 const CuadroProductosTwo = ({ imagen, titulo, link, nuevo, oferta }) => {
     const handleClick = e => {
@@ -9,7 +9,7 @@ const CuadroProductosTwo = ({ imagen, titulo, link, nuevo, oferta }) => {
     return (
         <div
             onClick={handleClick}
-            className="relative w-[155px] h-[310px] lg:w-[279px] lg:h-[355px] border-[2px] border-gray-400 border-opacity-25 shadow-lg lg:shadow-2xl rounded-md bg-white flex flex-col justify-center items-center p-[10px]">
+            className="relative w-[155px] h-[310px] lg:w-[279px] lg:h-[355px] cursor-pointer border-[2px] border-gray-400 border-opacity-25 shadow-lg lg:shadow-2xl rounded-md bg-white flex flex-col justify-center items-center p-[10px]">
             {parseInt(nuevo && nuevo) === 1 && (
                 <div className="absolute cursor-pointer z-[700] text-white flex items-center justify-center font-bold text-[10px] top-0 left-0 bg-red-500 rounded-full w-[45px] h-[45px]">
                     NUEVO!
@@ -21,24 +21,16 @@ const CuadroProductosTwo = ({ imagen, titulo, link, nuevo, oferta }) => {
                 </div>
             )}
             <div className="absolute top-0 flex flex-col items-center justify-center">
-                <div className="flex lg:hidden">
+                <div className="relative w-[109px] h-[136px] lg:w-[230px] lg:h-[200px]">
                     <Image
-                        width={109}
-                        height={136}
+                        layout="fill"
+                        objectFit="contain"
                         src={imagen && imagen}
                         priority={true}
                         alt={titulo && titulo}
                     />
                 </div>
-                <div className="hidden lg:block">
-                    <Image
-                        width={230}
-                        height={200}
-                        src={imagen && imagen}
-                        priority={true}
-                        alt={titulo && titulo}
-                    />
-                </div>
+
                 <div className="border-t-[1px] border-blueOne w-full  pt-[5px] ">
                     <h2 className="text-blueOne text-center text-sm font-semibold mb-[14px] lg:text-md">
                         {titulo && titulo}
