@@ -25,7 +25,7 @@ const Products = ({ datos }) => {
     }
 
     return (
-        <div className="flex-wrap flex items-center justify-center p-[16px] lg:p-[30px] lg:justify-start lg:items-start">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 p-4">
             {renderProducts()}
         </div>
     )

@@ -30,7 +30,7 @@ const CuadroProductosTwo = ({ imagen, titulo, link, nuevo, oferta }) => {
                         alt={titulo && titulo}
                     />
                 </div>
-                <div className="hidden lg:flex">
+                <div className="hidden lg:block">
                     <Image
                         width={230}
                         height={200}
