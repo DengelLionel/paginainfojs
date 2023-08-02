@@ -32,7 +32,13 @@ const MenuItems = ({ items, depthLevel }) => {
                     </button>
                     {isOpen &&
                         items.submenu.map((submenuItem, index) => (
-                            <div className="pl-4 overflow-y-auto" key={index}>
+                            <div
+                                className={` overflow-y-auto ${
+                                    depthLevel >= 1
+                                        ? 'bg-blueSeis'
+                                        : 'bg-blueCinco'
+                                }`}
+                                key={index}>
                                 <MenuItems
                                     items={submenuItem}
                                     depthLevel={depthLevel + 1}
