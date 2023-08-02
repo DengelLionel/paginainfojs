@@ -39,11 +39,6 @@ const InfoProducto = ({ datos }) => {
                             </strong>
                         </span>
                     ))}
-                <span>
-                    <strong className="text-blueOne  text-xl font-bold ">
-                        s/ 45
-                    </strong>
-                </span>
             </section>
             <Link
                 href={'/cotizar'}
