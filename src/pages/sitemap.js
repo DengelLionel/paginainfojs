@@ -46,6 +46,5 @@ export default async function sitemap() {
             })
         }
     })
-
     return siteMap
 }
