@@ -1,11 +1,9 @@
-import { getServerSideSitemap } from 'next-sitemap'
-
+import { productos } from '@/lib/datosproducto'
 const URL = 'https://nexomedic.com.pe'
-
-export const getServerSideProps = async ({ res }) => {
+export default async function sitemap() {
     const siteMap = [
         {
-            url: URL,
+            url: `${URL}`,
             lastModified: new Date(),
         },
         {
@@ -34,23 +32,12 @@ export const getServerSideProps = async ({ res }) => {
         },
     ]
 
-    try {
-        const response = await fetch(`${URL}/api/productos_todo`)
-        const json = await response.json()
-        const dato = json.data
-        const datos = dato.data
-        datos.forEach(post => {
-            siteMap.push({
-                url: `${URL}/producto/${post.meta_title_link}`,
-                lastModified: new Date(),
-            })
+    productos().forEach(post => {
+        siteMap.push({
+            url: `${URL}/producto/${post.meta_title_link}`,
+            lastModified: new Date(),
         })
+    })
 
-        return getServerSideSitemap(res, siteMap)
-    } catch (error) {
-        return getServerSideSitemap(res, siteMap)
-    }
+    return siteMap
 }
-
-const Sitemap = () => null
-export default Sitemap
