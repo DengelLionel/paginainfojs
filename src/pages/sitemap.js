@@ -31,8 +31,8 @@ export default async function sitemap() {
             lastModified: new Date(),
         },
     ]
-
-    productos().forEach(post => {
+    const { datos } = await productos()
+    datos.forEach(post => {
         siteMap.push({
             url: `${URL}/producto/${post.meta_title_link}`,
             lastModified: new Date(),
