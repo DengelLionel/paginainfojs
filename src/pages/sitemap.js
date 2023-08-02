@@ -1,10 +1,11 @@
+import { getServerSideSitemap } from 'next-sitemap'
+
 const URL = 'https://nexomedic.com.pe'
 
-export default async function sitemap() {
-    // Static pages
+export const getServerSideProps = async ({ res }) => {
     const siteMap = [
         {
-            url: `${URL}`,
+            url: URL,
             lastModified: new Date(),
         },
         {
@@ -33,16 +34,23 @@ export default async function sitemap() {
         },
     ]
 
-    const response = await fetch(`/api/productos_todo`)
-    const json = await response.json()
-    const dato = json.data
-    const datos = dato.data
-    datos.forEach(post => {
-        siteMap.push({
-            url: `${URL}/producto/${post.meta_title_link}`,
-            lastModified: new Date(),
+    try {
+        const response = await fetch(`${URL}/api/productos_todo`)
+        const json = await response.json()
+        const dato = json.data
+        const datos = dato.data
+        datos.forEach(post => {
+            siteMap.push({
+                url: `${URL}/producto/${post.meta_title_link}`,
+                lastModified: new Date(),
+            })
         })
-    })
 
-    return siteMap
+        return getServerSideSitemap(res, siteMap)
+    } catch (error) {
+        return getServerSideSitemap(res, siteMap)
+    }
 }
+
+const Sitemap = () => null
+export default Sitemap
