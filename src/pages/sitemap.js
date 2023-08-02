@@ -1,5 +1,4 @@
-import useSWR from 'swr'
-import axios from '@/lib/axios'
+import Axios from 'axios'
 const URL = 'https://nexomedic.com.pe'
 
 export default async function sitemap() {
@@ -34,10 +33,15 @@ export default async function sitemap() {
         },
     ]
 
-    const data = useSWR('/api/productos_todo', () =>
-        axios.get('/api/productos_todo').then(res => res.data),
-    )
-    const datos = data.data
+    const data = await Axios.get(`${URL}/api/productos_todo`, {
+        baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest',
+        },
+        withCredentials: true,
+    }).then(res => res.data)
+    const datos = await data.data
+
     datos.forEach(producto => {
         if (producto.meta_title_link) {
             siteMap.push({
