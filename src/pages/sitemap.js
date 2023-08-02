@@ -33,13 +33,14 @@ export default async function sitemap() {
         },
     ]
 
-    const data = await Axios.get(`${URL}/api/productos_todo`, {
+    const data = await Axios.get(`/api/productos_todo`, {
         baseURL: process.env.NEXT_PUBLIC_BACKEND_URL,
         headers: {
             'X-Requested-With': 'XMLHttpRequest',
         },
         withCredentials: true,
-    }).then(res => res.data)
+    })
+
     const datos = await data.data
 
     datos.forEach(producto => {

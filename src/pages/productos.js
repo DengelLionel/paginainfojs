@@ -6,6 +6,7 @@ import Marcas from '@/components/paginainfo/Marcas'
 import Footer from '@/components/paginainfo/Footer'
 import MostrandoTodoProducto from '@/components/producto/MostrandoTodoProducto'
 import Whatsapp from '@/components/paginainfo/Whatsapp'
+
 const Productos = () => {
     return (
         <>
