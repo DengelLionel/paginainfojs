@@ -1,6 +1,7 @@
 import useSWR from 'swr'
 import axios from '@/lib/axios'
 const URL = 'https://nexomedic.com.pe'
+
 export default async function sitemap() {
     const siteMap = [
         {
@@ -37,11 +38,13 @@ export default async function sitemap() {
         axios.get('/api/productos_todo').then(res => res.data),
     )
     const datos = data.data
-    datos.forEach(post => {
-        siteMap.push({
-            url: `${URL}/producto/${post.meta_title_link}`,
-            lastModified: new Date(),
-        })
+    datos.forEach(producto => {
+        if (producto.meta_title_link) {
+            siteMap.push({
+                url: `${URL}/producto/${producto.meta_title_link}`,
+                lastModified: new Date(),
+            })
+        }
     })
 
     return siteMap
