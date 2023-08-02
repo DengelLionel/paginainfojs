@@ -3,7 +3,7 @@ export default function robots() {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/mreg/',
+      disallow: ['/mreg/','/nexoper/'],
     },
     sitemap: 'https://nexomedic.com.pe/sitemap.xml',
   }
