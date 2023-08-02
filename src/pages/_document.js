@@ -15,7 +15,7 @@ class MyDocument extends Document {
                         rel="stylesheet"
                     />
                     <script
-                        src="//code.tidio.co/b7z4h4ot07ah1xwnhnbl2skfxcca0qtl.js"
+                        src="//code.tidio.co/cynri2h2ensjkxnqzjjlw7sx1l8wigwy.js"
                         async
                     />
                 </Head>
