@@ -10,7 +10,7 @@ const MostrandoTodoProducto = () => {
             <div className="p-[16px] mb-[120px] flex flex-wrap items-center justify-center gap-[14px] lg:gap-[20px] lg:p-[30px]">
                 {datos?.map((producto, index) => (
                     <CuadroProductosTwo
-                        imagen={producto.imagenes_producto[0].imagen}
+                        imagen={producto.imagenes_producto[0]?.imagen}
                         titulo={producto.nombre}
                         nuevo={producto.nuevo}
                         oferta={producto.oferta}

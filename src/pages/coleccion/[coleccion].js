@@ -46,12 +46,12 @@ const Coleccion = () => {
     return (
         <>
             <Head>
-                <title>{datos?.coleccion[0].meta_title}</title>
+                <title>{datos?.coleccion?.[0].meta_title}</title>
                 <meta
                     name="description"
                     content={
                         datos?.length > 0 &&
-                        datos?.coleccion[0].meta_description
+                        datos?.coleccion?.[0]?.meta_description
                     }
                 />
                 <meta name="robots" content="index,follow" />

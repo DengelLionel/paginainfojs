@@ -11,6 +11,7 @@ import IconBuscador from '@/components/icons/IconBuscador'
 import FondoOscurecido from '@/components/paginainfo/FondoOscurecido'
 const NavBar = () => {
     const { datos } = useDatosMenu()
+
     const router = useRouter()
     const {
         isOopen,
