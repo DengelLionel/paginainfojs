@@ -1,7 +1,7 @@
 import Axios from 'axios'
-const URL = 'https://nexomedic.com.pe'
 
 export default async function sitemap() {
+    const URL = 'https://nexomedic.com.pe'
     const siteMap = [
         {
             url: `${URL}`,
