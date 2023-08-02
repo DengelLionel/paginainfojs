@@ -1,6 +1,6 @@
-import { datos } from '@/lib/datosproducto'
+import { useDatosProducto } from '@/lib/datosproducto'
 const URL = 'https://nexomedic.com.pe'
-
+const { datos } = useDatosProducto()
 export default async function sitemap() {
     // Static pages
     const siteMap = [
