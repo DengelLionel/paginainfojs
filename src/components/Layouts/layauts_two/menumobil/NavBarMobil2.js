@@ -81,7 +81,7 @@ const NavBarMobil = () => {
             <div
                 className={`${
                     isOopen
-                        ? 'block absolute bg-blueCuatro w-full h-[500px] overflow-y-auto'
+                        ? 'block absolute bg-blueCuatro w-full  h-[100vh] overflow-y-auto'
                         : 'hidden'
                 } lg:block`}>
                 <ul className=" list-none pr-[16px] pt-[20px] pb-[20px] pl-[16px] ">
