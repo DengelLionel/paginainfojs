@@ -4,25 +4,25 @@ function generateSiteMap(posts) {
     return `<?xml version="1.0" encoding="UTF-8"?>
               <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
                 <url>
-                  <loc>${URL}</loc>
+                  <loc>https://nexomedic.com.pe</loc>
                 </url>
                 <url>
-                <loc>${URL}/empresa</loc>
+                <loc>https://nexomedic.com.pe/empresa</loc>
               </url>
               <url>
-              <loc>${URL}/productos</loc>
+              <loc>https://nexomedic.com.pe/productos</loc>
             </url>
             <url>
-            <loc>${URL}/post-venta</loc>
+            <loc>https://nexomedic.com.pe/post-venta</loc>
           </url>
           <url>
-          <loc>${URL}/servicio-tecnico</loc>
+          <loc>https://nexomedic.com.pe/servicio-tecnico</loc>
         </url>
         <url>
-        <loc>${URL}/clientes</loc>
+        <loc>https://nexomedic.com.pe/clientes</loc>
       </url>
       <url>
-      <loc>${URL}/contactanos</loc>
+      <loc>https://nexomedic.com.pe/contactanos</loc>
     </url>
                 ${posts.map(post => {
                     return `<url>
