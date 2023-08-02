@@ -32,7 +32,7 @@ const Servicio = () => {
                     </span>
                     <Link
                         className=" w-[200px] bg-blueOne text-center text-white text-sm font-medium border-[1px] border-transparent py-2 px-4 rounded-full hover:bg-blueTwo hover:text-blueOne hover:border-blueOne transition duration-300 mb-[20px]"
-                        href="/contactanos">
+                        href="/cotizar">
                         Contactar a un asesor
                     </Link>
                 </article>
@@ -77,7 +77,7 @@ const Servicio = () => {
                     </span>
                     <Link
                         className=" w-[200px] bg-blueOne text-center text-white text-sm font-medium border-[1px] border-transparent py-2 px-4 rounded-full hover:bg-blueTwo hover:text-blueOne hover:border-blueOne transition duration-300 mb-[20px]"
-                        href="/contactanos">
+                        href="/cotizar">
                         Contactar a un asesor
                     </Link>
                 </article>
@@ -104,7 +104,7 @@ const Servicio = () => {
                     </span>
                     <Link
                         className=" w-[200px] bg-blueOne text-center text-white text-sm font-medium border-[1px] border-transparent py-2 px-4 rounded-full hover:bg-blueTwo hover:text-blueOne hover:border-blueOne transition duration-300 mb-[20px]"
-                        href="/contactanos">
+                        href="/cotizar">
                         Contactar a un asesor
                     </Link>
                 </article>
