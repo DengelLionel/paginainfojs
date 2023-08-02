@@ -1,7 +1,7 @@
 import useSWR from 'swr'
 import axios from '@/lib/axios'
 
-export const productos = () => {
+export const productos = async () => {
     const data = useSWR('/api/productos_todo', () =>
         axios.get('/api/productos_todo').then(res => res.data),
     )
