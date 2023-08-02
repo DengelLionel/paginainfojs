@@ -1,6 +1,5 @@
-import { useDatosProducto } from '@/lib/datosproducto'
 const URL = 'https://nexomedic.com.pe'
-const { datos } = useDatosProducto()
+
 export default async function sitemap() {
     // Static pages
     const siteMap = [
@@ -34,7 +33,10 @@ export default async function sitemap() {
         },
     ]
 
-    // Generate
+    const response = await fetch(`/api/productos_todo`)
+    const json = await response.json()
+    const dato = json.data
+    const datos = dato.data
     datos.forEach(post => {
         siteMap.push({
             url: `${URL}/producto/${post.meta_title_link}`,
