@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow:/mreg/
+Disallow:/nexoper/
+Sitemap: https://nexomedic.com.pe/sitemap.xml
