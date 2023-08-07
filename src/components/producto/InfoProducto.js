@@ -33,9 +33,13 @@ const InfoProducto = ({ datos }) => {
                 </span>
 
                 <span>
-                    <strong className="text-blueOne  text-xl font-bold ">
-                        s/. {datos?.[0]?.precio}
-                    </strong>
+                    {datos?.[0]?.precio === 0 || datos?.[0]?.precio === '0' ? (
+                        ''
+                    ) : (
+                        <strong className="text-blueOne  text-xl font-bold ">
+                            s/. {datos?.[0]?.precio}
+                        </strong>
+                    )}
                 </span>
             </section>
             <Link
