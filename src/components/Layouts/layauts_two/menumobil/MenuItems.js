@@ -15,11 +15,12 @@ const MenuItems = ({ items, depthLevel }) => {
     }
 
     return (
-        <li className="relative font-normal text-base p-[10px] overflow-y-auto border-b border-blancoOne border-opacity-50">
+        <li
+            className={`relative font-normal text-base pt-[5px] pb-[5px]  overflow-y-auto border-b border-blancoOne border-opacity-50`}>
             {items.submenu && items.submenu.length > 0 ? (
                 <>
                     <button
-                        className="flex flex-row items-center justify-between text-left font-notosans font-medium w-full text-white  hover:text-blancoOne"
+                        className="flex flex-row items-center justify-between text-left font-notosans font-medium w-full pr-[5px] pl-[5px] text-white  hover:text-blancoOne"
                         type="button"
                         aria-haspopup="menu"
                         onClick={handleToggle}>
@@ -33,10 +34,10 @@ const MenuItems = ({ items, depthLevel }) => {
                     {isOpen &&
                         items.submenu.map((submenuItem, index) => (
                             <div
-                                className={` overflow-y-auto ${
+                                className={` overflow-y-auto  ${
                                     depthLevel >= 1
-                                        ? 'bg-blueSeis'
-                                        : 'bg-blueCinco'
+                                        ? 'bg-blueSeis  pr-[5px] pl-[5px] '
+                                        : 'bg-blueCinco pr-0 pl-0'
                                 }`}
                                 key={index}>
                                 <MenuItems
@@ -48,7 +49,7 @@ const MenuItems = ({ items, depthLevel }) => {
                 </>
             ) : (
                 <Link
-                    className="font-notosans font-medium text-white "
+                    className="font-notosans font-medium text-white pr-[5px] pl-[5px]"
                     href={`${
                         items.coleccion.length > 0
                             ? '/coleccion' + items.enlace

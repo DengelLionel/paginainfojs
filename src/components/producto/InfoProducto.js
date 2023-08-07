@@ -31,14 +31,12 @@ const InfoProducto = ({ datos }) => {
                         {datos?.[0]?.procedencia}
                     </span>
                 </span>
-                {parseInt(datos?.[0]?.precio) != 0 ||
-                    (parseFloat(datos?.[0]?.precio) != 0.0 && (
-                        <span>
-                            <strong className="text-blueOne  text-xl font-bold ">
-                                s/. {datos?.[0]?.precio}
-                            </strong>
-                        </span>
-                    ))}
+
+                <span>
+                    <strong className="text-blueOne  text-xl font-bold ">
+                        s/. {datos?.[0]?.precio}
+                    </strong>
+                </span>
             </section>
             <Link
                 href={'/cotizar'}

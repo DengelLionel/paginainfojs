@@ -6,7 +6,7 @@ const SobreNosotros = () => {
         <div>
             <BannerGeneral
                 imagen={
-                    'https://res.cloudinary.com/darps1cta/image/upload/v1687643443/nexo/medico-tecnico-laboratorio-analizando-evolucion-virus-tableta-digital-equipo-cientificos-que-llevan-cabo-desarrollo-vacunas-utilizando-alta-tecnologia-investigar-tratamiento-contra-pandem_hykvlk.jpg'
+                    'https://res.cloudinary.com/dxvqyh8ib/image/upload/v1691255296/Empresa_NEW_o5d72x.jpg'
                 }
                 titulo={'banner'}
             />

@@ -8,10 +8,12 @@ const TodoCliente = () => {
         <div className="p-[16px] pt-[100px] lg:pl-[100px] lg:pt-[100px] lg:pb-[100px] lg:pr-[100px]">
             <h1 className="text-xl font-bold mb-5 text-blueOne">CLIENTES</h1>
             <p className="lg:mb-5 text-sm lg:text-md text-justify p-[30px] bg-blueTwo">
-                Trabajamos con las mejores marcas del mercado con el fin de
-                garantizar a nuestros clientes Productos de alta calidad a los
-                mejores precios todas nuestras marcas cuentan con cerfificación
-                ISO ,FDA,CE
+                Nuestro compromiso con la innovación y la excelencia nos ha
+                posicionado como el socio estratégico en la industria de
+                Equipamiento médico. Trabajamos con los hospitales, clínicas y
+                consultorios médicos más importantes del país, lo que nos
+                permite mejorar la atención a los pacientes y contribuir al
+                logro de resultados óptimos en el cuidado de la salud.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                 {datos?.map((marca, index) => (
