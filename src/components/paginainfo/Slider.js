@@ -2,7 +2,6 @@ import React from 'react'
 import Image from 'next/legacy/image'
 import IconArrow from '../icons/IconArrow'
 import { useHover } from '@/hooks/useHover'
-import Link from 'next/link'
 const Slider = ({
     imagen_mobil,
     imagen_desktop,
@@ -18,15 +17,36 @@ const Slider = ({
             className={`relative w-full h-[500px] ${
                 mobile ? 'md:hidden' : 'hidden md:block md:h-[600px]'
             }`}>
-            <Image
-                className="brightness-50 "
-                objectFit="cover"
-                layout="fill"
-                priority={true}
-                alt={titulo}
-                src={mobile ? imagen_mobil : imagen_desktop}
-                quality={100}
-            />
+            {imagen_mobil != null || imagen_desktop != null ? (
+                <Image
+                    className="brightness-50 "
+                    objectFit="cover"
+                    layout="fill"
+                    priority={true}
+                    alt={titulo && titulo}
+                    src={
+                        mobile
+                            ? imagen_mobil != null
+                                ? imagen_mobil
+                                : imagen_desktop
+                            : imagen_desktop
+                    }
+                    quality={100}
+                />
+            ) : (
+                <Image
+                    className="brightness-50 "
+                    objectFit="cover"
+                    layout="fill"
+                    priority={true}
+                    alt={titulo && titulo}
+                    src={
+                        'https://res.cloudinary.com/dh9etf988/image/upload/v1695174693/cld-sample-2.jpg'
+                    }
+                    quality={100}
+                />
+            )}
+
             <div className="w-full h-full z-[20] flex flex-col justify-end items-center gap-[20px] pl-[16px] pr-[16px] pb-[35px] relative lg:items-start lg:pl-[100px] lg:justify-center">
                 {titulo !== null && (
                     <h1 className="text-white font-bold text-lg text-center lg:text-2xl">
@@ -41,14 +61,15 @@ const Slider = ({
                 )}
 
                 {nombreenlace !== null && (
-                    <Link
+                    <a
                         target="_blank"
-                        href={enlace}
+                        href={enlace && enlace}
                         ref={hoverRef}
-                        className="bg-blueOne w-auto p-[10px] h-[47px] text-blancoOne rounded-full flex flex-row transition-all duration-[500ms] items-center justify-center shadow-md font-semibold hover:bg-blueTwo hover:text-blueOne gap-[10px]">
+                        className="bg-blueOne w-auto p-[10px] h-[47px] text-blancoOne rounded-full flex flex-row transition-all duration-[500ms] items-center justify-center shadow-md font-semibold hover:bg-blueTwo hover:text-blueOne gap-[10px]"
+                        rel="noreferrer">
                         {nombreenlace}
                         <IconArrow fill={isHovered ? '#2F6AAD' : '#fafafa'} />
-                    </Link>
+                    </a>
                 )}
             </div>
         </section>

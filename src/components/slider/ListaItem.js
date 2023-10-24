@@ -28,29 +28,29 @@ const ListaItem = () => {
     useEffect(() => {}, [errorserv])
     return (
         <div className="overflow-x-auto w-[360px] p-[16px] lg:w-full sm:mx-0.5 lg:mx-0.5">
-            <div className="py-2 inline-block min-w-full sm:px-6 lg:px-8">
+            <div className="py-2 inline-block min-w-full sm:px-6 lg:px-4">
                 <div className="">
                     <table className="min-w-full">
                         <thead className="bg-gray-200 border-b">
                             <tr>
                                 <th
                                     scope="col"
-                                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left lg:w-[200px]">
                                     Imagen mobil
                                 </th>
                                 <th
                                     scope="col"
-                                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left">
+                                    className="text-sm font-medium text-gray-900 px-6 py-4 text-left lg:w-[200px]">
                                     Imagen desktop
                                 </th>
                                 <th
                                     scope="col"
-                                    className="text-sm font-medium text-gray-900 w-[150px] lg:w-[400px] px-6 py-4 text-left">
+                                    className="text-sm font-medium text-gray-900 w-[150px] lg:w-[200px] px-6 py-4 text-left">
                                     Titulo
                                 </th>
                                 <th
                                     scope="col"
-                                    className="text-sm font-medium text-gray-900 w-[150px] lg:w-[400px] px-6 py-4 text-left">
+                                    className="text-sm font-medium text-gray-900 w-[150px] lg:w-[200px] px-6 py-4 text-left">
                                     Enlace
                                 </th>
                             </tr>
@@ -85,10 +85,10 @@ const ListaItem = () => {
                                     <td className="text-sm text-gray-900 font-light  px-6 py-4 ">
                                         {item.titulo}
                                     </td>
-                                    <td className="text-sm text-gray-900 font-light  px-6 py-4 ">
+                                    <td className="text-sm text-gray-900 font-light w-[100px] ">
                                         {item.enlace}
                                     </td>
-                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex flex-col justify-center items-center lg:flex-row">
+                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex flex-col justify-center items-center lg:w-[100px] lg:flex-row">
                                         <button
                                             onClick={() => {
                                                 setIsOpen(!isOpen)

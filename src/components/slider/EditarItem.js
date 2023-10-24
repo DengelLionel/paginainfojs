@@ -23,15 +23,15 @@ const EditarItem = () => {
     const handleUpdate = async () => {
         try {
             const slider = {
-                titulo: titulo,
-                subtitulo: subtitulo,
-                imagen_desktop: imagen_desktop,
-                imagen_mobil: imagen_mobil,
-                enlace: enlace,
-                nombreenlace: nombreenlace,
+                titulo: titulo && titulo,
+                subtitulo: subtitulo && subtitulo,
+                imagen_desktop: imagen_desktop && imagen_desktop,
+                imagen_mobil: imagen_mobil && imagen_mobil,
+                enlace: enlace && enlace,
+                nombreenlace: nombreenlace && nombreenlace,
             }
             await csrf()
-            await axios.put(`/api/slider/${idItem}`, slider)
+            await axios.put(`/api/slider/${idItem && idItem}`, slider)
             window.location.reload()
             setIsOpen(false)
         } catch (error) {

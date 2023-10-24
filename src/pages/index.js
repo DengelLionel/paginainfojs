@@ -16,7 +16,6 @@ import { useDatosSlider } from '@/hooks/useDatosSlider'
 import Whatsapp from '@/components/paginainfo/Whatsapp'
 export default function Home() {
     const { datos } = useDatosSlider()
-
     return (
         <>
             <Head>
@@ -45,22 +44,31 @@ export default function Home() {
                     }}
                     wrapAround={true}
                     autoplay={true}>
-                    {datos?.map(imagen => (
-                        <div key={imagen.id}>
+                    {datos?.map((imagen, index) => (
+                        <div key={index}>
                             <Slider
-                                imagen_mobil={imagen.imagen_mobil}
-                                titulo={imagen.titulo}
-                                subtitulo={imagen.subtitulo}
-                                nombreenlace={imagen.nombreenlace}
-                                enlace={imagen.enlace}
+                                imagen_mobil={
+                                    imagen.imagen_mobil && imagen.imagen_mobil
+                                }
+                                titulo={imagen.titulo && imagen.titulo}
+                                subtitulo={imagen.subtitulo && imagen.subtitulo}
+                                nombreenlace={
+                                    imagen.nombreenlace && imagen.nombreenlace
+                                }
+                                enlace={imagen.enlace && imagen.enlace}
                                 mobile={true}
                             />
                             <Slider
-                                imagen_desktop={imagen.imagen_desktop}
-                                titulo={imagen.titulo}
-                                subtitulo={imagen.subtitulo}
-                                nombreenlace={imagen.nombreenlace}
-                                enlace={imagen.enlace}
+                                imagen_desktop={
+                                    imagen.imagen_desktop &&
+                                    imagen.imagen_desktop
+                                }
+                                titulo={imagen.titulo && imagen.titulo}
+                                subtitulo={imagen.subtitulo && imagen.subtitulo}
+                                nombreenlace={
+                                    imagen.nombreenlace && imagen.nombreenlace
+                                }
+                                enlace={imagen.enlace && imagen.enlace}
                                 mobile={false}
                             />
                         </div>
