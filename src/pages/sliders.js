@@ -2,7 +2,7 @@ import AppLayout from '@/components/Layouts/AppLayout'
 import Head from 'next/head'
 import CreacionItem from '@/components/slider/CreacionItem'
 import ListaItem from '@/components/slider/ListaItem'
-const ItemProduct = () => {
+const sliders = () => {
     return (
         <AppLayout
             header={
@@ -25,4 +25,4 @@ const ItemProduct = () => {
     )
 }
 
-export default ItemProduct
+export default sliders
