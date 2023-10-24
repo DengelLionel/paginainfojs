@@ -16,12 +16,12 @@ const CreacionItem = () => {
         try {
             await csrf()
             const slider = {
-                titulo: titulo,
-                subtitulo: subtitulo,
-                imagen_desktop: imagen_desktop,
-                imagen_mobil: imagen_mobil,
-                enlace: enlace,
-                nombreenlace: nombreenlace,
+                titulo: titulo && titulo,
+                subtitulo: subtitulo && subtitulo,
+                imagen_desktop: imagen_desktop && imagen_desktop,
+                imagen_mobil: imagen_mobil && imagen_mobil,
+                enlace: enlace && enlace,
+                nombreenlace: nombreenlace && nombreenlace,
             }
             await axios.post('/api/slider', slider)
             window.location.reload()
