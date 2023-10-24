@@ -19,7 +19,9 @@ const ListaItem = () => {
 
     const EliminarItem = async item_eliminado => {
         try {
-            await axios.delete(`/api/slider/${item_eliminado}`)
+            await axios.delete(
+                `/api/slider/${item_eliminado && item_eliminado}`,
+            )
             window.location.reload()
         } catch (error) {
             setErrorserv(error)
@@ -56,57 +58,60 @@ const ListaItem = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {dato?.map((item, index) => (
-                                <tr
-                                    key={index}
-                                    className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
-                                    <td>
-                                        <div className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
-                                            <Image
-                                                layout="fill"
-                                                objectFit="cover"
-                                                className="w-[100px] h-[100px]"
-                                                alt={item.titulo}
-                                                src={item.imagen_mobil}
-                                            />
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
-                                            <Image
-                                                layout="fill"
-                                                objectFit="cover"
-                                                className="w-[100px] h-[100px]"
-                                                alt={item.titulo}
-                                                src={item.imagen_desktop}
-                                            />
-                                        </div>
-                                    </td>
-                                    <td className="text-sm text-gray-900 font-light  px-6 py-4 ">
-                                        {item.titulo}
-                                    </td>
-                                    <td className="text-sm text-gray-900 font-light w-[100px] ">
-                                        {item.enlace}
-                                    </td>
-                                    <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex flex-col justify-center items-center lg:w-[100px] lg:flex-row">
-                                        <button
-                                            onClick={() => {
-                                                setIsOpen(!isOpen)
-                                                IdProducto(item.id ?? item.id)
-                                            }}
-                                            className="border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline w-[100px]">
-                                            EDITAR
-                                        </button>
-                                        <button
-                                            onClick={() =>
-                                                EliminarItem(item.id)
-                                            }
-                                            className="border border-red-500 bg-red-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-red-600 focus:outline-none focus:shadow-outline">
-                                            ELIMINAR
-                                        </button>
-                                    </td>
-                                </tr>
-                            ))}
+                            {dato &&
+                                dato?.map((item, index) => (
+                                    <tr
+                                        key={index}
+                                        className="bg-white border-b transition duration-300 ease-in-out hover:bg-gray-100">
+                                        <td>
+                                            <div className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
+                                                <Image
+                                                    layout="fill"
+                                                    objectFit="cover"
+                                                    className="w-[100px] h-[100px]"
+                                                    alt={item.titulo}
+                                                    src={item.imagen_mobil}
+                                                />
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap relative">
+                                                <Image
+                                                    layout="fill"
+                                                    objectFit="cover"
+                                                    className="w-[100px] h-[100px]"
+                                                    alt={item.titulo}
+                                                    src={item.imagen_desktop}
+                                                />
+                                            </div>
+                                        </td>
+                                        <td className="text-sm text-gray-900 font-light  px-6 py-4 ">
+                                            {item.titulo}
+                                        </td>
+                                        <td className="text-sm text-gray-900 font-light w-[100px] ">
+                                            {item.enlace}
+                                        </td>
+                                        <td className="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap flex flex-col justify-center items-center lg:w-[100px] lg:flex-row">
+                                            <button
+                                                onClick={() => {
+                                                    setIsOpen(!isOpen)
+                                                    IdProducto(
+                                                        item.id ?? item.id,
+                                                    )
+                                                }}
+                                                className="border border-green-500 bg-green-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-green-600 focus:outline-none focus:shadow-outline w-[100px]">
+                                                EDITAR
+                                            </button>
+                                            <button
+                                                onClick={() =>
+                                                    EliminarItem(item.id)
+                                                }
+                                                className="border border-red-500 bg-red-500 text-white rounded-md px-4 py-2 m-2 transition duration-500 ease select-none hover:bg-red-600 focus:outline-none focus:shadow-outline">
+                                                ELIMINAR
+                                            </button>
+                                        </td>
+                                    </tr>
+                                ))}
                         </tbody>
                     </table>
                 </div>
